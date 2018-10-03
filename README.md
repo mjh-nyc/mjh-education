@@ -74,14 +74,14 @@ If you want to automatically generate the security keys (assuming you have wp-cl
 * Run `yarn` to update dependencies
 * Run `yarn build` to compile the build, a `dist` dir will be created, do not commit it, prod and staging branches will be compiled for production by the MJH team
 
-Please review documention in theme directory for further notes. Files can be comitted directly to the root of this git project repository https://github.com/mjh-nyc/mjh-superproject/tree/master/web/app/themes/mjh
+Please review documention in theme directory for further notes. Files can be comitted directly to the root of this git project repository https://github.com/mjh-nyc/mjh-education/tree/master/web/app/themes/mjh-edu
 
 ### Plugin Management
 
 **  Contrib Plugins**
 
 - Contrib plugins can be brought in via composer to `/web/app/plugins/yourpluginname` using `composer require <package_name>:<version`> 
-- Source for wordpress composer packages  `https://wpackagist.org`
+- Source for wordpress composer packages  https://wpackagist.org
 
 **Custom Plugins**
 
