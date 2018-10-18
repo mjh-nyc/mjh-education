@@ -1,3 +1,5 @@
+# iOS
+.DS_Store
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
