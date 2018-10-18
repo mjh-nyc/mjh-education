@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "98bc11f1a01ff727c5c0b96ed693ea51",
+    "content-hash": "faaf22dbf296bd03742488403349bf20",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -270,6 +270,17 @@
             "time": "2018-01-29T14:49:29+00:00"
         },
         {
+            "name": "mjh-nyc/mjh-custom-configurations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
+                "reference": "1.0.0"
+            },
+            "type": "wordpress-muplugin",
+            "time": "2018-10-18T18:31:29+00:00"
+        },
+        {
             "name": "oscarotero/env",
             "version": "v1.1.0",
             "source": {
@@ -521,6 +532,11 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Roave/SecurityAdvisories.git",
+                "reference": "cba9a022f6e44e3a8779874570372c56cd51b145"
+            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.12",
@@ -733,6 +749,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "mjh-nyc/mjh-custom-configurations": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
