@@ -50,13 +50,13 @@
     {
       "type": "package",
       "package": {
-        "name": "mjh-nyc/mjh-custom-configurations",
+        "name": "mjh-nyc/mjhedu-custom-configurations",
         "version": "dev-master",
         "type": "wordpress-muplugin",
         "source": {
           "type": "git",
            "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
-           "reference": "1.0.0"
+           "reference": "1.0.1"
         }
       }
     }
@@ -70,7 +70,7 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/wp-config": "1.0.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.5",
-    "mjh-nyc/mjh-custom-configurations": "dev-master"
+    "mjh-nyc/mjhedu-custom-configurations": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
