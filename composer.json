@@ -30,6 +30,35 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.7.7",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+           "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+        },
+        "require": {
+          "philippbaschke/acf-pro-installer": "^1.0",
+          "composer/installers": "^1.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "mjh-nyc/mjhedu-custom-configurations",
+        "version": "dev-master",
+        "type": "wordpress-muplugin",
+        "source": {
+          "type": "git",
+           "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
+           "reference": "1.0.1"
+        }
+      }
     }
   ],
   "require": {
@@ -39,7 +68,9 @@
     "johnpbloch/wordpress": "4.9.8",
     "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "roots/wp-config": "1.0.0"
+    "roots/wp-config": "1.0.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^5.5",
+    "mjh-nyc/mjhedu-custom-configurations": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
