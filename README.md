@@ -76,6 +76,8 @@ If you want to automatically generate the security keys (assuming you have wp-cl
 
 Please review documention in theme directory for further notes. Files can be comitted directly to the root of this git project repository https://github.com/mjh-nyc/mjh-education/tree/master/web/app/themes/mjh-edu
 
+For full deployment notes on the server and additional gotchas, please review this document which requires our permission to access  https://docs.google.com/document/d/1SoaXXOXSsFP4tKAbJFBdC8qcajdo7tqjTbTE9b0_AnY
+
 ### Plugin Management
 
 **  Contrib Plugins**
