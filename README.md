@@ -76,9 +76,11 @@ If you want to automatically generate the security keys (assuming you have wp-cl
 
 Please review documention in theme directory for further notes. Files can be comitted directly to the root of this git project repository https://github.com/mjh-nyc/mjh-education/tree/master/web/app/themes/mjh-edu
 
+For full deployment notes on the server and additional gotchas, please review this document which requires our permission to access  https://docs.google.com/document/d/1SoaXXOXSsFP4tKAbJFBdC8qcajdo7tqjTbTE9b0_AnY
+
 ### Plugin Management
 
-**  Contrib Plugins**
+**Contrib Plugins**
 
 - Contrib plugins can be brought in via composer to `/web/app/plugins/yourpluginname` using `composer require <package_name>:<version`> 
 - Source for wordpress composer packages  https://wpackagist.org
@@ -86,3 +88,33 @@ Please review documention in theme directory for further notes. Files can be com
 **Custom Plugins**
 
 - Custom plugins should be set up so that they can be brought in via composer to `/web/app/plugins/yourpluginname`
+
+**Custom Must Use Plugins**
+
+- Custom must use plugins should be set up so that they can be brought in via composer to `/web/app/mu-plugins/yourpluginname`
+
+**Composer setup for custom plugins or must-use plugins**
+
+- This works via git's tagging system. 
+- After you commit files that your ready to deploy, within the plugin reposistory, `git tag -l` to list all tags 
+- Create a tag increasing the version number. So if it's 1.0.0, increase to 1.0.1 for minor changes or 1.1.0 for more significant changes or 2.0.0 for complete overhaul or changes of code, this depends on self judgment.  `git tag <version_number>` and then run `git push origin --tags`
+- Go back to root directory. 
+- For creating a new setup via composer, open `composer.json` and add under `repositories` the following
+```,{
+"type": "package",
+"package": {
+"name": "mjh-nyc/<plugin-name>",
+"version": "dev-master",
+"type": "wordpress-<muplugin or plugin>"
+"source": {
+"type": "git",
+"url": "https://github.com/mjh-nyc/<plugin-name>.git",
+"reference": "<git-tag-number>"
+}
+}
+}
+```
+- For updating the plugin, you will need to update the `reference` to the latest tag number everytime. 
+- Once you save, you can then run `composer update mjh-nyc/<plugin-name>` , this will checkout the plugin directory to the tag, add reference in composer.json and composer.lock file.  
+- Commit both composer files and push. Run through deployment as usual
+- On server, you always only run `composer install`

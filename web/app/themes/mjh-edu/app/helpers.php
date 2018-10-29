@@ -140,3 +140,20 @@ function display_sidebar()
     isset($display) || $display = apply_filters('sage/display_sidebar', false);
     return $display;
 }
+//***************************************************************//
+// ADD LESSON PLANS OPTIONS PAGE ////////////////////////////
+
+/**
+ * Create ACF setting page under Survivor Stories CPT menu
+ *
+ * @since 1.0.0
+ */
+if ( function_exists( 'acf_add_options_sub_page' ) ){
+    acf_add_options_sub_page(array(
+        'title'      => 'Options',
+        'parent'     => 'edit.php?post_type=lessons',
+        'capability' => 'manage_options'
+    ));
+}
+//END LESSON PLANS OPTIONS
+//***************************************************************//
