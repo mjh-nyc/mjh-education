@@ -5,6 +5,9 @@
     <div class="animsition">
       @php do_action('get_header') @endphp
       @include('partials.header')
+      <div class="wrap hero container-fluid" role="document">
+            HERO!
+      </div>
       <div class="wrap container" role="document">
         <div class="content">
           <main class="main">

@@ -7,6 +7,24 @@ use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
+
+/**
+ * Add logo support to theme
+ */
+function theme_prefix_setup() {
+
+    add_theme_support( 'custom-logo', array(
+        'height'      => 85,
+        'width'       => 624,
+        'flex-width' => true,
+        'flex-height' => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+
+}
+add_action( 'after_setup_theme', 'App\\theme_prefix_setup' );
+
+
 /**
  * Theme assets
  */
@@ -53,6 +71,10 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
+    add_image_size( 'square@2x', 800, 800, true);
+    add_image_size( 'square@1x', 400, 400, true);
+    add_image_size( 'header', 1600, 550);
+    add_image_size( 'homepage-header', 1600, 750);
 
     /**
      * Enable HTML5 markup support
@@ -83,10 +105,10 @@ add_action('widgets_init', function () {
         'before_title'  => '<h3>',
         'after_title'   => '</h3>'
     ];
-    register_sidebar([
+    /*register_sidebar([
         'name'          => __('Primary', 'sage'),
         'id'            => 'sidebar-primary'
-    ] + $config);
+    ] + $config);*/
     register_sidebar([
         'name'          => __('Footer', 'sage'),
         'id'            => 'sidebar-footer'

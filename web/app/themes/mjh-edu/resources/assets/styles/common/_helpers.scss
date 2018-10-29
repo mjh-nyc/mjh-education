@@ -1,0 +1,49 @@
+/* stylelint-disable */
+//BentonSans
+@mixin bentonReg() {
+    font-family: benton-sans, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+@mixin bentonIt() {
+    font-family: benton-sans, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+}
+
+@mixin bentonBd() {
+    font-family: benton-sans, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@mixin bentonBdIt() {
+    font-family: benton-sans, sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+@mixin font-size($size) {
+    font-size: $size * 1px;
+    font-size: $size/$default-font-size + rem;
+}
+
+@mixin listReset() {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 0.2em 0;
+        }
+    }
+}
+
+@mixin fa-inline-prep() {
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-indent: 0
+}
+/* stylelint-enable */

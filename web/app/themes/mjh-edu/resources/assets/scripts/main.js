@@ -4,6 +4,29 @@ import 'jquery';
 // Import everything from autoload
 import "./autoload/**/*"
 
+
+/*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/
+//Added by CLOUDRED */
+import 'bootstrap';
+
+//Import Web Font Loader script
+import 'gatsby-plugin-web-font-loader/gatsby-browser';
+
+//Import lity responsive lightbox
+import 'lity/dist/lity.min';
+
+//Import animsition library
+import 'animsition/dist/js/animsition.min';
+
+//Import lity responsive lightbox
+import 'lity/dist/lity.min';
+
+//**** //END ******************/
+/*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/
+
+
+
+
 // import local dependencies
 import Router from './util/Router';
 import common from './routes/common';

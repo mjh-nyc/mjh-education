@@ -1,10 +1,11 @@
+/* stylelint-disable */
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
-
+$default-font-size:	18;
 $theme-colors: (
-  primary: #525ddc
+	primary: #525ddc
 );
-
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+/* stylelint-enable */
