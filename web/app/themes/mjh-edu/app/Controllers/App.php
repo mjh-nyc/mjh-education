@@ -68,4 +68,60 @@ class App extends Controller
             return false;
         }
     }
+
+    /**
+     * get field data from a group 
+     *
+     * @return varchar
+     */
+    public static function get_group_field($groupname, $fieldname, $id=false)
+    {
+        $field_value = "";
+        if (!$id){
+            $id = get_the_ID();
+        }
+        $groupname = get_field($groupname);
+        if( $groupname ) {
+            return $groupname[$fieldname];
+        }  else {
+            return false;
+        }
+        
+    }
+
+
+    /**
+     * Return featured image of post src only
+     *
+     * @return string
+     */
+    public static function featuredImageSrc($size='large',$id=false)
+    {
+        $image = "";
+        if (!$id){
+            $id = get_the_ID();
+        }
+        if (has_post_thumbnail( $id ) ) {
+            $image = get_the_post_thumbnail_url($id, $size);
+        } 
+        if (!$image) {
+            //use default image entered under social in theme toptions
+            //$image = get_field('social','option');
+        }
+        return $image;
+    }
+
+    /**
+     * Return featured image alt, pass post ID
+     *
+     * @return string
+     */
+    public static function featuredImageAlt($id=false)
+    {
+        $image_alt = "";
+        if ($id) {
+            $image_alt = get_post_meta( $id, '_wp_attachment_image_alt', true);
+        }
+        return $image_alt;
+    }
 }

@@ -29,6 +29,14 @@
     font-size: $size/$default-font-size + rem;
 }
 
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
 @mixin listReset() {
     ul {
         list-style: none;

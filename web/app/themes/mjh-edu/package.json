@@ -111,6 +111,7 @@
     "jquery": "^3.3.1",
     "jquery-parallax.js": "^1.5.0",
     "lity": "^2.3.1",
-    "popper.js": "^1.14.4"
+    "popper.js": "^1.14.4",
+    "waypoints": "^4.0.1"
   }
 }

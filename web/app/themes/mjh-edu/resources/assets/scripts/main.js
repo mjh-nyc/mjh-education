@@ -21,6 +21,13 @@ import 'animsition/dist/js/animsition.min';
 //Import lity responsive lightbox
 import 'lity/dist/lity.min';
 
+// Import Parallax js
+import 'jquery-parallax.js/parallax.min';
+
+//Import waypoints
+import 'waypoints/lib/jquery.waypoints.min';
+import 'waypoints/lib/shortcuts/sticky.min';
+
 //**** //END ******************/
 /*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/
 
