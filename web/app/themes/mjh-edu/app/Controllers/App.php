@@ -83,44 +83,6 @@ class App extends Controller
 		return $image;
 	}
 
-	/**
-	 * Return featured image of post src only
-	 *
-	 * @return string
-	 */
-	public static function featuredImageSrc($size='large',$id=false)
-	{
-		$image = "";
-		if (!$id){
-			$id = get_the_ID();
-		}
-		if (has_post_thumbnail( $id ) ) {
-			$image = get_the_post_thumbnail_url($id, $size);
-		} elseif (get_field('testimony_platform',$id)) {
-			//this is a testimony, use the video screenshot as featured image
-			$image = App::featuredTestimonailImageSrc('large',$id);
-		}
-		if (!$image) {
-			//use default image entered under social in theme toptions
-			$image = get_field('social','option');
-		}
-		return $image;
-	}
-
-	/**
-	 * Return featured image alt, pass post ID
-	 *
-	 * @return string
-	 */
-	public static function featuredImageAlt($id=false)
-	{
-		$image_alt = "";
-		if ($id) {
-			$post_thumbnail_id = get_post_thumbnail_id($id);
-			$image_alt = get_post_meta( $post_thumbnail_id, '_wp_attachment_image_alt', true);
-		}
-		return $image_alt;
-	}
 
 	/**
 	 * Return featured image description (used for photo credits)
