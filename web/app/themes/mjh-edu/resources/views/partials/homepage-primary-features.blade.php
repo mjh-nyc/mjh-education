@@ -6,6 +6,9 @@
   </div>
   <div class="col-md-3">
     Post object (Featured lesson here)
+    @if( !empty($feature_lesson_plan))
+      {!! $feature_lesson_plan['title'] !!}
+    @endif
 
   </div>
   <div class="col-md-3">

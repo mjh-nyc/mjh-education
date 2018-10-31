@@ -12,4 +12,7 @@
 
 @section('primary-features')
     @include('partials.homepage-primary-features')
+    @if( !empty($feature_secondary_features))
+        @include('partials.homepage-secondary-features')
+    @endif
 @endsection

@@ -271,7 +271,7 @@ class App extends Controller
      *
      * @return varchar
      */
-    public static function get_group_field($groupname, $fieldname, $id=false)
+    public static function get_group_field($groupname, $fieldname=false, $id=false)
     {
         $field_value = "";
         if (!$id){
@@ -279,7 +279,11 @@ class App extends Controller
         }
         $groupname = get_field($groupname);
         if( $groupname ) {
-            return $groupname[$fieldname];
+			if(empty($fieldname)){
+				return $groupname;
+			}else {
+				return $groupname[$fieldname];
+			}
         }  else {
             return false;
         }
