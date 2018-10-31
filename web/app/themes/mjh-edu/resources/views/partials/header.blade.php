@@ -3,8 +3,10 @@
 		<div class="sticky-container">
 			<div class="container-fluid">
 				<div class="row top-row">
-					<div class="col-3 social">Social icons</div>
-					<div class="col-6 logo">
+					<div class="col-md-3 social-channels">
+						{!! App::get_social() !!}
+					</div>
+					<div class="col-9 col-md-6 logo">
 						{!!  get_custom_logo() !!}
 					</div>
 					<div class="col-3 navigation">
@@ -45,6 +47,9 @@
             {!! wp_nav_menu(['theme_location' => 'primary_navigation']) !!}
           @endif
         </nav>
+        <div class="social-channels">
+          {!! App::get_social() !!}
+        </div>
       </div>
     </div>
   </div>

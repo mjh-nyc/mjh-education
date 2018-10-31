@@ -48,6 +48,7 @@ export default {
 			$('.overlay-nav').css({ 'height': $(document).height() }).fadeToggle();
 			$("html, body").animate({ scrollTop: 0 });
 		};
+
 		$('#menu-main-navigation .menu-item-has-children > a').bind('click', function() {
 			event.preventDefault();
 			$(this).parent().toggleClass('open').find('ul').slideToggle();
@@ -60,6 +61,9 @@ export default {
 		//automatically expand parent if we're on a subpage
 		$('#menu-main-navigation .current-menu-parent').toggleClass('open').find('ul').slideToggle();
 
+
+		//Set autocomplete off for the search form
+		$('.search-form').attr('autocomplete','off');
 
 		$(".animsition").animsition({
 			inClass: 'fade-in',
