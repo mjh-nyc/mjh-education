@@ -34,7 +34,10 @@
 		}
 	}
 }
-
+/* initially hide the header image, revealed with js */
+.parallax-mirror {
+	display: none;
+}
 .sticky {
 	height: $sticky-header-height;
 	@include clearfix;

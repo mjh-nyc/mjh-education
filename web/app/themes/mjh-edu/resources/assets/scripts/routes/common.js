@@ -84,6 +84,8 @@ export default {
 			transition: function(url) { window.location.href = url; },
 		}).one('animsition.inStart', function(){
 			$(".parallax-mirror").fadeIn("slow");
+		}).one('animsition.outStart', function(){
+			$(".parallax-mirror").fadeOut("fast");
 		});
 
 		//add animsition-link class to menu items
