@@ -203,6 +203,30 @@ class App extends Controller
 			return $string;
 		}
 	}
+	/**
+	 * Return a formatted post array for featured posts,
+	 *
+	 * @postObj WP Post Object
+	 * @return array
+	 */
+	public static function setFeaturePostObjects( $postObj ){
+		if(is_object($postObj) && !empty($postObj->ID)) {
+			$postHash = array();
+			$postHash['title'] = $postObj->post_title;
+			$postHash['permalink'] = App::getPermalink($postObj->ID);
+			$postHash['post_type_label'] = get_post_type_object($postObj->post_type)->label;
+			$postHash['featured_image_id'] = get_post_thumbnail_id($postObj->ID);
+			if (!empty($postHash['featured_image_id'])) {
+				$postHash['featured_image'] = App::featuredImageSrc($size = 'medium', $postObj->ID);
+				$postHash['featured_image_alt'] = App::featuredImageAlt($postHash['featured_image_id']);
+			} else {
+				$postHash['featured_image'] = $postHash['featured_image_alt'] = '';
+			}
+			return $postHash;
+		}else{
+			return false;
+		}
+	}
 
     /**
      * Return repeater field from Advanced Custom Fields
