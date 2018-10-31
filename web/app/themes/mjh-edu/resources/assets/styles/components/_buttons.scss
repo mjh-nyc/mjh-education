@@ -40,12 +40,9 @@
 }
 
 .cta-arrow:before {
+    @include fa-inline-prep();
     position: absolute;
-    font-family: FontAwesome;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-indent: 0;
     content: "\f105";
     right: 14px;
     top: 55%;
