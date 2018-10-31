@@ -243,6 +243,20 @@ class App extends Controller
     }
 
     /**
+     * Get URL param
+     *
+     * @return intval
+     */
+    public static function get_uri_param($param)
+    {
+        if (isset($_GET[$param])) {
+            return $_GET[$param];
+        } else {
+            return 0;
+        }
+    }
+
+    /**
      * get field data from a group 
      *
      * @return varchar
