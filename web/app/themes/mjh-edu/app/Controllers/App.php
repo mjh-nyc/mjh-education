@@ -130,10 +130,29 @@ class App extends Controller
 	 */
 	public static function postCategories($id=false)
 	{
-		if (!$id){
+		if (!$id) {
 			$id = get_the_ID();
 		}
-		return wp_get_post_categories($id);
+		$post_categories = wp_get_post_categories($id);
+		if (!empty($post_categories)) {
+			$cats = array();
+			foreach ($post_categories as $cat_id) {
+				$cat = get_category($cat_id);
+				$cats[] = array('name' => $cat->name, 'slug' => $cat->slug);
+			}
+			return $cats;
+		}else{
+			return array();
+		}
+	}
+
+	/**
+	 * Set themes taxonomy globally since shared among various content types
+	 *
+	 * @return array
+	 */
+	public function themes(){
+		return App::postCategories();
 	}
 
 	/**
