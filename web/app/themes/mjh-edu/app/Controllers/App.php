@@ -273,7 +273,7 @@ class App extends Controller
      */
     public static function get_uri_param($param)
     {
-        if (isset($_GET[$param])) {
+        if (!empty($_GET[$param])) {
             return $_GET[$param];
         } else {
             return 0;
