@@ -1,0 +1,82 @@
+/* stylelint-disable */
+@font-face {
+    font-family: 'EksellDisplay';
+    src: url('../fonts/EksellDisplayWeb-Medium.eot');
+    src: url('../fonts/EksellDisplayWeb-Medium.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/EksellDisplayWeb-Medium.woff2') format('woff2'), 
+    url('../fonts/EksellDisplayWeb-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    @include bentonReg();
+    @include font-size(14);
+    @include media-breakpoint-up(md) {
+        @include font-size(16);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-size(18);
+    }
+}
+
+p, ol, ul, dl {
+    margin-bottom: 1.7em;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'EksellDisplay';
+}
+
+h1 {
+    text-transform: capitalize;
+    @include font-size(24);
+    @include media-breakpoint-up(sm) {
+        @include font-size(36);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-size(48);
+    }
+}
+
+.bold, b, strong {
+    @include bentonBd();
+}
+
+i, em {
+    @include bentonIt();
+}
+
+i strong, i bold, em strong, em bold,
+strong i, bold i, strong em, bold em {
+  @include bentonBdIt();
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lity-content {
+  color: white;
+  @include font-size(24);
+  line-height: normal;
+  max-width: 960px;
+  margin:0 auto;
+}
+/* stylelint-enable */

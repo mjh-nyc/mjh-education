@@ -141,7 +141,7 @@ function display_sidebar()
     return $display;
 }
 //***************************************************************//
-// ADD LESSON PLANS OPTIONS PAGE ////////////////////////////
+// ADD LESSON PLANS & Social OPTIONS PAGE ////////////////////////////
 
 /**
  * Create ACF setting page under Survivor Stories CPT menu
@@ -152,6 +152,11 @@ if ( function_exists( 'acf_add_options_sub_page' ) ){
     acf_add_options_sub_page(array(
         'title'      => 'Options',
         'parent'     => 'edit.php?post_type=lessons',
+        'capability' => 'manage_options'
+    ));
+    acf_add_options_sub_page(array(
+        'title'      => 'Social Channels',
+        'parent'     => 'options-general.php',
         'capability' => 'manage_options'
     ));
 }

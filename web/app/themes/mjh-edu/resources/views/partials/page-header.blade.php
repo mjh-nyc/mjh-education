@@ -1,3 +1,10 @@
 <div class="page-header">
-  <h1>{!! App::title() !!}</h1>
+  	@if (!is_front_page())
+  		<h1>{!! App::title() !!}</h1>
+  	@else
+  		<h1>{!! the_content() !!}</h1>
+  		<div>
+  			<a class="cta cta-white cta-arrow animsition-link" href="{{App::get_field('main_cta_url')}}">{{App::get_field('main_cta_label')}}</a>
+  		</div>
+  	@endif
 </div>

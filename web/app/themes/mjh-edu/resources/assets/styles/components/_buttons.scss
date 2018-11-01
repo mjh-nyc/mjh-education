@@ -1,0 +1,55 @@
+/* stylelint-disable */
+.cta {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 50px 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    text-decoration: none !important;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.2s;
+
+    @include font-size(16);
+    @include media-breakpoint-up(md) {
+        border-radius: 25px;
+        height: 50px;
+        line-height: 50px;
+        @include font-size(18);
+        padding: 0 70px 0 30px;
+    }
+    
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.cta-white {
+        background-color: white;
+        color: #222;
+        &:hover {
+            color: white;
+            background: #222;
+        }
+    }
+}
+
+.cta-arrow {
+    position: relative;
+    &.cta-white {
+        color: #222;
+    }
+}
+
+.cta-arrow:before {
+    @include fa-inline-prep();
+    position: absolute;
+    line-height: 1;
+    content: "\f105";
+    right: 14px;
+    top: 55%;
+    margin-top: -15px;
+    @include font-size(26);
+    @include media-breakpoint-up(md) {
+        @include font-size(32);
+        top: 50%;
+    }
+}
