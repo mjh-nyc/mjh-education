@@ -1,6 +1,9 @@
 /* stylelint-disable */
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
+/** Set Fontawesome relative path **/
+$fa-font-path: "~font-awesome/fonts/" !default;
+
 $default-font-size:	18;
 $theme-colors: (
 	primary: #525ddc
