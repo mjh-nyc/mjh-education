@@ -1,5 +1,16 @@
 {
-  "scripts/customizer.js": "scripts/customizer_35b9609e.js",
-  "styles/main.css": "styles/main_35b9609e.css",
-  "scripts/main.js": "scripts/main_35b9609e.js"
+  "fonts/EksellDisplayWeb-Medium.eot": "fonts/EksellDisplayWeb-Medium_15ac0ac8.eot",
+  "fonts/EksellDisplayWeb-Medium.woff": "fonts/EksellDisplayWeb-Medium_65db42e3.woff",
+  "fonts/EksellDisplayWeb-Medium.woff2": "fonts/EksellDisplayWeb-Medium_9dee04c0.woff2",
+  "images/geography_europe_map.png": "images/geography_europe_map_1aaeaafc.png",
+  "images/young-friends.png": "images/young-friends_14a96bdf.png",
+  "vendor/fontawesome-webfont.eot": "vendor/fontawesome-webfont_674f50d2.eot",
+  "vendor/fontawesome-webfont.eot?v=4.7.0": "vendor/fontawesome-webfont_674f50d2.eot",
+  "vendor/fontawesome-webfont.svg?v=4.7.0": "vendor/fontawesome-webfont_912ec66d.svg",
+  "vendor/fontawesome-webfont.ttf?v=4.7.0": "vendor/fontawesome-webfont_b06871f2.ttf",
+  "vendor/fontawesome-webfont.woff2?v=4.7.0": "vendor/fontawesome-webfont_af7ae505.woff2",
+  "vendor/fontawesome-webfont.woff?v=4.7.0": "vendor/fontawesome-webfont_fee66e71.woff",
+  "scripts/customizer.js": "scripts/customizer_bc19b5b4.js",
+  "styles/main.css": "styles/main_bc19b5b4.css",
+  "scripts/main.js": "scripts/main_bc19b5b4.js"
 }
