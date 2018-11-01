@@ -11,21 +11,13 @@
     @include('partials.page-header')
     @include('partials.content-page')
     @endwhile
-    <form method="post">
-        <h3>Don't have an account?<br /> Create one now.</h3>
-        <p><label>Last Name</label></p>
-        <p><input type="text" value="" name="last_name" id="last_name" /></p>
-        <p><label>First Name</label></p>
-        <p><input type="text" value="" name="first_name" id="first_name" /></p>
-        <p><label>Email</label></p>
-        <p><input type="text" value="" name="email" id="email" /></p>
-        <p><label>Username</label></p>
-        <p><input type="text" value="" name="username" id="username" /></p>
-        <p><label>Password</label></p>
-        <p><input type="password" value="" name="pwd1" id="pwd1" /></p>
-        <p><label>Password again</label></p>
-        <p><input type="password" value="" name="pwd2" id="pwd2" /></p>
-       @php acf_form('new-user') @endphp
-        <input type="hidden" name="task" value="register" />
-    </form>
+    @if( !empty($updated))
+        <h3>Thank you for registering!</h3>
+        <p>Please check your email to verify the account and login.</p>
+    @else
+        <form method="post" class="users-register">
+            <input type="hidden" name="register" value="register" />
+           @php acf_form('new-user') @endphp
+        </form>
+    @endif
 @endsection

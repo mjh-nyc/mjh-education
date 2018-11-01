@@ -96,7 +96,7 @@ For full deployment notes on the server and additional gotchas, please review th
 **Composer setup for custom plugins or must-use plugins**
 
 - This works via git's tagging system. 
-- After you commit files that your ready to deploy, within the plugin reposistory, `git tag -l` to list all tags 
+-  After you commit files that your ready to deploy, within the plugin reposistory, `git pull origin --tags` to get all the remote tag references and  `git tag -l` to list all tags 
 - Create a tag increasing the version number. So if it's 1.0.0, increase to 1.0.1 for minor changes or 1.1.0 for more significant changes or 2.0.0 for complete overhaul or changes of code, this depends on self judgment.  `git tag <version_number>` and then run `git push origin --tags`
 - Go back to root directory. 
 - For creating a new setup via composer, open `composer.json` and add under `repositories` the following
