@@ -138,7 +138,6 @@ class App extends Controller
 			$cats = array();
 			foreach ($post_categories as $cat_id) {
 				$cat = get_category($cat_id);
-				var_dump($cat);
 				$cats[] = array('name' => $cat->name, 'link' => get_term_link($cat->term_id));
 			}
 			return $cats;
