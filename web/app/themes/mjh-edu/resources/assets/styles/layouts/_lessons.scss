@@ -1,0 +1,45 @@
+/* stylelint-disable */
+.single-lessons {
+	.hero {
+		%link-style {
+			color: white;
+			text-decoration: underline;
+			&:hover {
+				color: $text-color;
+			}
+		}
+		background-color: map-get($theme-colors, primary);
+		padding-top: 15px;
+		padding-bottom: 15px;
+		h1, h2, h3, h4 {
+			color: white;
+		}
+		.featured-image {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.featured-image--caption {
+			color: white;
+		}
+		.no-featured-image {
+			text-align: center;
+		}
+		.post-links {
+			@include listReset();
+			ul li {
+				margin:2.22rem 0;
+			}
+		}
+		.all {
+			@extend %link-style;
+		}
+		.post-themes {
+			margin-top: 2.222rem;
+			a {
+				@extend %link-style;
+			}
+		}
+	}
+}

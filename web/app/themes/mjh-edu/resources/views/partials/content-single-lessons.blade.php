@@ -1,7 +1,6 @@
 <article @php post_class() @endphp>
     <header>
         @include('partials.content-share')
-        @include('partials.entry-taxonomy-categories')
     </header>
     <div class="entry-content">
         @if(is_user_logged_in())
@@ -9,7 +8,7 @@
         @else
             <h2>{{ __('About this lesson', 'sage') }}</h2>
             @php the_excerpt() @endphp
-            <a class="cta cta-white cta-arrow animsition-link" href="{{wp_login_url( get_permalink() )}}">{{ __('Sign in to see more', 'sage') }}</a>
+            <a class="cta cta-black cta-icon cta-arrow animsition-link" href="{{wp_login_url( get_permalink() )}}">{{ __('Sign in to see more', 'sage') }}</a>
         @endif
     </div>
     <footer>

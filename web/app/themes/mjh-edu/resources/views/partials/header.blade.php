@@ -1,7 +1,7 @@
 <header class="banner">
 	<div class="sticky">
 		<div class="sticky-container">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row top-row">
 					<div class="col-md-3 social-channels">
 						{!! App::get_social() !!}

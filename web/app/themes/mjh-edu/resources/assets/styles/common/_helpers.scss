@@ -54,4 +54,8 @@
     -moz-osx-font-smoothing: grayscale;
     text-indent: 0
 }
+
+%small {
+    @include font-size(14);
+}
 /* stylelint-enable */

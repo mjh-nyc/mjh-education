@@ -40,6 +40,13 @@ h1 {
         @include font-size(48);
     }
 }
+h4 {
+  @include bentonBd();
+  @include font-size(14);
+  @include media-breakpoint-up(sm) {
+    @include font-size(24);
+  }
+}
 
 .bold, b, strong {
     @include bentonBd();
@@ -53,7 +60,15 @@ i strong, i bold, em strong, em bold,
 strong i, bold i, strong em, bold em {
   @include bentonBdIt();
 }
-
+.secondary.wrap {
+  main {
+    @include make-col-ready();
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+      @include make-col-offset(2);
+    }
+  }
+}
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -78,5 +93,36 @@ strong i, bold i, strong em, bold em {
   line-height: normal;
   max-width: 960px;
   margin:0 auto;
+}
+
+.share {
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid map-get($theme-colors, neutral);
+  .share-options {
+    @include clearfix;
+    .share-channel {
+      display: inline-block;
+      margin-right: 6px;
+      a {
+        color: $text-color;
+        display: block;
+        border: 1px solid $text-color;
+        border-radius: 50%;
+        line-height: 2;
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        @include font-size(14);
+        @include media-breakpoint-up(lg) {
+            @include font-size(16);
+        }
+        &:hover {
+          color: map-get($theme-colors, primary);
+          border: 1px solid map-get($theme-colors, primary);
+        }
+      }
+    }
+  }
 }
 /* stylelint-enable */

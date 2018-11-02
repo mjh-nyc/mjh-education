@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container hero">
     <div class="row">
         @if($post->post_type == 'lessons')
             @include('partials.content-header-lessons')
