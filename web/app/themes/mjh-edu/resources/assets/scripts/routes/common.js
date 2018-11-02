@@ -5,6 +5,7 @@ export default {
 		var $body 			= $('body'),
 			$hamburger 		= $('.hamburger');
 
+
 		// Initiate Typekit Fonts
 		window.WebFontConfig = {
 			typekit: {
@@ -29,6 +30,8 @@ export default {
 		// init hamburger navigation icon
 		$hamburger.on('click', function() {
 			$(this).toggleClass('is-active');
+			$('.social-channels a').toggleClass('nav-active');
+			$('.logo svg').toggleClass('nav-active');
 			if ($body.hasClass('nav_open')) {
 				$body.removeClass('nav_open').addClass('nav_closed');
 			} else {

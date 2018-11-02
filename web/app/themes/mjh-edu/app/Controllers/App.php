@@ -52,10 +52,12 @@ class App extends Controller
 		}
 		return get_permalink();
 	}
+
+
 	/**
 	 * Return site logo image hash
 	 *
-	 * @return array
+	 * @return varchar
 	 */
 	public static function siteLogo()
 	{

@@ -7,7 +7,9 @@
 						{!! App::get_social() !!}
 					</div>
 					<div class="col-9 col-md-6 logo">
-						{!!  get_custom_logo() !!}
+						<a href="/" class="animsition-link">
+							{!! file_get_contents(App::siteLogo()) !!}
+						</a>
 					</div>
 					<div class="col-3 navigation">
 						<!--<a href="#" class="search"><i class="fa fa-search" aria-hidden="true"><span class="sr-only">@php _e("Search","sage"); @endphp</span></i></a>-->
