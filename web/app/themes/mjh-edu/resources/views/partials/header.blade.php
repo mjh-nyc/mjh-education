@@ -35,7 +35,7 @@
     </div>
   	<!-- //end featured image and page title area -->
 	@else
-		@include('partials.content-featured-image')
+		@include('partials.content-header')
 	@endif
 </header>
 
