@@ -29,8 +29,12 @@ function users_generate_new_user_id( $post_id, $form ) {
 	}
 
 	if ( !empty( $_POST['acf']['field_5bda42a5b3269']) ) {
-		$user_fields['user_login'] = $user_fields['user_email'] = sanitize_email( $_POST['acf']['field_5bda42a5b3269'] );
+		$user_fields['user_email'] = sanitize_email( $_POST['acf']['field_5bda42a5b3269'] );
 	}
+	if ( !empty( $_POST['acf']['field_5bdb7385658db']) ) {
+		$user_fields['user_login'] = sanitize_user( $_POST['acf']['field_5bdb7385658db'] );
+	}
+
 
 	$user_id = wp_insert_user( $user_fields );
 
@@ -66,12 +70,18 @@ add_action( 'user_register', 'users_registration_email', 20, 1 );
  */
 function users_validate_save_post() {
 	if(!empty($_POST['_acf_post_id']) && $_POST['_acf_post_id']=='new_user'){
+		// User Email
 		if(!empty($_POST['acf']['field_5bda42a5b3269'])){
-			if(email_exists( $_POST['acf']['field_5bda42a5b3269'] ) || username_exists( $_POST['acf']['field_5bda42a5b3269'] ) ){
-				acf_add_validation_error( 'acf[field_5bda42a5b3269]', __('This email address is already registered with us, try again','sage') );
+			if(email_exists( $_POST['acf']['field_5bda42a5b3269'] ) ) {
+				acf_add_validation_error( 'acf[field_5bda42a5b3269]', __('This Email Address is already registered with us, try again','sage') );
 			}
 		}
-
+		// User Login
+		if(!empty($_POST['acf']['field_5bdb7385658db'])){
+			if(username_exists( $_POST['acf']['field_5bdb7385658db'] ) ){
+				acf_add_validation_error( 'acf[field_5bdb7385658db]', __('This User Name is already registered with us, try again','sage') );
+			}
+		}
 	}
 }
 add_action('acf/validate_save_post', 'users_validate_save_post', 10, 0);

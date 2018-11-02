@@ -12,8 +12,8 @@
     @include('partials.content-page')
     @endwhile
     @if( !empty($updated))
-        <h3>Thank you for registering!</h3>
-        <p>Please check your email to verify the account and login.</p>
+        <h3>{{ __('Thank you for registering!', 'sage') }}</h3>
+        <p>{{ __('Please check your email to verify the account and login.', 'sage') }}</p>
     @else
         <form method="post" class="users-register">
             <input type="hidden" name="register" value="register" />

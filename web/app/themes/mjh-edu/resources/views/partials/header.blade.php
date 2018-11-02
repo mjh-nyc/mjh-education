@@ -21,6 +21,7 @@
 			</div>
 		</div>
 	</div>
+	@if (is_front_page())
     <!-- featured image and page title area -->
     <div class="hero-area parallax-window" data-parallax="scroll" data-image-src="{{App::featuredImageSrc('homepage-header')}}" data-over-scroll-fix="true" alt="{{App::featuredImageAlt(get_post_thumbnail_id())}}">
       <div class="sr-only">{{App::featuredImageAlt(get_post_thumbnail_id())}}</div>
@@ -33,6 +34,9 @@
       	</div>
     </div>
   	<!-- //end featured image and page title area -->
+	@else
+		@include('partials.content-featured-image')
+	@endif
 </header>
 
 <div class="overlay-nav container-fluid no-gutters" style="">
