@@ -1,25 +1,18 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="video-container">
+<div class="row features features__primary">
+  <div class="col-lg-6">
+    <div class="video-container card-shadow feature">
       {!! App::get_group_field('features','video_embed') !!}
     </div>
   </div>
-  <div class="col-md-3">
-    Post object (Featured lesson here)
+  <div class="col-md-6 col-lg-3 feature">
     @if( !empty($feature_lesson_plan))
-      {!! $feature_lesson_plan['title'] !!}
+      @include('partials.content-card', ['item_id'=>$feature_lesson_plan['ID'],'header'=>'Featured Lesson Plan'])
     @endif
 
   </div>
-  <div class="col-md-3">
-    Post object (Custom feature)
+  <div class="col-md-6 col-lg-3 feature">
     @if( !empty($feature_custom_feature))
-      {!! $feature_custom_feature['title'] !!}
-      {!! $feature_custom_feature['permalink'] !!}
-      {!! $feature_custom_feature['post_type_label'] !!}
-      {!! $feature_custom_feature['featured_image'] !!}
-      {!! $feature_custom_feature['featured_image_alt'] !!}
-    @endif
-
+      @include('partials.content-card', ['item_id'=>$feature_custom_feature['ID'],'header'=>$feature_custom_feature['post_type_label']])
+    @endif    
   </div>
 </div>
