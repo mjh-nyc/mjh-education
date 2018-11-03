@@ -1,6 +1,5 @@
 {{-- You must pass the post ID to this template as $item_id --}}
 <div class="slide-card lesson-card" @if ($header) data-header="{{ $header }}" @endif>
-    <!-- Hero bg in header template -->
     <div class="card-image" style="background-image:url({{App::featuredImageSrc('square@1x',$item_id)}})">
         <span class="sr-only">{{ App::featuredImageAlt($item_id) }}</span>
     </div>

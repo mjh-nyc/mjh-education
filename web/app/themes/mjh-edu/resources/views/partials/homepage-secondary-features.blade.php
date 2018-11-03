@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row features features__secondary">
   @if($feature_secondary_features)
     @foreach ($feature_secondary_features as $feature)
     <div class="col-md-3">
