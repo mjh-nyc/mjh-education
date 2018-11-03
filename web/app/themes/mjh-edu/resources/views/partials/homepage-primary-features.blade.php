@@ -6,7 +6,7 @@
   </div>
   <div class="col-md-6 col-lg-3 feature">
     @if( !empty($feature_lesson_plan))
-      @include('partials.content-card', ['item_id'=>$feature_lesson_plan['ID'],'header'=>'Featured Lesson Plan'])
+      @include('partials.content-card', ['item_id'=>$feature_lesson_plan['ID'],'header'=>__('Featured Lesson Plan', 'sage')])
     @endif
 
   </div>

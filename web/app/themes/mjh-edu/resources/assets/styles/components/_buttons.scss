@@ -31,10 +31,10 @@
         }
     }
     &.cta-black {
-        background-color: $text-color;
+        background-color: map-get($theme-colors, text-color);
         color: white;
         &:hover {
-            color: $text-color;
+            color: map-get($theme-colors, text-color);
             background: white;
         }
     }

@@ -23,13 +23,16 @@ import 'lity/dist/lity.min';
 
 // Import Parallax js
 import 'jquery-parallax.js/parallax.min';
+//jQuery color animation support
+import 'jquery-color/jquery.color';
 
 //Import waypoints
 import 'waypoints/lib/jquery.waypoints.min';
 import 'waypoints/lib/shortcuts/sticky.min';
+import 'waypoints/lib/shortcuts/inview.min';
 
 //Import slick
-import 'slick-carousel/slick/slick';
+//import 'slick-carousel/slick/slick';
 
 //**** //END ******************/
 /*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/

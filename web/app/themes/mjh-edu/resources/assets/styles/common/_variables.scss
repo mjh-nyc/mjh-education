@@ -5,9 +5,14 @@
 $fa-font-path: "~font-awesome/fonts/" !default;
 
 $default-font-size:	18;
+
+/* usage example: map-get($theme-colors, primary); */
 $theme-colors: (
-	primary: #2C4D53,
-	neutral: #A5A4A6
+	primary: 		#2C4D53,
+	background:		#E8EFF7,
+	neutral: 		#A5A4A6,
+	text-color:		#222222
+
 );
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
@@ -18,5 +23,4 @@ $sticky-header-height: 79px;
 //colors
 $color-current-menu:	#033EFB;
 $default-dark:			#000;
-$text-color:			#222;
 /* stylelint-enable */

@@ -1,7 +1,7 @@
 /* stylelint-disable */
 .banner {
 	.top-row {
-		color: $text-color;
+		color: map-get($theme-colors, text-color);
 		display: flex;
 		flex-wrap:wrap;
 		flex-direction: row;
@@ -32,7 +32,7 @@
 				height: auto;
 			}
 			svg .a {
-				fill: $text-color;
+				fill: map-get($theme-colors, text-color);
 			}
 			svg.nav-active .a {
 				fill:white;
@@ -89,7 +89,7 @@
         padding-top: 3px;
     }
     a {
-    	color: $text-color;
+    	color: map-get($theme-colors, text-color);
         margin-right: 10px;
         @include transition(color, 0.3s, ease);
         @include media-breakpoint-up(md) {
