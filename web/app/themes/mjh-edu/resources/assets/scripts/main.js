@@ -28,6 +28,9 @@ import 'jquery-parallax.js/parallax.min';
 import 'waypoints/lib/jquery.waypoints.min';
 import 'waypoints/lib/shortcuts/sticky.min';
 
+//Import slick
+import 'slick-carousel/slick/slick';
+
 //**** //END ******************/
 /*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/
 

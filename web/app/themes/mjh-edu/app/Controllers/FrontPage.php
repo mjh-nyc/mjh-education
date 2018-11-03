@@ -48,4 +48,13 @@ class FrontPage extends Controller
 		}
 		return false;
 	}
+
+	/**
+	 * Get lessons
+	 *
+	 * @return array
+	 */
+	public function lessons(){
+		return TemplateLessonsListing::getLessons();
+	}
 }

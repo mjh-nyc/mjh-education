@@ -9,7 +9,8 @@
         <div class="content">
           <main class="main">
           @yield('primary-features')
-          
+          @yield('carousel')
+          @yield('secondary-features')
           </main>
         </div>
       </div>

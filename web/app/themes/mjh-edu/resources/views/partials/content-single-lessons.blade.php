@@ -8,8 +8,8 @@
         @else
             <h2>{{ __('About this lesson', 'sage') }}</h2>
             @php the_excerpt() @endphp
-            <a class="cta cta-black cta-icon cta-arrow animsition-link" href="{{wp_login_url( get_permalink() )}}">{{ __('Sign in to see more', 'sage') }}</a>
         @endif
+        @include('partials.content-download-lesson-link')
     </div>
     <footer>
         {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
