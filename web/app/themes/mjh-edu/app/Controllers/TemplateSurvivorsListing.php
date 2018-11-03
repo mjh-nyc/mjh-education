@@ -48,21 +48,8 @@ class TemplateSurvivorsListing extends Controller
 	 * @return string
 	 */
 	private function getInitSurvivorStoryPostLink($term_id){
-		$args = array(
-			'post_type' => 'survivor_story',
-			'posts_per_page' => 1,
-			'post_status' => 'publish',
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'survivors',
-					'field'    => 'term_id',
-					'terms'    => $term_id,
-				),
-			),
-			'orderby' => 'menu_order',
-			'order' => 'asc',
-		);
-		$survivor_stories = new WP_Query( $args);
+		$pParamHash = array('posts_per_page'=>1,'term_id' => $term_id );
+		$survivor_stories = SingleSurvivor_story::getSurvivorStoriesBySurvivor($pParamHash);
 		if($survivor_stories->post_count){
 			$post = $survivor_stories->next_post();
 			return get_permalink($post->ID);
