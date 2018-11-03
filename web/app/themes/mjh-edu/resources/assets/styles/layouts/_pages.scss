@@ -36,6 +36,9 @@
 		margin-top: -100px;
 		z-index: 200;
 	}
+	&__secondary {
+		margin-top: 4rem;
+	}
 }
 
 .card-shadow {
@@ -44,6 +47,7 @@
 }
 .content-wrapper {
 	position: relative;
+	background-size: cover;
 	&:after {
 		@extend %overlay;
 	}
