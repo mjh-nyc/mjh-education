@@ -16,12 +16,22 @@ class TemplateLessonsListing extends Controller
 	{
 
 	}
+
 	/**
 	 * Get lessons listing
 	 *
 	 * @return array
 	 */
 	public function lessons(){
+		return TemplateLessonsListing::getLessons();
+
+	}
+	/**
+	 * Get lessons listing
+	 *
+	 * @return array
+	 */
+	public static function getLessons(){
 		$args = array(
 			'post_type' => 'lessons',
 			'post_status' => 'publish',
