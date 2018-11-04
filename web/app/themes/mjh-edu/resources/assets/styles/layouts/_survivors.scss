@@ -1,0 +1,29 @@
+/* stylelint-disable */
+
+
+/* Survivors listing page */
+.survivors-listing {
+	@include listReset();
+	ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		img {
+			width: 100%;
+			height: auto;
+		}
+		li {
+			width: 100%;
+			@include media-breakpoint-up(sm) {
+				width: 49%
+			}
+			@include media-breakpoint-up(md) {
+				width:30%;
+			}
+		}
+	}
+	.survivor {
+		text-align: center;
+	}
+}

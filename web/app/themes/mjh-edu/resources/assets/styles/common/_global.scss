@@ -66,20 +66,16 @@ strong i, bold i, strong em, bold em {
 
 /* force content into 8 columns on all secondary pages */
 .wrap {
-  main {
-    margin-top: 3rem;
-    @include media-breakpoint-up(md) {
-      width:66.66%;
-      margin-right: auto;
-      margin-left: auto;
-    }
+  margin-top: 3rem;
+  @include media-breakpoint-up(md) {
+    width:66.66%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 /* span full width of container on homepage only */
 .home .wrap {
-  main {
     width: 100%;
-  }
 }
 .video-container {
   position: relative;
