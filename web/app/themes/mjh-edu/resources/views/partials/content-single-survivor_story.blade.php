@@ -10,6 +10,8 @@
   </div>
   <footer>
     <!-- Previous/Next navigation -->
+    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Chapters:', 'sage'), 'after' => '</p></nav>']) !!}
+
     @if($survivor_story_next_prev)
         <div class="navigation">
             @if($survivor_story_next_prev['previous'])
