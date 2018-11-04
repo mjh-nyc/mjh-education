@@ -96,9 +96,9 @@ export default {
 		});
 
 		//add animsition-link class to menu items
-		$('#menu-main-navigation a').each(function() {
+		/*$('#menu-main-navigation a').each(function() {
 			$( this ).addClass('animsition-link');
-		});
+		});*/
 
 	},
 	finalize() {

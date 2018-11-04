@@ -354,6 +354,18 @@
                     }
                 }
             }
+            li.gridded {
+            	.sub-menu {
+            		@include clearfix();
+            		li {
+            			width:50%;
+            			float: left;
+            			@include media-breakpoint-up(md) {
+            				width:33.333%;
+            			}
+            		}
+            	}
+            }
         }
     }
 }
