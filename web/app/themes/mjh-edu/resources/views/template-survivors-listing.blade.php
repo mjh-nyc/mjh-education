@@ -16,5 +16,5 @@
 @endsection
 
 @section('content-footer')
-  {{ App::get_field('survivor_story_content_footer') }}
+  {!! App::get_field('survivor_story_content_footer') !!}
 @endsection
