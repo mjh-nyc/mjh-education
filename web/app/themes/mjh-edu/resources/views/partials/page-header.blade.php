@@ -2,7 +2,6 @@
   	@if (!is_front_page())
   		<h1>{!! App::title() !!}</h1>
 		@include('partials.entry-taxonomy-categories')
-</div>
   	@else
   		<h1>{!! the_content() !!}</h1>
   		<div>

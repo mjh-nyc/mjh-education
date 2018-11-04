@@ -47,6 +47,28 @@
 	}
 }
 
+/* Lessons Listing Page */
+.template-lessons-listing {
+	.dropdown {
+		margin-bottom: 2rem;
+		button {
+			width: 100%;
+			text-align: left;
+			&:after {
+				right: 15px;
+			    position: absolute;
+			    top: 40%;
+			}
+		}
+		.dropdown-menu {
+			.dropdown-item {
+				white-space: pre-wrap;
+				width: 100%;
+			}
+		}
+	}
+}
+
 /* single lesson plan page */
 .single-lessons {
 	.hero {

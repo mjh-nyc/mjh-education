@@ -5,7 +5,7 @@
     <div class="animsition">
       @php do_action('get_header') @endphp
       @include('partials.header')
-      <div class="secondary wrap container" role="document">
+      <div class="wrap container" role="document">
         <div class="content">
           <main class="main">
             @yield('content')

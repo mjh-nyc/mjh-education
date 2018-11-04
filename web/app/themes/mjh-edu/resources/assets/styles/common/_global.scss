@@ -63,13 +63,22 @@ i strong, i bold, em strong, em bold,
 strong i, bold i, strong em, bold em {
   @include bentonBdIt();
 }
-.secondary.wrap {
+
+/* force content into 8 columns on all secondary pages */
+.wrap {
   main {
-    @include make-col-ready();
+    margin-top: 3rem;
     @include media-breakpoint-up(md) {
-      @include make-col(8);
-      @include make-col-offset(2);
+      width:66.66%;
+      margin-right: auto;
+      margin-left: auto;
     }
+  }
+}
+/* span full width of container on homepage only */
+.home .wrap {
+  main {
+    width: 100%;
   }
 }
 .video-container {
@@ -99,7 +108,6 @@ strong i, bold i, strong em, bold em {
 }
 
 .share {
-  margin-top: 3rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid map-get($theme-colors, neutral);
   .share-options {
