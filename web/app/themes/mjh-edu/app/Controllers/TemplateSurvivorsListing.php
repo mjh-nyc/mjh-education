@@ -22,10 +22,7 @@ class TemplateSurvivorsListing extends Controller
 	 * @return array
 	 */
 	public function survivors(){
-		$survivors = get_terms( array(
-			'taxonomy' => 'survivors',
-			'hide_empty' => false,
-		) );
+		$survivors = TemplateSurvivorsListing::getSurvivors();
 		if (!empty($survivors)) {
 			$terms = array();
 			foreach ($survivors as $term_id) {
@@ -42,6 +39,21 @@ class TemplateSurvivorsListing extends Controller
 			return array();
 		}
 	}
+
+	/**
+	 * Get survivors listing
+	 *
+	 * @return array
+	 */
+	public static function getSurvivors(){
+		return get_terms( array(
+			'taxonomy' => 'survivors',
+			'hide_empty' => false,
+			'orderby' => 'name',
+			'order' => 'ASC'
+		) );
+	}
+	
 	/**
 	 * Get survivors permalink to their tagged survivor_story post type. Default to term link if no post found
 	 *
