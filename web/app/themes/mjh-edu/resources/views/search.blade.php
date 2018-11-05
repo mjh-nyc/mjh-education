@@ -14,5 +14,5 @@
     @include('partials.content-search')
   @endwhile
 
-  {!! get_the_posts_navigation() !!}
+  {!! App::get_posts_nav() !!}
 @endsection
