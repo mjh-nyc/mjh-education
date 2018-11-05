@@ -53,7 +53,7 @@ class TemplateSurvivorsListing extends Controller
 			'order' => 'ASC'
 		) );
 	}
-	
+
 	/**
 	 * Get survivors permalink to their tagged survivor_story post type. Default to term link if no post found
 	 *
