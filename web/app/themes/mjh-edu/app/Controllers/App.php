@@ -534,4 +534,55 @@ class App extends Controller
 
         return $social;
     }
+
+    /**
+	 * Modification of wp_link_pages() with an extra element to highlight the current page.
+	 *
+	 * @param  array $args
+	 * @return void
+	 */
+	public static function numbered_in_page_links( $args = array () )
+	{
+	    $defaults = array(
+	        'before'      => '<div class="page-nav"><h4>' . __('Chapters: ') . '</h4>'
+	    ,   'after'       => '</div>'
+	    ,   'link_before' => '<span class="btn btn-primary">'
+	    ,   'link_after'  => ''
+	    ,   'pagelink'    => '%'
+	    ,   'echo'        => 1
+	        // element for the current page
+	    ,   'highlight'   => 'b'
+	    );
+
+	    $r = wp_parse_args( $args, $defaults );
+	    $r = apply_filters( 'wp_link_pages_args', $r );
+	    extract( $r, EXTR_SKIP );
+
+	    global $page, $numpages, $multipage, $more, $pagenow;
+
+	    if ( ! $multipage )
+	    {
+	        return;
+	    }
+
+	    $output = $before;
+
+	    for ( $i = 1; $i < ( $numpages + 1 ); $i++ )
+	    {
+	        $j       = str_replace( '%', $i, $pagelink );
+	        $output .= ' ';
+
+	        if ( $i != $page || ( ! $more && 1 == $page ) )
+	        {
+	            $output .= _wp_link_page( $i ) . "{$link_before}{$j}{$link_after}</a>";
+	        }
+	        else
+	        {   // highlight the current page
+	            // not sure if we need $link_before and $link_after
+	            $output .= "<$highlight>{$link_before}{$j}{$link_after}</$highlight>";
+	        }
+	    }
+
+	    return $output . $after;
+	}
 }

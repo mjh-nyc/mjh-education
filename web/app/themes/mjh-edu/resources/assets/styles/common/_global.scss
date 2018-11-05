@@ -51,6 +51,28 @@ h4 {
   }
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* global link styles */
+a {
+  &:link, &:visited {
+    color: map-get($theme-colors, link);
+    text-decoration: underline;
+    @include transition(all, 0.2s, linear);
+  }
+  &:hover {
+    color: map-get($theme-colors, link-hover);
+    text-decoration: none;
+  }
+  &:active {
+    color: map-get($theme-colors, neutral);
+    text-decoration: none;
+  }
+}
+
 .bold, b, strong {
     @include bentonBd();
 }

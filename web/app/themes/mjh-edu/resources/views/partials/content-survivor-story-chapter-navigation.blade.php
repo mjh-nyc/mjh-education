@@ -1,7 +1,16 @@
-@if($survivor_stories_chapters)
+{{-- @if($survivor_stories_chapters)
 <nav class="nav">
     @foreach($survivor_stories_chapters as $chapter)
         <a class="nav-link @if($chapter->ID == $post->ID) active @endif" href="{!! get_permalink($chapter->ID) !!}">{{ __('Chapter', 'sage') }} {{$loop->iteration}}</a>
     @endforeach
 </nav>
-@endif
+@endif --}}
+
+{!! App::numbered_in_page_links() !!}
+
+{{--
+<div class="btn-group btn-breadcrumb">
+            <a href="#" class="btn btn-default">Snippets</a>
+            <a href="#" class="btn btn-default">Breadcrumbs</a>
+            <a href="#" class="btn btn-default">Default</a>
+        </div> --}}

@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="quiz.css">
 </head>
 
-<body>
+<body background="#FFFFFF" style="background-color: #FFFFFF">
 
-	<div id="content">
+	<div id="content" style="margin: 0 auto; width: 650px">
 		<?php
 			if (!empty($_GET['name']) && !empty($_GET['question'])) {
 				if ($_GET['question'] == 'done') {

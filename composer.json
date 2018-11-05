@@ -56,7 +56,7 @@
         "source": {
           "type": "git",
            "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
-           "reference": "1.1.1"
+           "reference": "1.1.2"
         }
       }
     }
