@@ -136,7 +136,6 @@
 
    	@include media-breakpoint-up(sm) {
     	padding-top: 10px;
-    	padding-bottom: 15px;
   	}
   .sticky-container {
 	width: 100%;
@@ -289,6 +288,10 @@
                     padding: 0;
                     width: 100%;
                     line-height: 50px;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration:underline;
+                    }
                     @include media-breakpoint-up(md) {
                         line-height: 60px;
                     }

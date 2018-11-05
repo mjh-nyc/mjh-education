@@ -27,3 +27,29 @@
 		text-align: center;
 	}
 }
+
+/* Single Survivor page */
+.single-survivor_story {
+	.resources {
+		border-bottom: 1px solid map-get($theme-colors, neutral);
+	    border-top: 1px solid map-get($theme-colors, neutral);
+	    margin-top: 2rem;
+	    padding: 1rem 0;
+	    &__link {
+	    	display: inline-block;
+	    	margin-right: 30px;
+	    }
+	}
+	.page-nav {
+		b span {
+		background-color: map-get($theme-colors, secondary);
+		}
+		h4 {
+			display: inline-block;
+	    	margin-right: 20px;
+	    	vertical-align: text-top;
+		}
+	}
+	
+}
+

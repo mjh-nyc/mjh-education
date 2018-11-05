@@ -5,8 +5,7 @@
             @include('partials.content-header-lessons')
         @else
         {{-- Otherwise, print just the header image --}}
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-12">
                 @include('partials.content-featured-image')
             </div>
         @endif

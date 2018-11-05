@@ -2,16 +2,27 @@
   <header>
     <h1 class="entry-title">{{ $survivor }}</h1>
     @include('partials/content-survivor-story-chapter-navigation')
-    @include('partials.entry-taxonomy-categories')
+  
+    <div class="resources">
+      <div class="resources__link">
+        <i class="fa fa-map-o" aria-hidden="true"></i> <a href="/legacy/geography/quiz_page.php?name={{ strtolower($survivor) }}&question=1" data-lity>Geography Quiz</a>
+      </div>
+      <div class="resources__link">
+        <i class="fa fa-edit" aria-hidden="true"></i> <a href="#">Project Suggestions</a>
+      </div>
+      <div class="resources__link">
+        <i class="fa fa-television" aria-hidden="true"></i> <a href="#">Resources</a>
+      </div>
+    </div>
   </header>
   <div class="entry-content">
+     @include('partials.entry-taxonomy-categories')
     <h2>{{ get_the_title() }}</h2>
     @php the_content() @endphp
   </div>
   <footer>
-    <!-- Previous/Next navigation -->
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Chapters:', 'sage'), 'after' => '</p></nav>']) !!}
-
+    @include('partials/content-survivor-story-chapter-navigation')
+    {{--
     @if($survivor_story_next_prev)
         <div class="navigation">
             @if($survivor_story_next_prev['previous'])
@@ -28,7 +39,7 @@
             @endif
         </div>
     @endif
-    <!-- Previous/Next navigation -->
+    --}}
   </footer>
   @php comments_template('/partials/comments.blade.php') @endphp
 </article>
