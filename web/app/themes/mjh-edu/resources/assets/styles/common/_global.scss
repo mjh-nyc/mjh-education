@@ -35,17 +35,35 @@ h3 {
 
 h1 {
     text-transform: capitalize;
-    @include font-size(24);
+    @include font-size(32);
     @include media-breakpoint-up(sm) {
-        @include font-size(36);
+        @include font-size(40);
     }
     @include media-breakpoint-up(lg) {
         @include font-size(48);
     }
 }
+h2 {
+    @include font-size(20);
+    @include media-breakpoint-up(sm) {
+        @include font-size(28);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-size(36);
+    }
+}
+h3 {
+    @include font-size(18);
+    @include media-breakpoint-up(sm) {
+        @include font-size(24);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-size(30);
+    }
+}
 h4 {
   @include bentonBd();
-  @include font-size(14);
+  @include font-size(16);
   @include media-breakpoint-up(sm) {
     @include font-size(24);
   }
@@ -154,6 +172,20 @@ strong i, bold i, strong em, bold em {
     }
   }
 }
+/************ PAGINATION *****************/
+.pagination {
+  width: 100%;
+  .nav-links {
+    margin: 50px auto;
+    span, a {
+      font-size: 1.5em;
+      display: inline-block;
+      padding: 10px;
+      @extend .bold;
+    }
+  }
+}
+
 
 footer.content-info {
   background-color: map-get($theme-colors, dark);
