@@ -8,6 +8,11 @@
                     <div class="grid-item timeline size-3" >
                         {{ __('World Events','sage')  }}
                     </div>
+                    @if($survivor_term)
+                    <div class="grid-item timeline size-3" >
+                        {{ $survivor_term->name }}
+                    </div>
+                    @endif
                     <div class="gutter-sizer"></div>
                 </div>
             </div>

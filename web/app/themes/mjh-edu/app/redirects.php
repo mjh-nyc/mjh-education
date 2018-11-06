@@ -9,15 +9,14 @@
  * @hook init
  * @return null
  */
-
-function redirects_survivor_taxonomy() {
+function mjh_redirects_survivor_taxonomy() {
 	$path = '';
 	if( !empty( $_SERVER['REDIRECT_URL'] ) ){
 		$path =  $_SERVER['REDIRECT_URL'];
 		$root_url = get_bloginfo('url');
 		$pathHash = explode("/", substr($path, 1));
 		$taxonomy = get_taxonomy( 'survivors' );
-		if(is_array($pathHash) && !empty($taxonomy->rewrite['slug']) && $pathHash[0]=$taxonomy->rewrite['slug']) {
+		if(is_array($pathHash) && !empty($taxonomy->rewrite['slug']) && $pathHash[0]==$taxonomy->rewrite['slug']) {
 			if(!empty($pathHash[1])){
 				$term = sanitize_title_for_query($pathHash[1]);
 				$term = get_term_by( 'slug', $term, $taxonomy->name);
@@ -35,4 +34,29 @@ function redirects_survivor_taxonomy() {
 		}
 	}
 }
-add_action('init', 'redirects_survivor_taxonomy',10, 0);
+add_action('init', 'mjh_redirects_survivor_taxonomy',10, 0);
+
+/**
+ * Add query_var for timeline dropdown
+ *
+ * @hook query_vars
+ * @return array
+ */
+function mjh_add_query_vars_timeline($aVars) {
+	$aVars[] = "survivor-story";
+	return $aVars;
+}
+add_filter('query_vars', 'mjh_add_query_vars_timeline');
+
+/**
+ * Add rewrite rule for timeline dropdown pretty url
+ *
+ * @hook rewrite_rules_array
+ * @return array
+ */
+function mjh_add_rewrite_rules_timeline($aRules) {
+	$aNewRules = array('timeline/survivor-story/([^/]+)/?$' => 'index.php?pagename=timeline&survivor-story=$matches[1]');
+	$aRules = $aNewRules + $aRules;
+	return $aRules;
+}
+add_filter('rewrite_rules_array', 'mjh_add_rewrite_rules_timeline');

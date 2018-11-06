@@ -22,6 +22,33 @@ class TemplateTimelineListing extends Controller
 	}
 
 	/**
+	 * Get survivor story querystring
+	 *
+	 * @return string
+	 */
+	public function survivorStoryQueryVar(){
+		$slug = get_query_var('survivor-story');
+		if( !empty($slug) ){
+			return trim($slug);
+		}else{
+			return '';
+		}
+	}
+
+	/**
+	 * Get survivors term by slug
+	 *
+	 * @return array
+	 */
+	public function survivorTerm(){
+		$survivor_slug = $this->survivorStoryQueryVar();
+		if(!empty($survivor_slug)) {
+			return get_term_by('slug', $survivor_slug, 'survivors');
+		}
+		return false;
+	}
+
+	/**
 	 * Get lessons listing
 	 *
 	 * @return array
@@ -47,6 +74,35 @@ class TemplateTimelineListing extends Controller
 				$timelineHash[$year]['world-events'][] = $timeline_item->ID;
 			}
 		}
+
+		$survivor_term = $this->survivorTerm();
+		if(!empty($survivor_term)){
+			$term = get_term_by( 'slug', 'survivor-stories', 'timeline_category' );
+			if(!empty($term) ){
+				$pParamHashSurvivor = array();
+				$pParamHashSurvivor['tax_query'][] = array(
+					'taxonomy' => 'timeline_category',
+					'field'    => 'term_id',
+					'terms'    => $term->term_id,
+				);
+				$pParamHashSurvivor['tax_query'][] = array(
+					'taxonomy' => 'survivors',
+					'field'    => 'term_id',
+					'terms'    => $survivor_term->term_id,
+				);
+				$timelines_survivor = TemplateTimelineListing::getTimeline($pParamHashSurvivor);
+			}
+			if($timelines_survivor) {
+				foreach ($timelines_survivor as $timeline_item) {
+					$year = get_field('timeline_year', $timeline_item->ID);
+					if (!array_key_exists($year, $timelineHash)) {
+						$timelineHash[$year] = array('survivor-stories' => array());
+					}
+					$timelineHash[$year]['survivor-stories'][] = $timeline_item->ID;
+				}
+			}
+		}
+		ksort($timelineHash);
 		return $timelineHash;
 
 	}
