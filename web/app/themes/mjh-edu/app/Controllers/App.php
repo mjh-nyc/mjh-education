@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use WP_Query;
 
 class App extends Controller
 {
@@ -190,6 +191,38 @@ class App extends Controller
 		}
 		return $term_string;
 	}
+
+	/**
+	 * Return the post categories in a string
+	 *
+	 * @return object
+	 */
+	public static function getRelatedPostByTerm($terms,$taxonomy,$post_id_exclude=false, $post_type_include = false)
+	{
+		$args = array(
+			'post_status' => 'publish',
+			'tax_query' => array(
+				array(
+					'taxonomy' => $taxonomy,
+					'field'    => 'term_id',
+					'terms'    => $terms,
+				),
+			),
+			'orderby' => 'menu_order',
+			'order' => 'asc',
+		);
+
+		if(!empty($post_type_include)){
+			$args['post_type']  = $post_type_include;
+		}
+
+		if(!empty($post_id_exclude)){
+			$args['post__not_in'] = array($post_id_exclude);
+		}
+
+		return new WP_Query($args);
+	}
+
 
 	/**
 	 * Return the post excerpt, if no ID provided, will use current post id

@@ -10,6 +10,7 @@ class TemplateTimelineListing extends Controller
 
 	var $page_template = 'timeline';
 	var $selected_survivor;
+	var $selected_survivor_timeline_init_post_id;
 
 	/**
 	 * Constructor
@@ -43,7 +44,18 @@ class TemplateTimelineListing extends Controller
 	public function survivorTerm(){
 		$survivor_slug = $this->survivorStoryQueryVar();
 		if(!empty($survivor_slug)) {
-			return get_term_by('slug', $survivor_slug, 'survivors');
+			$this->selected_survivor = get_term_by('slug', $survivor_slug, 'survivors');
+			return $this->selected_survivor;
+		}
+		return false;
+	}
+
+	public function survivorImage(){
+		if($this->selected_survivor){
+			$img = get_field('survivors_past_image','survivors_'.$this->selected_survivor->term_id);
+			if(!empty($img)){
+				return $img['sizes']['thumbnail'];
+			}
 		}
 		return false;
 	}
@@ -68,13 +80,26 @@ class TemplateTimelineListing extends Controller
 		if($timelines) {
 			foreach ($timelines as $timeline_item) {
 				$year = get_field('timeline_year', $timeline_item->ID);
+				$timestamp = $this->getTimestamp($timeline_item->ID);
+
 				if (!array_key_exists($year, $timelineHash)) {
 					$timelineHash[$year] = array('world-events' => array());
 				}
-				$timelineHash[$year]['world-events'][] = $timeline_item->ID;
+				$item =array('post_id'=>$timeline_item->ID,'related_items'=>array());
+				$terms = App::postTerms($timeline_item->ID, 'category');
+				if($terms){
+					foreach($terms as $term){
+						$termsHash[] = $term->term_id;
+					}
+					$related_items =  App::getRelatedPostByTerm($termsHash,'category',$timeline_item->ID, array('lessons','survivor_story','survivor_resources'));
+					if(!empty($related_items->post_count)){
+						$item['related_items'] = $related_items->posts;
+					}
+				}
+				$timelineHash[$year]['world-events'][$timestamp] = $item;
+				ksort($timelineHash[$year]['world-events']);
 			}
 		}
-
 		$survivor_term = $this->survivorTerm();
 		if(!empty($survivor_term)){
 			$term = get_term_by( 'slug', 'survivor-stories', 'timeline_category' );
@@ -93,18 +118,40 @@ class TemplateTimelineListing extends Controller
 				$timelines_survivor = TemplateTimelineListing::getTimeline($pParamHashSurvivor);
 			}
 			if($timelines_survivor) {
-				foreach ($timelines_survivor as $timeline_item) {
+				foreach ($timelines_survivor as $key => $timeline_item) {
+					$timestamp = $this->getTimestamp($timeline_item->ID);
 					$year = get_field('timeline_year', $timeline_item->ID);
 					if (!array_key_exists($year, $timelineHash)) {
 						$timelineHash[$year] = array('survivor-stories' => array());
 					}
-					$timelineHash[$year]['survivor-stories'][] = $timeline_item->ID;
+					$item =array('post_id'=>$timeline_item->ID);
+					$timelineHash[$year]['survivor-stories'][$timestamp] = $item;
+					ksort($timelineHash[$year]['survivor-stories']);
+					if($key==0){
+						$this->selected_survivor_timeline_init_post_id = $timeline_item->ID;
+					}
+
 				}
 			}
 		}
 		ksort($timelineHash);
 		return $timelineHash;
+	}
 
+	/**
+	 * Get timestamp for timeline hash
+	 *
+	 * @return timestamp
+	 */
+	private function getTimestamp($post_id){
+		$year = get_field('timeline_year', $post_id);
+		if(!$month = get_field('timeline_month', $post_id)){
+			$month = 1;
+		}
+		if(!$day = get_field('timeline_day', $post_id)){
+			$day = 1;
+		}
+		return strtotime($year.'-'.$month.'-'.$day);
 	}
 	/**
 	 * Get lessons listing
@@ -148,6 +195,17 @@ class TemplateTimelineListing extends Controller
 	{
 		return $this->selected_survivor;
 	}
+
+	/**
+	 * Getter for selected_survivor
+	 *
+	 * @return string
+	 */
+	public function selectedSurvivorTimelineInitPostId()
+	{
+		return $this->selected_survivor_timeline_init_post_id;
+	}
+
 
 	/**
 	 * Get survivors
