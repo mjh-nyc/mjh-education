@@ -36,5 +36,8 @@
     @if($media_resources)
         @include('partials.content-survivor_resources_media_resources')
     @endif
+    @if($project_suggestions)
+        @include('partials.content-survivor_resources_project_suggestions')
+    @endif
   </div>
 </article>

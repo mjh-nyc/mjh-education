@@ -89,6 +89,15 @@ class SingleSurvivor_resources extends Controller
 	}
 
 	/**
+	 * Check if this post is a project suggestions
+	 *
+	 * @return boolean
+	 */
+	public function projectSuggestions(){
+		return $this->checkResourceCategory('project-suggestions');
+	}
+
+	/**
 	 * Check resource_category type of this post
 	 *
 	 * @return boolean

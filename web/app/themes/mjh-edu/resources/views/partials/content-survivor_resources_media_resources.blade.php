@@ -1,5 +1,5 @@
 <header>
-    <h1 class="entry-title">{!! __('Resources Related To '.$survivor.'’s story','sage') !!}</h1>
+    <h1 class="entry-title">{!! __('Resources Related To '.$survivor.'’s Story','sage') !!}</h1>
 </header>
 <div class="entry-content">
     <div class="content">@php the_content() @endphp</div>
