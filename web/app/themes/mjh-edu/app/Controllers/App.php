@@ -29,12 +29,16 @@ class App extends Controller
             }
             return __('Latest Posts', 'sage');
         }
+		if (is_category()) {
+			return sprintf(__('Theme Results: %s', 'sage'), get_query_var('category_name'));
+		}
         if (is_archive()) {
             return get_the_archive_title();
         }
         if (is_search()) {
             return sprintf(__('Search Results for %s', 'sage'), get_search_query());
         }
+
         if (is_404()) {
             return __('Not Found', 'sage');
         }
