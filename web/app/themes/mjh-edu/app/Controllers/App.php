@@ -421,6 +421,64 @@ class App extends Controller
 	}
 
 	/**
+	 * Compares start and end date and cleans output if same day
+	 *
+	 * @return string
+	 */
+	public static function cleanDateOutput($start_date, $end_date){
+		if( empty($end_date) ){
+			return $start_date;
+		}
+		$start_date_day = date('Y-m-d', strtotime($start_date));
+		$end_date_day = date('Y-m-d', strtotime($end_date));
+		if($start_date_day == $end_date_day ){
+			$date_output = $start_date;
+		}else{
+			$date_output = date('M j', strtotime($start_date))." &#8211; ".date('M j, Y', strtotime($end_date));
+		}
+		return $date_output;
+	}
+	/**
+	 * Evaluate if an event is PAST, returns true if past, requires start and end dates
+	 *
+	 * @return bool
+	 */
+	public static function evalEventStatus($start_date, $end_date){
+		return app::evalDateStatus($start_date, $end_date);
+	}
+	/**
+	 * Evaluate if date is in the past
+	 *
+	 * @return bool
+	 */
+	public static function evalDateStatus($start_date, $end_date){
+		//convert to timestamp
+		$start_date = strtotime($start_date);
+		$end_date = strtotime($end_date);
+		date_default_timezone_set('America/New_York');
+		$now = strtotime('yesterday 11:59:59');
+		if (!$start_date && !$end_date) {
+			return false;
+		} elseif($start_date == $end_date || !$end_date){
+			//just look at the start date
+			if ($now > $start_date) {
+				return true; //passed
+			} else {
+				return false;
+			}
+		} else {
+			//if the end date is in the future, this is not a past event
+			//use the end date for comparison
+			if ($now > $end_date) {
+				return true; //passed
+
+			} else {
+				return false;
+			}
+		}
+	}
+
+	/**
 	 * Get secondary nav items, pass current page/post ID
 	 *
 	 * @return array
