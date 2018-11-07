@@ -33,7 +33,8 @@
         @endif
       </div>
     @endif
-
-
+    @if($media_resources)
+        @include('partials.content-survivor_resources_media_resources')
+    @endif
   </div>
 </article>

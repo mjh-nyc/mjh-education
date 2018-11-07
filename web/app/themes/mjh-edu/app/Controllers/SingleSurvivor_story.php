@@ -14,6 +14,15 @@ class SingleSurvivor_story extends Controller
 	 * @return string
 	 */
 	public function survivor(){
+		return SingleSurvivor_story::getSurvivor();
+	}
+
+	/**
+	 * Static function to Get survivor label
+	 *
+	 * @return string
+	 */
+	public static function getSurvivor() {
 		return App::postTermsString(get_the_ID(),'survivors');
 	}
 

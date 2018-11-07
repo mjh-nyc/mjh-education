@@ -58,5 +58,51 @@ class SingleSurvivor_resources extends Controller
         	return false;
         }
     }
+
+	/**
+	 * Get survivor label for current survivor resource
+	 *
+	 * @return string
+	 */
+	public function survivor(){
+		return SingleSurvivor_story::getSurvivor();
+	}
+
+	/**
+	 * Get media resources for this post
+	 *
+	 * @return array
+	 */
+    public function mediaResources(){
+		if($this->checkResourceCategory('media-resources')){
+			//Get media resource fields
+			$mediaResourcesHash = array();
+			//Books
+			$mediaResourcesHash['books'] = get_field('select_books');
+			//Website
+			$mediaResourcesHash['websites'] = get_field('select_websites');
+			//Films
+			$mediaResourcesHash['films'] = get_field('select_films');
+			return $mediaResourcesHash;
+		}
+		return array();
+	}
+
+	/**
+	 * Check resource_category type of this post
+	 *
+	 * @return boolean
+	 */
+	private function checkResourceCategory($term_slug){
+		$terms = wp_get_post_terms(get_the_ID(),'resource_category');
+		if(!empty($terms)){
+			foreach($terms as $term){
+				if($term_slug == $term->slug){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }
 
