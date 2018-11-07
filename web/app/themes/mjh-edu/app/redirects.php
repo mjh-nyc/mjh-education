@@ -4,6 +4,28 @@
  */
 
 /**
+ * Redirect events archive to customize listing
+ *
+ * @hook init
+ * @return null
+ */
+function mjh_redirects_events() {
+	$path = '';
+	if( !empty( $_SERVER['REDIRECT_URL'] ) ){
+		$path =  $_SERVER['REDIRECT_URL'];
+		$root_url = get_bloginfo('url');
+
+		switch($path){
+			case'/events/':
+				wp_redirect( $root_url.'/current-events' );
+				exit;
+				break;
+		}
+	}
+}
+add_action( 'init', 'mjh_redirects_events' );
+
+/**
  * Redirect survivor taxonomy to related survivor-story post
  *
  * @hook init
