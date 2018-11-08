@@ -15,10 +15,8 @@ class TemplateRegistration extends Controller
 	public function TemplateRegistration()
 	{
 		// Logged in users should not see this page
-		if(is_user_logged_in() ){
-			wp_redirect( home_url() );
-			exit;
-		}
+		App::verifyUserLoggedOut();
+
 		// Register the acf form group fields to be used for registration
 		acf_register_form(array(
 			'id'		=> 'new-user',
