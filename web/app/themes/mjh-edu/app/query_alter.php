@@ -9,10 +9,10 @@
  * @hook pre_get_posts
  * @return null
  */
-function mjh_meta_query( $query ) {
-	if($query->is_category && empty($query-> is_admin) ){
-		$query->set('posts_per_page', 9);
-		$query->set('post_type', array('lessons','survivor_story','survivor_resources'));
+function mjh_meta_query_category( $query ) {
+	if($query->is_category() && empty($query->is_admin()) && !empty($query->is_main_query()) ){
+		$query->set('posts_per_page', \App\Controllers\Category::categoryPostPerPage());
+		$query->set('post_type', array('lessons','survivor_story','survivor_resources','timeline'));
 	}
 }
-add_action( 'pre_get_posts', 'mjh_meta_query', 1 );
+add_action( 'pre_get_posts', 'mjh_meta_query_category', 1 );
