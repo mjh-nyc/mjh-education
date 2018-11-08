@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use WP_Query;
 
 class App extends Controller
 {
@@ -28,12 +29,16 @@ class App extends Controller
             }
             return __('Latest Posts', 'sage');
         }
+		if (is_category()) {
+			return sprintf(__('Theme Results: %s', 'sage'), get_query_var('category_name'));
+		}
         if (is_archive()) {
             return get_the_archive_title();
         }
         if (is_search()) {
             return sprintf(__('Search Results for %s', 'sage'), get_search_query());
         }
+
         if (is_404()) {
             return __('Not Found', 'sage');
         }
@@ -52,10 +57,12 @@ class App extends Controller
 		}
 		return get_permalink();
 	}
+
+
 	/**
 	 * Return site logo image hash
 	 *
-	 * @return array
+	 * @return varchar
 	 */
 	public static function siteLogo()
 	{
@@ -130,10 +137,29 @@ class App extends Controller
 	 */
 	public static function postCategories($id=false)
 	{
-		if (!$id){
+		if (!$id) {
 			$id = get_the_ID();
 		}
-		return wp_get_post_categories($id);
+		$post_categories = wp_get_post_categories($id);
+		if (!empty($post_categories)) {
+			$cats = array();
+			foreach ($post_categories as $cat_id) {
+				$cat = get_category($cat_id);
+				$cats[] = array('name' => $cat->name, 'link' => get_term_link($cat->term_id));
+			}
+			return $cats;
+		}else{
+			return array();
+		}
+	}
+
+	/**
+	 * Set themes taxonomy globally since shared among various content types
+	 *
+	 * @return array
+	 */
+	public function themes(){
+		return App::postCategories();
 	}
 
 	/**
@@ -169,6 +195,38 @@ class App extends Controller
 		}
 		return $term_string;
 	}
+
+	/**
+	 * Return the post categories in a string
+	 *
+	 * @return object
+	 */
+	public static function getRelatedPostByTerm($terms,$taxonomy,$post_id_exclude=false, $post_type_include = false)
+	{
+		$args = array(
+			'post_status' => 'publish',
+			'tax_query' => array(
+				array(
+					'taxonomy' => $taxonomy,
+					'field'    => 'term_id',
+					'terms'    => $terms,
+				),
+			),
+			'orderby' => 'menu_order',
+			'order' => 'asc',
+		);
+
+		if(!empty($post_type_include)){
+			$args['post_type']  = $post_type_include;
+		}
+
+		if(!empty($post_id_exclude)){
+			$args['post__not_in'] = array($post_id_exclude);
+		}
+
+		return new WP_Query($args);
+	}
+
 
 	/**
 	 * Return the post excerpt, if no ID provided, will use current post id
@@ -212,16 +270,18 @@ class App extends Controller
 	public static function setFeaturePostObjects( $postObj ){
 		if(is_object($postObj) && !empty($postObj->ID)) {
 			$postHash = array();
-			$postHash['title'] = $postObj->post_title;
+			$postHash['ID'] = $postObj->ID;
+            $postHash['post_type_label'] = get_post_type_object($postObj->post_type)->label;
+            /*
+            $postHash['title'] = $postObj->post_title;
 			$postHash['permalink'] = App::getPermalink($postObj->ID);
-			$postHash['post_type_label'] = get_post_type_object($postObj->post_type)->label;
 			$postHash['featured_image_id'] = get_post_thumbnail_id($postObj->ID);
 			if (!empty($postHash['featured_image_id'])) {
 				$postHash['featured_image'] = App::featuredImageSrc($size = 'medium', $postObj->ID);
 				$postHash['featured_image_alt'] = App::featuredImageAlt($postHash['featured_image_id']);
 			} else {
 				$postHash['featured_image'] = $postHash['featured_image_alt'] = '';
-			}
+			}*/
 			return $postHash;
 		}else{
 			return false;
@@ -362,6 +422,64 @@ class App extends Controller
 		global $post;
 		$post_slug=$post->post_name;
 		return $post_slug;
+	}
+
+	/**
+	 * Compares start and end date and cleans output if same day
+	 *
+	 * @return string
+	 */
+	public static function cleanDateOutput($start_date, $end_date){
+		if( empty($end_date) ){
+			return $start_date;
+		}
+		$start_date_day = date('Y-m-d', strtotime($start_date));
+		$end_date_day = date('Y-m-d', strtotime($end_date));
+		if($start_date_day == $end_date_day ){
+			$date_output = $start_date;
+		}else{
+			$date_output = date('M j', strtotime($start_date))." &#8211; ".date('M j, Y', strtotime($end_date));
+		}
+		return $date_output;
+	}
+	/**
+	 * Evaluate if an event is PAST, returns true if past, requires start and end dates
+	 *
+	 * @return bool
+	 */
+	public static function evalEventStatus($start_date, $end_date){
+		return app::evalDateStatus($start_date, $end_date);
+	}
+	/**
+	 * Evaluate if date is in the past
+	 *
+	 * @return bool
+	 */
+	public static function evalDateStatus($start_date, $end_date){
+		//convert to timestamp
+		$start_date = strtotime($start_date);
+		$end_date = strtotime($end_date);
+		date_default_timezone_set('America/New_York');
+		$now = strtotime('yesterday 11:59:59');
+		if (!$start_date && !$end_date) {
+			return false;
+		} elseif($start_date == $end_date || !$end_date){
+			//just look at the start date
+			if ($now > $start_date) {
+				return true; //passed
+			} else {
+				return false;
+			}
+		} else {
+			//if the end date is in the future, this is not a past event
+			//use the end date for comparison
+			if ($now > $end_date) {
+				return true; //passed
+
+			} else {
+				return false;
+			}
+		}
 	}
 
 	/**
@@ -511,4 +629,62 @@ class App extends Controller
 
         return $social;
     }
+
+    /**
+	 * Modification of wp_link_pages() with an extra element to highlight the current page.
+	 *
+	 * @param  array $args
+	 * @return void
+	 */
+	public static function numbered_in_page_links( $args = array () )
+	{
+	    $defaults = array(
+	        'before'      => '<div class="page-nav"><h4>' . __('Chapters: ') . '</h4>'
+	    ,   'after'       => '</div>'
+	    ,   'link_before' => '<span class="btn btn-primary">'
+	    ,   'link_after'  => ''
+	    ,   'pagelink'    => '%'
+	    ,   'echo'        => 1
+	        // element for the current page
+	    ,   'highlight'   => 'b'
+	    );
+
+	    $r = wp_parse_args( $args, $defaults );
+	    $r = apply_filters( 'wp_link_pages_args', $r );
+	    extract( $r, EXTR_SKIP );
+
+	    global $page, $numpages, $multipage, $more, $pagenow;
+
+	    if ( ! $multipage )
+	    {
+	        return;
+	    }
+
+	    $output = $before;
+
+	    for ( $i = 1; $i < ( $numpages + 1 ); $i++ )
+	    {
+	        $j       = str_replace( '%', $i, $pagelink );
+	        $output .= ' ';
+
+	        if ( $i != $page || ( ! $more && 1 == $page ) )
+	        {
+	            $output .= _wp_link_page( $i ) . "{$link_before}{$j}{$link_after}</a>";
+	        }
+	        else
+	        {   // highlight the current page
+	            // not sure if we need $link_before and $link_after
+	            $output .= "<$highlight>{$link_before}{$j}{$link_after}</$highlight>";
+	        }
+	    }
+
+	    return $output . $after;
+	}
+
+	public static function verifyUserLoggedOut(){
+		if(is_user_logged_in() ){
+			wp_redirect( home_url() );
+			exit;
+		}
+	}
 }

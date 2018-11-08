@@ -15,8 +15,10 @@ $hamburger-padding-y                       : 0 !default;
 $hamburger-layer-width                     : 28px !default;
 $hamburger-layer-height                    : 3px !default;
 $hamburger-layer-spacing                   : 6px !default;
-$hamburger-layer-color                     : #fff !default;
-$hamburger-hover-layer-color               : #FFF !default;
+$hamburger-layer-color                     : map-get($theme-colors, text-color);
+$hamburger-hover-layer-color               : map-get($theme-colors, text-color);
+$hamburger-layer-color-home                : #FFF !default;
+$hamburger-hover-layer-color-home          : #FFF !default; 
 $hamburger-layer-border-radius             : 0 !default;
 $hamburger-hover-opacity                   : 0.7 !default;
 $hamburger-hover-scale                     : 0.9 !default;
@@ -106,6 +108,13 @@ $hamburger-types: (
     bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
   }
 }
+.home .hamburger-inner {
+  &,
+  &::before,
+  &::after {
+    background-color: $hamburger-layer-color-home;
+  }
+}
 
 /*
   * Spin
@@ -145,6 +154,13 @@ $hamburger-types: (
         transition: bottom 0.1s ease-out,
                     transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
+      
+      &,
+      &::before,
+      &::after {
+        background-color: $hamburger-layer-color-home;
+      }
+
     }
   }
 }

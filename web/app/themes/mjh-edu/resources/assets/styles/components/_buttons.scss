@@ -30,26 +30,103 @@
             background: #222;
         }
     }
+    &.cta-black {
+        background-color: map-get($theme-colors, text-color);
+        color: white;
+        &:hover {
+            color: map-get($theme-colors, text-color);
+            background: white;
+        }
+    }
 }
 
-.cta-arrow {
+.cta-icon {
     position: relative;
+    &:before {
+        @include fa-inline-prep();
+        position: absolute;
+        line-height: 1;
+        right: 14px;
+        top: 55%;
+        margin-top: -15px;
+        @include font-size(26);
+        @include media-breakpoint-up(md) {
+            @include font-size(32);
+            top: 50%;
+        }
+    }
     &.cta-white {
         color: #222;
     }
+    &.cta-black {
+        color: white;
+    }
+}
+.cta-arrow:before {
+   content: "\f105";
+}
+.cta-download:before {
+   content: "\f0ed";
 }
 
-.cta-arrow:before {
-    @include fa-inline-prep();
-    position: absolute;
-    line-height: 1;
-    content: "\f105";
-    right: 14px;
-    top: 55%;
-    margin-top: -15px;
-    @include font-size(26);
-    @include media-breakpoint-up(md) {
-        @include font-size(32);
-        top: 50%;
-    }
+
+/* process flow/chapter links */
+/** The Magic **/
+.btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid #ccc;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+/** The Spacing **/
+.btn-breadcrumb .btn {
+  padding:6px 12px 6px 24px;
+  background-color: #ececec;
+  &:hover {
+    background-color: #ccc;
+  }
+}
+.btn-breadcrumb .btn:first-child {
+  padding:6px 6px 6px 10px;
+}
+.btn-breadcrumb .btn:last-child {
+  padding:6px 18px 6px 24px;
+}
+
+/** Default button **/
+.btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 10px solid #ececec; //triangle shape
+}
+.btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 10px solid #ccc;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #ccc; //triangle shape rollover
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 10px solid #adadad;
 }

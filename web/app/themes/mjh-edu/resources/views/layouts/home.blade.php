@@ -9,8 +9,17 @@
         <div class="content">
           <main class="main">
           @yield('primary-features')
-          
           </main>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="content">
+          @yield('carousel')
+        </div>
+      </div>
+      <div class="container">
+        <div class="content">
+          @yield('secondary-features')
         </div>
       </div>
       @php do_action('get_footer') @endphp

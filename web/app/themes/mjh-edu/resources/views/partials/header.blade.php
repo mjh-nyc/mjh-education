@@ -1,13 +1,15 @@
 <header class="banner">
 	<div class="sticky">
 		<div class="sticky-container">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row top-row">
 					<div class="col-md-3 social-channels">
 						{!! App::get_social() !!}
 					</div>
 					<div class="col-9 col-md-6 logo">
-						{!!  get_custom_logo() !!}
+						<a href="/" class="animsition-link">
+							{!! file_get_contents(App::siteLogo()) !!}
+						</a>
 					</div>
 					<div class="col-3 navigation">
 						<!--<a href="#" class="search"><i class="fa fa-search" aria-hidden="true"><span class="sr-only">@php _e("Search","sage"); @endphp</span></i></a>-->
@@ -21,6 +23,7 @@
 			</div>
 		</div>
 	</div>
+	@if (is_front_page())
     <!-- featured image and page title area -->
     <div class="hero-area parallax-window" data-parallax="scroll" data-image-src="{{App::featuredImageSrc('homepage-header')}}" data-over-scroll-fix="true" alt="{{App::featuredImageAlt(get_post_thumbnail_id())}}">
       <div class="sr-only">{{App::featuredImageAlt(get_post_thumbnail_id())}}</div>
@@ -33,6 +36,9 @@
       	</div>
     </div>
   	<!-- //end featured image and page title area -->
+	@else
+		@include('partials.content-header')
+	@endif
 </header>
 
 <div class="overlay-nav container-fluid no-gutters" style="">

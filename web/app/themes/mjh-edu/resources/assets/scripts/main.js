@@ -23,10 +23,16 @@ import 'lity/dist/lity.min';
 
 // Import Parallax js
 import 'jquery-parallax.js/parallax.min';
+//jQuery color animation support
+import 'jquery-color/jquery.color';
 
 //Import waypoints
 import 'waypoints/lib/jquery.waypoints.min';
 import 'waypoints/lib/shortcuts/sticky.min';
+import 'waypoints/lib/shortcuts/inview.min';
+
+//Import slick
+//import 'slick-carousel/slick/slick';
 
 //**** //END ******************/
 /*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/
@@ -39,6 +45,8 @@ import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
 import aboutUs from './routes/about';
+import templateSurvivorsListing from './routes/templateSurvivorsListing';
+import templateTimelineListing from './routes/templateTimelineListing';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -48,6 +56,10 @@ const routes = new Router({
   home,
   // About Us page, note the change from about-us to aboutUs.
   aboutUs,
+  // Survivor listing template
+    templateSurvivorsListing,
+  // Survivor listing template
+    templateTimelineListing,
 });
 
 // Load Events

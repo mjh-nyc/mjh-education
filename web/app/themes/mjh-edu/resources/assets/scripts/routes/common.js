@@ -5,6 +5,7 @@ export default {
 		var $body 			= $('body'),
 			$hamburger 		= $('.hamburger');
 
+
 		// Initiate Typekit Fonts
 		window.WebFontConfig = {
 			typekit: {
@@ -29,6 +30,8 @@ export default {
 		// init hamburger navigation icon
 		$hamburger.on('click', function() {
 			$(this).toggleClass('is-active');
+			$('.social-channels a').toggleClass('nav-active');
+			$('.logo svg').toggleClass('nav-active');
 			if ($body.hasClass('nav_open')) {
 				$body.removeClass('nav_open').addClass('nav_closed');
 			} else {
@@ -68,8 +71,8 @@ export default {
 		$(".animsition").animsition({
 			inClass: 'fade-in',
 			outClass: 'fade-out',
-			inDuration: 1500,
-			outDuration: 800,
+			inDuration: 500,
+			outDuration: 400,
 			linkElement: '.animsition-link',
 			// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
 			loading: true,
@@ -93,9 +96,9 @@ export default {
 		});
 
 		//add animsition-link class to menu items
-		$('#menu-main-navigation a').each(function() {
+		/*$('#menu-main-navigation a').each(function() {
 			$( this ).addClass('animsition-link');
-		});
+		});*/
 
 	},
 	finalize() {

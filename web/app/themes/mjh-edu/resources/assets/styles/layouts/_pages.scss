@@ -9,7 +9,85 @@
 		position: absolute;
 	}
 }
-
-
 /***  //END GEOGRAPHY QUIZES **************************/
 /*******************************************************/
+
+.featured-image--caption {
+	@extend %small;
+	margin-top: 10px;
+}
+
+.entry-content {
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+}
+
+.post-themes {
+	@include listReset();
+	ul li {
+		padding: 0
+	}
+}
+.features {
+	align-items: stretch;
+	position: relative;
+	&__primary {
+		position: relative;
+		margin-top: -100px;
+		z-index: 200;
+	}
+	&__secondary {
+		margin-top: 30px;
+		.feature {
+			@include media-breakpoint-up(lg) {
+				height: 300px;
+			}
+			a {
+				margin-top: 1rem;
+			}
+		}
+	}
+}
+
+.card-shadow {
+	-webkit-box-shadow: 0 0 28px 0 rgba(0,0,0,.3);
+	box-shadow: 0 0 28px 0 rgba(0,0,0,.3);
+}
+.content-wrapper {
+	position: relative;
+	background-size: cover;
+	&:after {
+		@extend %overlay;
+	}
+	margin-top: 30px;
+	@include media-breakpoint-up(md) {
+		height: 100%;
+	}
+	@include media-breakpoint-up(lg) {
+		margin-top: 0;
+	}
+
+	@extend .card-shadow;
+
+	.content-card {
+		height: 100%;
+		position: relative;
+		z-index: 2;
+		padding: 15px;
+		color: white;
+		position: relative;
+		display: flex;
+    	flex-direction: column;
+    	justify-content: space-between;
+		&__title {
+
+		}
+		&__image {
+
+		}
+		&__link {
+			align-self: flex-start;
+		}
+	}
+}
+

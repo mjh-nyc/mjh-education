@@ -25,15 +25,19 @@
                 @endif
               @endif            
             </div>
-             <img src="/app/themes/mjh-edu/dist/images/geography_europe_map.png" alt="@php _e('Europe circa 1930','sage'); @endphp" width="650" height="525">
           @endforeach
+          <img src="{{ get_template_directory_uri() }}/assets/images/geography_europe_map.png" alt="@php _e('Europe circa 1930','sage'); @endphp" width="650" height="525">
         @else
           <h2>Question Not Found</h2>
           <p><a href="{{ the_permalink() }}" class="cta cta-white cta-arrow animsition-link">Reset Quiz</a>
         @endif
       </div>
     @endif
-
-
+    @if($media_resources)
+        @include('partials.content-survivor_resources_media_resources')
+    @endif
+    @if($project_suggestions)
+        @include('partials.content-survivor_resources_project_suggestions')
+    @endif
   </div>
 </article>

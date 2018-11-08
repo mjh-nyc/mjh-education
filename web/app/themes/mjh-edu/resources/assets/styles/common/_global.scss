@@ -18,6 +18,9 @@ body {
     @include media-breakpoint-up(lg) {
         @include font-size(18);
     }
+    &.home {
+      background-color: map-get($theme-colors, background);
+    }
 }
 
 p, ol, ul, dl {
@@ -32,13 +35,60 @@ h3 {
 
 h1 {
     text-transform: capitalize;
-    @include font-size(24);
+    @include font-size(32);
     @include media-breakpoint-up(sm) {
-        @include font-size(36);
+        @include font-size(40);
     }
     @include media-breakpoint-up(lg) {
         @include font-size(48);
     }
+}
+h2 {
+    @include font-size(20);
+    @include media-breakpoint-up(sm) {
+        @include font-size(28);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-size(36);
+    }
+}
+h3 {
+    @include font-size(18);
+    @include media-breakpoint-up(sm) {
+        @include font-size(24);
+    }
+    @include media-breakpoint-up(lg) {
+        @include font-size(30);
+    }
+}
+h4 {
+  @include bentonBd();
+  @include font-size(16);
+  @include media-breakpoint-up(sm) {
+    @include font-size(24);
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* global link styles */
+a {
+  &:link, &:visited {
+    color: map-get($theme-colors, link);
+    text-decoration: underline;
+    @include transition(all, 0.2s, linear);
+  }
+  &:hover {
+    color: map-get($theme-colors, link-hover);
+    text-decoration: none;
+  }
+  &:active {
+    color: map-get($theme-colors, neutral);
+    text-decoration: none;
+  }
 }
 
 .bold, b, strong {
@@ -54,6 +104,19 @@ strong i, bold i, strong em, bold em {
   @include bentonBdIt();
 }
 
+/* force content into 8 columns on all secondary pages */
+.wrap {
+  margin-top: 3rem;
+  @include media-breakpoint-up(md) {
+    width:66.66%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+/* span full width of container on homepage only */
+.home .wrap {
+    width: 100%;
+}
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -78,5 +141,75 @@ strong i, bold i, strong em, bold em {
   line-height: normal;
   max-width: 960px;
   margin:0 auto;
+}
+
+.share {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid map-get($theme-colors, neutral);
+  .share-options {
+    @include clearfix;
+    .share-channel {
+      display: inline-block;
+      margin-right: 6px;
+      a {
+        color: map-get($theme-colors, text-color);
+        display: block;
+        border: 1px solid map-get($theme-colors, text-color);
+        border-radius: 50%;
+        line-height: 2;
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        @include font-size(14);
+        @include media-breakpoint-up(lg) {
+            @include font-size(16);
+        }
+        &:hover {
+          color: map-get($theme-colors, primary);
+          border: 1px solid map-get($theme-colors, primary);
+        }
+      }
+    }
+  }
+}
+/************ PAGINATION *****************/
+.pagination {
+  width: 100%;
+  .nav-links {
+    margin: 50px auto;
+    span, a {
+      font-size: 1.5em;
+      display: inline-block;
+      padding: 10px;
+      @extend .bold;
+    }
+  }
+}
+
+
+footer.content-info {
+  background-color: map-get($theme-colors, dark);
+  color: white;
+  margin-top: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  @extend .small;
+  h3 {
+    @extend h4;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+  section {
+    @include make-col-ready();
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+  }
 }
 /* stylelint-enable */

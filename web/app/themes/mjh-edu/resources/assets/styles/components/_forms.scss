@@ -1,3 +1,4 @@
+/* stylelint-disable */
 /** Search form */
 .search-form {
   @extend .form-inline;
@@ -17,3 +18,17 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+/* general input fields */
+/*.acf-field input[type="text"], 
+.acf-field input[type="password"], 
+.acf-field input[type="number"], 
+.acf-field input[type="search"], 
+.acf-field input[type="email"], 
+.acf-field input[type="url"], 
+.acf-field textarea, 
+.acf-field select {
+	@include font-size($default-font-size);
+    line-height: normal;
+    padding: 25px 10px;
+}*/

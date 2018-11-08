@@ -13,6 +13,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import url("~animsition/dist/css/animsition.min.css");
 @import url("~lity/dist/lity.min.css");
+@import "~slick-carousel/slick/slick";
 
 /** Import theme styles */
 @import "common/helpers";
@@ -27,4 +28,7 @@
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
+@import "layouts/lessons";
+@import "layouts/survivors";
+@import "layouts/users";
 @import "layouts/tinymce";
