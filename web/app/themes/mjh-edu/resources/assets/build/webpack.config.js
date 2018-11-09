@@ -109,7 +109,7 @@ let webpackConfig = {
         },
       },
       {
-        test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
+        test: /\.(png|jpe?g|gif|ico)$/,
         include: /node_modules/,
         loader: 'url',
         options: {
@@ -118,6 +118,16 @@ let webpackConfig = {
           name: `${config.cacheBusting}.[ext]`,
         },
       },
+        {
+            test: /\.(ttf|otf|eot|woff2?|svg)$/,
+            include: /node_modules/,
+            loader: 'url',
+            options: {
+                limit: 4096,
+                outputPath: 'fonts/',
+                name: `${config.cacheBusting}.[ext]`,
+            },
+        },
     ],
   },
   resolve: {
