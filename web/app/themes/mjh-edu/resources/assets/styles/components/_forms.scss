@@ -19,16 +19,47 @@
   @extend .btn-secondary;
 }
 
-/* general input fields */
-/*.acf-field input[type="text"], 
-.acf-field input[type="password"], 
-.acf-field input[type="number"], 
-.acf-field input[type="search"], 
-.acf-field input[type="email"], 
-.acf-field input[type="url"], 
-.acf-field textarea, 
-.acf-field select {
+%text-input {
 	@include font-size($default-font-size);
     line-height: normal;
-    padding: 25px 10px;
-}*/
+    padding: 10px;
+}
+/* custom login form */
+#loginform {
+	padding: 1rem;
+    background: map-get($theme-colors, background);
+	.login-submit input {
+		@extend .cta;
+		@extend .cta-black;
+		@extend .cta-black;
+		@extend .cta-icon;
+		@extend .cta-arrow;
+		border:none;
+	}
+	label {
+		display: block;
+	}
+	input[type="text"],
+	input[type="password"] {
+		width: 100%;
+		@extend %text-input;
+	}
+}
+
+/* custom register form */
+.users-register {
+	padding: 1rem;
+    background: map-get($theme-colors, background);
+}
+
+/* general input fields */
+input[type="text"], 
+input[type="password"], 
+input[type="number"], 
+input[type="search"], 
+input[type="email"], 
+input[type="url"], 
+textarea, 
+select {
+	@extend %text-input;
+}
