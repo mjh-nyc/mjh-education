@@ -8,7 +8,7 @@
 					</div>
 					<div class="col-9 col-md-6 logo">
 						<a href="/" class="animsition-link">
-							{!! App::url_get_contents(App::siteLogo()) !!}
+							{!! file_get_contents(App::siteLogo()) !!}
 						</a>
 					</div>
 					<div class="col-3 navigation">
