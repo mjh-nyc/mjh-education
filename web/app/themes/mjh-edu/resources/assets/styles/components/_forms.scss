@@ -24,18 +24,14 @@
     line-height: normal;
     padding: 10px;
 }
-/* custom login form */
-#loginform {
+/* custom forms */
+
+#loginform,
+.users-register {
 	padding: 1rem;
     background: map-get($theme-colors, background);
-	.login-submit input {
-		@extend .cta;
-		@extend .cta-black;
-		@extend .cta-black;
-		@extend .cta-icon;
-		@extend .cta-arrow;
-		border:none;
-	}
+}
+#loginform {
 	label {
 		display: block;
 	}
@@ -44,12 +40,6 @@
 		width: 100%;
 		@extend %text-input;
 	}
-}
-
-/* custom register form */
-.users-register {
-	padding: 1rem;
-    background: map-get($theme-colors, background);
 }
 
 /* general input fields */
@@ -62,4 +52,14 @@ input[type="url"],
 textarea, 
 select {
 	@extend %text-input;
+}
+
+input[type="submit"] {
+	border:none;
+	@extend .cta;
+	@extend .cta-black;
+	@extend %cta-input-arrow-white;
+	&:hover {
+		@extend %cta-input-arrow-black;
+	}
 }

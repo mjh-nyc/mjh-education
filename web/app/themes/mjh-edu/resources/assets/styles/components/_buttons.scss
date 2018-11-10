@@ -73,6 +73,23 @@
     }
 }
 
+/* inputs can't have pseudo-classes 
+so we have to use background image to get the arrows to show up */
+%cta-input-arrow-white {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: 94% 42%;
+    background-image: url('images/angle-right-fff.png');
+}
+%cta-input-arrow-black {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: 94% 42%;
+    background-image: url('images/angle-right-000.png');
+}
+
 .btn-lg, .btn-group-lg > .btn, .comment-form .btn-group-lg > input[type="submit"], .search-form .btn-group-lg > .search-submit {
     font-size: 1rem;
     @include media-breakpoint-up(md) {
