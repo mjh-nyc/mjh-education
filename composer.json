@@ -50,6 +50,18 @@
     {
       "type": "package",
       "package": {
+        "name": "deliciousbrains/wp-offload-s3-pro",
+        "version": "1.5.1",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://deliciousbrains.com/dl/wp-offload-s3-pro-latest.zip?licence_key=1af4b9aa-71f7-4036-a5ef-300592795795&site_url=mjhnyc.org"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
         "name": "mjh-nyc/mjhedu-custom-configurations",
         "version": "dev-master",
         "type": "wordpress-muplugin",
@@ -71,7 +83,8 @@
     "roots/wp-config": "1.0.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.5",
     "mjh-nyc/mjhedu-custom-configurations": "dev-master",
-    "wpackagist-plugin/advanced-forms": "1.5.5"
+    "wpackagist-plugin/advanced-forms": "^1.0",
+    "deliciousbrains/wp-offload-s3-pro": "^1.5"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
