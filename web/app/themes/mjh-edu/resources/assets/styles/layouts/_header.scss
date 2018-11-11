@@ -55,6 +55,7 @@
 
 .featured-image {
     text-align: center;
+    background-color: map-get($theme-colors, dark);
     img {
         width: auto;
     }
