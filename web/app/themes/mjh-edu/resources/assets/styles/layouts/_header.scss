@@ -53,6 +53,14 @@
 	}
 }
 
+.featured-image {
+    text-align: center;
+    background-color: map-get($theme-colors, dark);
+    img {
+        width: auto;
+    }
+}
+
 
 .hero-area {
 	margin-top: -$sticky-header-height;

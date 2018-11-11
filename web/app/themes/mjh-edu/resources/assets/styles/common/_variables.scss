@@ -13,13 +13,16 @@ $theme-colors: (
 	background:		#E8EFF7,
 	neutral: 		#A5A4A6,
 	text-color:		#222222,
-	dark:			#4A4A4A,
+	dark:			#141414,
 	link:			#2C4D53,
 	link-hover:		#033EFB
 );
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+/* chapter-nav  */
+$crumbs-back:		#F3F5FA;
 
 $sticky-header-height: 79px;
 

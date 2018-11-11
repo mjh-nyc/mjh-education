@@ -99,62 +99,79 @@ so we have to use background image to get the arrows to show up */
 
 
 /* process flow/chapter links */
-/** The Magic **/
-.btn-breadcrumb .btn:not(:last-child):after {
-  content: " ";
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 17px solid transparent;
-  border-bottom: 17px solid transparent;
-  border-left: 10px solid white;
-  position: absolute;
-  top: 50%;
-  margin-top: -17px;
-  left: 100%;
-  z-index: 3;
-}
-.btn-breadcrumb .btn:not(:last-child):before {
-  content: " ";
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 17px solid transparent;
-  border-bottom: 17px solid transparent;
-  border-left: 10px solid #ccc;
-  position: absolute;
-  top: 50%;
-  margin-top: -17px;
-  margin-left: 1px;
-  left: 100%;
-  z-index: 3;
-}
+$crumbs-back:#F3F5FA;
+$text-color:#8093A7;
+$size:20px;
 
-/** The Spacing **/
-.btn-breadcrumb .btn {
-  padding:6px 12px 6px 24px;
-  background-color: #ececec;
-  &:hover {
-    background-color: #ccc;
-  }
-}
-.btn-breadcrumb .btn:first-child {
-  padding:6px 6px 6px 10px;
-}
-.btn-breadcrumb .btn:last-child {
-  padding:6px 18px 6px 24px;
-}
+.chapter-nav {    
+    &__links {
+        @include clearfix();
 
-/** Default button **/
-.btn-breadcrumb .btn.btn-default:not(:last-child):after {
-  border-left: 10px solid #ececec; //triangle shape
-}
-.btn-breadcrumb .btn.btn-default:not(:last-child):before {
-  border-left: 10px solid #ccc;
-}
-.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
-  border-left: 10px solid #ccc; //triangle shape rollover
-}
-.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
-  border-left: 10px solid #adadad;
+        a, span {
+            display: inline-block;
+            float: left;
+            background: $crumbs-back;
+            text-align: center;
+            padding: 10px 20px 0 40px;
+            position: relative;
+            margin: 0 10px 0 0; 
+            height: 40px;
+            @include font-size(18);
+            text-decoration: none;
+            color: $text-color;
+
+            &:after {
+                content: "";  
+                border-top: $size solid transparent;
+                border-bottom: $size solid transparent;
+                border-left: $size solid $crumbs-back;
+                position: absolute; 
+                right: -$size;
+                top: 0;
+                z-index: 1;
+            }
+            &:before {
+                content: "";  
+                border-top: $size solid transparent;
+                border-bottom: $size solid transparent;
+                border-left: $size solid #fff;
+                position: absolute; 
+                left: 0; 
+                top: 0;
+            }
+            &:first-child {
+                padding-left: 25px;
+                border-top-left-radius: 5px; 
+                border-bottom-left-radius: 5px;
+                &:before {
+                    display: none; 
+                }
+            }
+            &:last-child {
+                padding-right: 25px;
+                border-top-right-radius: 5px; 
+                border-bottom-right-radius: 5px;
+                &:after {
+                    display: none; 
+                }
+            }
+            &:hover {
+                background: map-get($theme-colors, primary);
+                color:#fff;
+                &:after {
+                    border-left-color: map-get($theme-colors, primary);
+                    color:#fff;
+                }
+            }
+        }
+        /* this current item */
+        span {
+            background: map-get($theme-colors, secondary);
+            color: white;
+            &:after {
+                border-left-color: map-get($theme-colors, secondary);
+                color:#fff;
+            }
+        }
+    }
 }
