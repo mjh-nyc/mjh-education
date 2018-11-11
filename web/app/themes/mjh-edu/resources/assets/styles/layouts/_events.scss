@@ -1,0 +1,63 @@
+/* stylelint-disable */
+
+/* EVENT LISTINGS */
+.event-listing-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	article {
+		width:100%;
+		@include media-breakpoint-up(lg) {
+			width:48%;
+		}
+		@include media-breakpoint-up(xl) {
+			width:31%;
+		}
+	}
+}
+.event-card {
+	@extend .card-shadow;
+	margin-top: 30px;
+	&__image {
+		height: 250px;
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+		.card-category {
+			position: absolute;
+		    bottom: 20px;
+		    left: 20px;
+		    right: 20px;
+		    background: map-get($theme-colors, primary);
+		    color: white;
+		    line-height: normal;
+		    display: table;
+		    max-width: 85%;
+		    padding: 7px 10px;
+		}
+	}
+	&__info {
+		padding: 20px;
+	}
+	&__details {
+		padding: 0 20px;
+		@extend .small;
+	}
+	&__link {
+		padding: 0 20px 20px 20px;
+		margin-top: 30px;
+	}
+}
+
+/* SINGLE EVENT */
+.event-info {
+	@include listReset();
+	padding: 1rem;
+    background: map-get($theme-colors, background);
+    .buy-tix {
+    	margin-top: 2rem;
+    }
+}
+.calendar-options > div {
+	display: inline-block;
+}

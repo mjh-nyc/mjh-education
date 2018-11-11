@@ -5,20 +5,20 @@
   
     <div class="resources">
       <div class="resources__link">
-        <i class="fa fa-map-o" aria-hidden="true"></i> <a href="/legacy/geography/quiz_page.php?name={{ strtolower($survivor) }}&question=1" data-lity>Geography Quiz</a>
+        <i class="fa fa-map-o" aria-hidden="true"></i> &nbsp;<a href="/legacy/geography/quiz_page.php?name={{ strtolower($survivor) }}&question=1" data-lity>Geography Quiz</a>
       </div>
       <div class="resources__link">
-        <i class="fa fa-edit" aria-hidden="true"></i> <a href="#">Project Suggestions</a>
+        <i class="fa fa-edit" aria-hidden="true"></i>  &nbsp;<a href="#">Project Suggestions</a>
       </div>
       <div class="resources__link">
-        <i class="fa fa-television" aria-hidden="true"></i> <a href="#">Resources</a>
+        <i class="fa fa-television" aria-hidden="true"></i>  &nbsp;<a href="#">Resources</a>
       </div>
     </div>
   </header>
   <div class="entry-content">
      @include('partials.entry-taxonomy-categories')
     <h2>{{ get_the_title() }}</h2>
-    @php the_content() @endphp
+    {!! \App\Controllers\TemplateGlossaryListing::cmttGlossaryParse($post->post_content) !!}
   </div>
   <footer>
     @include('partials/content-survivor-story-chapter-navigation')
@@ -41,5 +41,4 @@
     @endif
     --}}
   </footer>
-  @php comments_template('/partials/comments.blade.php') @endphp
 </article>

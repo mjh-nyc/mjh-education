@@ -6,11 +6,9 @@
 </nav>
 @endif --}}
 
-{!! App::numbered_in_page_links() !!}
-
-{{--
-<div class="btn-group btn-breadcrumb">
-            <a href="#" class="btn btn-default">Snippets</a>
-            <a href="#" class="btn btn-default">Breadcrumbs</a>
-            <a href="#" class="btn btn-default">Default</a>
-        </div> --}}
+<div class="chapter-nav-wrapper">
+	<h4>{{ _e('Chapters','sage') }}</h4>
+	<div class="chapter-nav">
+		{!! App::numbered_in_page_links() !!}
+	</div>
+</div>
