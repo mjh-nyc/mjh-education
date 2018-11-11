@@ -57,6 +57,7 @@
     text-align: center;
     background-color: map-get($theme-colors, dark);
     img {
+        max-width: 100%;
         width: auto;
     }
 }
