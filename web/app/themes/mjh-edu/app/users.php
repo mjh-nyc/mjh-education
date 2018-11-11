@@ -144,3 +144,14 @@ function users_logout_redirect() {
 	exit;
 }
 add_action('wp_logout','users_logout_redirect');
+
+/**
+ * User login form footer
+ *
+ * @hook wp_logout
+ * @return null
+ */
+function users_login_form_bottom() {
+	return '<div class="users-register"><a href="'.get_home_url().'/register">'.__("Register","sage").'</a></div>';
+}
+add_filter('login_form_bottom','users_login_form_bottom');
