@@ -1,4 +1,4 @@
-<header class="banner">
+<header class="banner" id="top">
 	<div class="sticky">
 		<div class="sticky-container">
 			<div class="container">
