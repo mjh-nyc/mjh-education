@@ -10,7 +10,6 @@
  * @return null
  */
 function mjh_redirects_events() {
-	$path = '';
 	if( !empty( $_SERVER['REDIRECT_URL'] ) ){
 		$path =  $_SERVER['REDIRECT_URL'];
 		$root_url = get_bloginfo('url');
@@ -24,6 +23,23 @@ function mjh_redirects_events() {
 	}
 }
 add_action( 'init', 'mjh_redirects_events' );
+
+/**
+ * Redirect glossary post to glossary listing by hash
+ *
+ * @hook template_redirect
+ * @return null
+ */
+function mjh_glossary_redirect_post() {
+	global $post;
+	$queried_post_type = get_query_var('post_type');
+	if ( is_single() && 'glossary' ==  $queried_post_type ) {
+		$root_url = get_bloginfo('url');
+		wp_redirect( $root_url.'/glossary/#'.$post->post_name, 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'mjh_glossary_redirect_post' );
 
 /**
  * Redirect survivor taxonomy to related survivor-story post

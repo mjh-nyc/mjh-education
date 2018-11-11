@@ -47,6 +47,7 @@ import home from './routes/home';
 import aboutUs from './routes/about';
 import templateSurvivorsListing from './routes/templateSurvivorsListing';
 import templateTimelineListing from './routes/templateTimelineListing';
+import singleSurvivorStory from './routes/singleSurvivorStory';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -60,6 +61,8 @@ const routes = new Router({
     templateSurvivorsListing,
   // Survivor listing template
     templateTimelineListing,
+  // Survivor story detail template
+    singleSurvivorStory,
 });
 
 // Load Events
