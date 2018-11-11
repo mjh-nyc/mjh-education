@@ -200,6 +200,9 @@ footer.content-info {
   padding-top: 5rem;
   padding-bottom: 5rem;
   @extend .small;
+  .container {
+    opacity: .6;
+  }
   h3 {
     @extend h4;
   }
@@ -215,6 +218,18 @@ footer.content-info {
     @include make-col-ready();
     @include media-breakpoint-up(md) {
       @include make-col(4);
+    }
+  }
+
+  .secondary {
+    margin-top: 2rem;
+  }
+  .menu-footer-navigation-container {
+    @include listReset();
+    text-align: right;
+    ul li {
+      display: inline-block;
+      margin-right: 15px;
     }
   }
 }

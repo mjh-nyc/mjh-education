@@ -75,11 +75,15 @@
 .features {
 	align-items: stretch;
 	position: relative;
+	.content-wrapper {
+		position: relative;
+		background-size: cover;
+		background-position: center;
+	}
 	.content-card {
 		a {
 			margin-top: 1rem;
-			margin-bottom: 2rem;
-			margin-bottom: 2rem;
+			margin-bottom: 1rem;
 		}
 	}
 	&__primary {
@@ -97,8 +101,6 @@
 			justify-content: flex-end;
 		}
 		.content-wrapper {
-			position: relative;
-			background-size: cover;
 			justify-content: flex-end;
 			&:after {
 				background: rgba(255,255,255,.56);
