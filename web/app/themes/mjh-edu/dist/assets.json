@@ -8,9 +8,11 @@
   "fonts/fontawesome-webfont.ttf?v=4.7.0": "fonts/fontawesome-webfont_b06871f2.ttf",
   "fonts/fontawesome-webfont.woff2?v=4.7.0": "fonts/fontawesome-webfont_af7ae505.woff2",
   "fonts/fontawesome-webfont.woff?v=4.7.0": "fonts/fontawesome-webfont_fee66e71.woff",
+  "images/angle-right-000.png": "images/angle-right-000_29635187.png",
+  "images/angle-right-fff.png": "images/angle-right-fff_418f36e7.png",
   "images/geography_europe_map.png": "images/geography_europe_map_1aaeaafc.png",
   "images/young-friends.png": "images/young-friends_14a96bdf.png",
-  "scripts/customizer.js": "scripts/customizer_7322b7f6.js",
-  "styles/main.css": "styles/main_7322b7f6.css",
-  "scripts/main.js": "scripts/main_7322b7f6.js"
+  "scripts/customizer.js": "scripts/customizer_5100b496.js",
+  "styles/main.css": "styles/main_5100b496.css",
+  "scripts/main.js": "scripts/main_5100b496.js"
 }
