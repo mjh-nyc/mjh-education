@@ -97,6 +97,15 @@ so we have to use background image to get the arrows to show up */
     }
 }
 
+.search-submit {
+   @extend .cta;
+    @extend .cta-black;
+    @extend %cta-input-arrow-white;
+    &:hover {
+        @extend %cta-input-arrow-black;
+    }
+}
+
 
 /* process flow/chapter links */
 $crumbs-back:#F3F5FA;

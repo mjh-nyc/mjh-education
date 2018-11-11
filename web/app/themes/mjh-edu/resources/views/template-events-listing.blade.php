@@ -10,7 +10,7 @@
 
     <div class="event-form">
       <form id="event-listing-form" name="event-listing-form" method='get' action="{!! APP::getPermalink() !!}">
-        <label for="event-category">@php _e("Display","sage"); @endphp</label>
+        <h4><label for="event-category">@php _e("Display","sage"); @endphp</label></h4>
         <div class="styled-select slate">
           <select name="event-category" id="event-category">
             <option value="">@php _e("All categories","sage"); @endphp</option>
@@ -31,7 +31,7 @@
       @endforeach
     </div>
  @else
-    <div style="margin-bottom: 100px;">
+    <div style="margin: 4rem 0;">
       <div class="alert alert-warning">{!! __("There are no events to display","sage") !!} </div>
       {!! get_search_form(false) !!}
     </div>
