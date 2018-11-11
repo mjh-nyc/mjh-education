@@ -14,6 +14,9 @@
         <div class="styled-select slate">
           <select name="event-category" id="event-category">
             <option value="">@php _e("All categories","sage"); @endphp</option>
+            @foreach (get_terms('event_category') as $event_category)
+              <option value="{{$event_category->term_id}}" @if($event_category_request === $event_category->term_id)selected="selected" @endif>{{$event_category->name}}</option>
+            @endforeach
           </select>
         </div>
       </form>
