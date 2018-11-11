@@ -19,11 +19,8 @@ function mjh_redirects_events() {
 				wp_redirect( $root_url.'/current-events' );
 				exit;
 				break;
-		}
-
-		switch($path){
-			case'/lessons/':
-				wp_redirect( $root_url.'/lesson-plans' );
+			case'/testimonies/':
+				wp_redirect( $root_url.'/testimony-archives' );
 				exit;
 				break;
 		}
