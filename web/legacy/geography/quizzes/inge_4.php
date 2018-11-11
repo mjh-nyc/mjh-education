@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'When she was transported to Oederan, Inge had to cross the Polish border to back into Germany.',
 				'Oederan is located in eastern Germany near Leipzig.',
-				'Inge was forced to labor in a munitions factory in Oederan.  Oederan was a factory and railroad town beginning in the 1800s.'
+				'Inge was forced to labor in a munitions factory in Oederan.  Oederan was a factory and railroad town beginning in the 1800s.<br><br><a class="next-question" href="'+$legacyURL+'?name=inge&question=done">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

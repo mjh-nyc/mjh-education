@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Novaky was located in Czechoslovakia (and is now two countries - the Czech Republic and Slovakia).',
 				'Novaky is located in what is now called Slovakia.',
-				'After leaving the Novaky labor camp, Yisrael went through Romania, Hungary, Austria, Italy, and was sent to a detention camp on the island of Cyprus, before settling in the country that is now Israel.'
+				'After leaving the Novaky labor camp, Yisrael went through Romania, Hungary, Austria, Italy, and was sent to a detention camp on the island of Cyprus, before settling in the country that is now Israel.<br><br><a class="next-question" href="'+$legacyURL+'?name=yisrael&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Tashkent was located in one of the southern most areas of the Soviet territory.',
 				'Tashkent is the capital of what is now Uzbekistan.',
-				'Jews have a long history in Uzbekistan, going back over 1,500 years.'
+				'Jews have a long history in Uzbekistan, going back over 1,500 years.<br><br><a class="next-question" href="'+$legacyURL+'?name=rachel&question=4">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

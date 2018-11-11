@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'When Elli left Nagymagyar (close to her hometown of Samorin), she traveled northeast.',
 				'Auschwitz (Oswiecim in Polish) is located in the south of Poland.',
-				'In Auschwitz-Birkenau, 1.3 million people were killed, 90% of whom were Jews.'
+				'In Auschwitz-Birkenau, 1.3 million people were killed, 90% of whom were Jews.<br><br><a class="next-question" href="'+$legacyURL+'?name=elli&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

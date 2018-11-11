@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Dachau is located in southern Germany.',
 				'Dachau is not far from Munich.',
-				'Dachau was the first of the Nazi’s numerous concentration camps. It was established in March 1933.'
+				'Dachau was the first of the Nazi’s numerous concentration camps. It was established in March 1933.<br><br><a class="next-question" href="'+$legacyURL+'?name=pawel&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

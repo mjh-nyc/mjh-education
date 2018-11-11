@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Siberia is in Russia.',
 				'Siberia is a large region in what is now the Russian Federation which covers over ¾ of the country.',
-				'Siberia has long been a place where Russia exiled people.  Jews were first sent to Siberia in the 1600’s during the Russo-Polish War.'
+				'Siberia has long been a place where Russia exiled people.  Jews were first sent to Siberia in the 1600’s during the Russo-Polish War.<br><br><a class="next-question" href="'+$legacyURL+'?name=rachel&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

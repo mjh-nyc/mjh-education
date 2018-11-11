@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'In Elli\’s memoir, <em>I Have lived a Thousand Years<\/em>, she writes about how she used to swim in the Danube river as a child.',
 				'Samorin is near the borders of both Hungary and Austria.',
-				'Jews have lived in the region that was called Czechoslovakia (and is now two countries - the Czech Republic and Slovakia) for hundreds of years.  Before the war, there were over 350,000 Jews living there.'
+				'Jews have lived in the region that was called Czechoslovakia (and is now two countries - the Czech Republic and Slovakia) for hundreds of years.  Before the war, there were over 350,000 Jews living there.<br><br><a class="next-question" href="'+$legacyURL+'?name=elli&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

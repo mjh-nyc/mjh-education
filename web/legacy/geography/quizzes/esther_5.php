@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Stutthof is in Poland.',
 				'Stutthof is in north central Poland close to the Baltic Sea.',
-				'Stutthof was a large camp with locations throughout northern Poland.  It was the site of 60,000 deaths.'
+				'Stutthof was a large camp with locations throughout northern Poland.  It was the site of 60,000 deaths.<br><br><a class="next-question" href="'+$legacyURL+'?name=esther&question=done">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

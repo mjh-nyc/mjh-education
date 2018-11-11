@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Try again. Muehldorf located in southern Germany.',
 				'Try again. Muehldorf is not far from the German/Austrian border.',
-				'Dachau was the first of the Nazi’s numerous concentration camps. It was established in March 1933.'
+				'Dachau was the first of the Nazi’s numerous concentration camps. It was established in March 1933.<br><br><a class="next-question" href="'+$legacyURL+'?name=anna&question=done">Next question</a>'
 			);
 			var qParams1 = {
 				mqID: 1,

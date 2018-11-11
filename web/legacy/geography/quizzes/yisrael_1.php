@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Gora Kalwaria is located in Poland.',
 				'Gora Kalwaria is in central Poland. The closest big city to Gur is Warsaw, the capital of Poland.',
-				'Poland had the largest population of Jews in Europe before the war.'
+				'Poland had the largest population of Jews in Europe before the war.<br><br><a class="next-question" href="'+$legacyURL+'?name=yisrael&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

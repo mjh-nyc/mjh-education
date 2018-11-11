@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'During the war Vilna (Vilnius) passed between Soviet, Lithuanian, and German hands.',
 				'Vilna is now the capital of Lithuania.',
-				'During the war about 90% of the Jewish population was murdered by the Nazis and Lithuanian collaborators who helped Nazis decimate the Jewish population.'
+				'During the war about 90% of the Jewish population was murdered by the Nazis and Lithuanian collaborators who helped Nazis decimate the Jewish population.<br><br><a class="next-question" href="'+$legacyURL+'?name=esther&question=4">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Heidelberg is a city in Germany.',
 				'The closest neighboring country to the city of Heidelberg, is France.',
-				'Prior to and during the Nazi era, the citizens of Heidelberg were strong supporters of the Nazi political party.'
+				'Prior to and during the Nazi era, the citizens of Heidelberg were strong supporters of the Nazi political party.<br><br><a class="next-question" href="'+$legacyURL+'?name=pawel&question=done">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {
