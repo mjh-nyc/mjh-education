@@ -381,7 +381,7 @@ class App extends Controller
         } 
         if (!$image) {
             //use default image entered under social in theme toptions
-            //$image = get_field('social','option');
+            $image = get_field('social','option');
         }
         return $image;
     }
