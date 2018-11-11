@@ -15,6 +15,7 @@
         <h3>{{ __('Thank you for registering!', 'sage') }}</h3>
         <p>{{ __('Please check your email to verify the account and login.', 'sage') }}</p>
     @else
+        <div class="users-login"><a href="{!! get_home_url()!!}/login">{!! __("Login if you are already registered","sage")!!}</a></div>
         <form method="post" class="users-register">
             <input type="hidden" name="register" value="register" />
            @php acf_form('new-user') @endphp

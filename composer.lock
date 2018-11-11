@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b95102bad20b99b9ca696d5544fc277e",
+    "content-hash": "39070d74011fcc40c33e2b3cbd9d85e3",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -140,6 +140,17 @@
                 "zikula"
             ],
             "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
+            "name": "deliciousbrains/wp-offload-s3-pro",
+            "version": "1.5.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://deliciousbrains.com/dl/wp-offload-s3-pro-latest.zip?licence_key=1af4b9aa-71f7-4036-a5ef-300592795795&site_url=mjhnyc.org",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-plugin"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -278,7 +289,7 @@
                 "reference": "1.1.5"
             },
             "type": "wordpress-muplugin",
-            "time": "2018-11-11 04:24:00"
+            "time": "2018-11-11T04:24:00+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -538,7 +549,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.5.5.zip",
-                "reference": "tags/1.5.5",
+                "reference": null,
                 "shasum": null
             },
             "require": {
