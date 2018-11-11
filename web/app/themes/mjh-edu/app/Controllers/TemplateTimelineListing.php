@@ -162,6 +162,7 @@ class TemplateTimelineListing extends Controller
 		$args = array(
 			'post_type' => 'timeline',
 			'post_status' => 'publish',
+			'posts_per_page'   => -1,
 			'meta_key' => 'timeline_year',
 			'orderby' => 'meta_value',
 			'order' => 'asc',
