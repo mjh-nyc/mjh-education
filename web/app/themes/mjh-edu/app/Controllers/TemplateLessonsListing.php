@@ -35,6 +35,7 @@ class TemplateLessonsListing extends Controller
 		$args = array(
 			'post_type' => 'lessons',
 			'post_status' => 'publish',
+			'posts_per_page'   => -1,
 			'orderby' => 'menu_order',
 			'order' => 'asc',
 		);
@@ -44,7 +45,6 @@ class TemplateLessonsListing extends Controller
 		}else{
 			return array();
 		}
-
 	}
 
 }
