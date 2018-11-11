@@ -21,6 +21,13 @@ function mjh_redirects_events() {
 				exit;
 				break;
 		}
+
+		switch($path){
+			case'/lessons/':
+				wp_redirect( $root_url.'/lesson-plans' );
+				exit;
+				break;
+		}
 	}
 }
 add_action( 'init', 'mjh_redirects_events' );

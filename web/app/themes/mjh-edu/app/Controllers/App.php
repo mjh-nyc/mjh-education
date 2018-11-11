@@ -639,14 +639,14 @@ class App extends Controller
 	public static function numbered_in_page_links( $args = array () )
 	{
 	    $defaults = array(
-	        'before'      => '<div class="page-nav"><h4>' . __('Chapters: ') . '</h4>'
+	        'before'      => '<div class="chapter-nav__links">'
 	    ,   'after'       => '</div>'
-	    ,   'link_before' => '<span class="btn btn-primary">'
+	    ,   'link_before' => ''
 	    ,   'link_after'  => ''
 	    ,   'pagelink'    => '%'
 	    ,   'echo'        => 1
 	        // element for the current page
-	    ,   'highlight'   => 'b'
+	    ,   'highlight'   => 'span'
 	    );
 
 	    $r = wp_parse_args( $args, $defaults );

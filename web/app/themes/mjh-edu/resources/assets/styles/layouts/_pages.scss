@@ -28,26 +28,7 @@
 		padding: 0
 	}
 }
-.features {
-	align-items: stretch;
-	position: relative;
-	&__primary {
-		position: relative;
-		margin-top: -100px;
-		z-index: 200;
-	}
-	&__secondary {
-		margin-top: 30px;
-		.feature {
-			@include media-breakpoint-up(lg) {
-				height: 300px;
-			}
-			a {
-				margin-top: 1rem;
-			}
-		}
-	}
-}
+
 
 .card-shadow {
 	-webkit-box-shadow: 0 0 28px 0 rgba(0,0,0,.3);
@@ -74,7 +55,6 @@
 		position: relative;
 		z-index: 2;
 		padding: 15px;
-		color: white;
 		position: relative;
 		display: flex;
     	flex-direction: column;
@@ -87,6 +67,68 @@
 		}
 		&__link {
 			align-self: flex-start;
+		}
+	}
+}
+
+.features {
+	align-items: stretch;
+	position: relative;
+	.content-card {
+		a {
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+			margin-bottom: 2rem;
+		}
+	}
+	&__primary {
+		color: white;
+		position: relative;
+		margin-top: -150px;
+		z-index: 200;
+		.content-card {
+			justify-content: space-between;
+		}
+	}
+	&__secondary {
+		margin-top: 30px;
+		.content-card {
+			justify-content: flex-end;
+		}
+		.content-wrapper {
+			position: relative;
+			background-size: cover;
+			justify-content: flex-end;
+			&:after {
+				background: rgba(255,255,255,.56);
+			}
+		}
+
+		.feature {
+			text-align: center;
+			color: map-get($theme-colors, text-color);
+			@include media-breakpoint-up(lg) {
+				height: 300px;
+			}
+			a {
+				align-self: center !important;
+			}
+		}
+	}
+	&__supporting {
+		margin-top: 4rem;
+		.content-card {
+			justify-content: flex-end;
+		}
+		.feature {
+			text-align: center;
+			color: white;
+			@include media-breakpoint-up(lg) {
+				height: 400px;
+			}
+			a {
+				align-self: center !important;
+			}
 		}
 	}
 }

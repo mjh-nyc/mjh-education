@@ -37,7 +37,7 @@ class FrontPage extends Controller
 	 */
 	public function featureSecondaryFeatures(){
 		$group_secondary_features = App::get_group_field('secondary_features');
-		if(!empty($group_secondary_features)  ){
+		if(!empty($group_secondary_features)){
 			$featureHash = array();
 			foreach($group_secondary_features as $key=>$secondary_feature){
 				if(!empty($secondary_feature->ID) ) {

@@ -25,3 +25,7 @@
         @include('partials.homepage-secondary-features')
     @endif
 @endsection
+
+@section('supporting-features')
+    @include('partials.homepage-supporting-features')
+@endsection
