@@ -23,6 +23,10 @@ function mjh_redirects_events() {
 				wp_redirect( $root_url.'/testimony-archives' );
 				exit;
 				break;
+			case'/artifacts/':
+				wp_redirect( $root_url.'/artifacts-archives' );
+				exit;
+				break;
 		}
 	}
 }

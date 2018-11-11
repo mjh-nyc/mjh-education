@@ -29,9 +29,6 @@
                     </div>
                 @endif
             @endif
-
-
-
         </div>
     </div>
     <div class="back-link">
