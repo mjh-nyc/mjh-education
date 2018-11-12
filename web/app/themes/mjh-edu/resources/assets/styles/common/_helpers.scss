@@ -37,6 +37,20 @@
   transition: $args;
 }
 
+@mixin word-break {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  /*-ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;*/
+
+}
+
 @mixin listReset() {
     ul {
         list-style: none;

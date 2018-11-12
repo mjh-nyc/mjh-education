@@ -31,6 +31,9 @@ import 'waypoints/lib/jquery.waypoints.min';
 import 'waypoints/lib/shortcuts/sticky.min';
 import 'waypoints/lib/shortcuts/inview.min';
 
+//Import Sticky-kit
+import 'sticky-kit/dist/sticky-kit.min';
+
 //Import slick
 //import 'slick-carousel/slick/slick';
 
