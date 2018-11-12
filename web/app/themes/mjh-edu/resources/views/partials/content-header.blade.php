@@ -7,6 +7,8 @@
         {{-- If timeline template, our header contains title, image and dropdown --}}
         @elseif(!empty($page_template) && $page_template=='timeline')
             @include('partials.content-header-timeline')
+        @elseif(!empty($post) && ($post->post_type == 'artifacts' || $post->post_type == 'testimony'))
+            {{-- no featured image for artifacts and testimony --}}
         @else
         {{-- Otherwise, print just the header image --}}
             <div class="col-12">
