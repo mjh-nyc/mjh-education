@@ -8,14 +8,15 @@ $default-font-size:	18;
 
 /* usage example: map-get($theme-colors, primary); */
 $theme-colors: (
-	primary: 		#2C4D53,
-	secondary:		#73479C,
-	background:		#E8EFF7,
-	neutral: 		#A5A4A6,
-	text-color:		#222222,
-	dark:			#141414,
-	link:			#2C4D53,
-	link-hover:		#033EFB
+	primary: 			#2C4D53,
+	secondary:			#73479C,
+	background:			#E8EFF7,
+	background-overlay:	#d9e1ea,
+	neutral: 			#A5A4A6,
+	text-color:			#222222,
+	dark:				#141414,
+	link:				#2C4D53,
+	link-hover:			#033EFB
 );
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;

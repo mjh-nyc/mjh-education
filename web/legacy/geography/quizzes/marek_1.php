@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Lvov was in Poland before WW II, today it is in the Ukraine.',
 				'Lvov was in south eastern Poland.',
-				'During the war, Lvov was passed back and forth between the German and Soviet armies.  Many of the Jews in Lvov spoke Yiddish, Polish, and German and had to learn Russian in order to get by.'
+				'During the war, Lvov was passed back and forth between the German and Soviet armies.  Many of the Jews in Lvov spoke Yiddish, Polish, and German and had to learn Russian in order to get by.<br><br><a class="next-question" href="'+$legacyURL+'?name=marek&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Unlike Rome, Alvito is not on the coast.',
 				'When Anna’s family left Rome, they traveled east and slightly to the south.',
-				'Four battles were fought in Monte Cassino during the war. During these battles Allied bombs destroyed the monastery in that town which was nearly 1,500 years old.'
+				'Four battles were fought in Monte Cassino during the war. During these battles Allied bombs destroyed the monastery in that town which was nearly 1,500 years old.<br><br><a class="next-question" href="'+$legacyURL+'?name=anna&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Try again. Plaszow is in Poland, near Krakow.',
 				'Try again. Plaszow can be found in southern Poland.',
-				'The Plaszow labor camp was built on the site of two Jewish cemeteries in a suburb of Krakow. <a href="/survivor-stories/ellis-story/geography/ellis-geography-question-4/" class="next-question">Next question</a>'
+				'The Plaszow labor camp was built on the site of two Jewish cemeteries in a suburb of Krakow. <br><br><a class="next-question" href="'+$legacyURL+'?name=meir&question=4">Next question</a>'
 			);
 			var qParams1 = {
 				mqID: 1,

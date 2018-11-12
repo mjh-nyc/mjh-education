@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Marseilles is in southern France.',
 				'Marseilles is on the Mediterranean Sea.',
-				'Marseilles is the third largest city in France. Much of the city was rebuilt after the war because it was bombed by both the Allied and Axis powers.'
+				'Marseilles is the third largest city in France. Much of the city was rebuilt after the war because it was bombed by both the Allied and Axis powers.<br><br><a class="next-question" href="'+$legacyURL+'?name=rachel&question=done">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

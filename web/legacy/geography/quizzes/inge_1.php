@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Kassel is located near the center of Germany, in the state of Hesse.',
 				'Inge had to move west of the Rhine to when she and her family relocated to Cologne.',
-				'Approximately 90% of Kassel was destroyed by bombing during the war.'
+				'Approximately 90% of Kassel was destroyed by bombing during the war.<br><br><a class="next-question" href="'+$legacyURL+'?name=inge&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

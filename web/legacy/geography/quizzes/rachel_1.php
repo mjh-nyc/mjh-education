@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Limanowa can be found in Poland.',
 				'Limanowa is in south central Poland, not far from Krakow.',
-				'The Nazis established a ghetto in Limanowa where half of the Jewish population of the town was murdered.'
+				'The Nazis established a ghetto in Limanowa where half of the Jewish population of the town was murdered.<br><br><a class="next-question" href="'+$legacyURL+'?name=rachel&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

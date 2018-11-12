@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Regensburg was located not far from the border with Czechoslovakia.',
 				'Regensburg is not close to any sea or ocean.',
-				'After liberation, the Jewish population in Europe was a fraction of what it had been before the war.'
+				'After liberation, the Jewish population in Europe was a fraction of what it had been before the war.<br><br><a class="next-question" href="'+$legacyURL+'?name=moshe&question=4">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

@@ -8,11 +8,15 @@
   "fonts/fontawesome-webfont.ttf?v=4.7.0": "fonts/fontawesome-webfont_b06871f2.ttf",
   "fonts/fontawesome-webfont.woff2?v=4.7.0": "fonts/fontawesome-webfont_af7ae505.woff2",
   "fonts/fontawesome-webfont.woff?v=4.7.0": "fonts/fontawesome-webfont_fee66e71.woff",
+  "images/angle-down-000.png": "images/angle-down-000_db5b6fc5.png",
+  "images/angle-down-fff.png": "images/angle-down-fff_083da65c.png",
   "images/angle-right-000.png": "images/angle-right-000_29635187.png",
   "images/angle-right-fff.png": "images/angle-right-fff_418f36e7.png",
   "images/geography_europe_map.png": "images/geography_europe_map_1aaeaafc.png",
+  "images/image-feature-placeholder.png": "images/image-feature-placeholder_05506eee.png",
+  "images/video-feature-placeholder.png": "images/video-feature-placeholder_2b87b0c4.png",
   "images/young-friends.png": "images/young-friends_14a96bdf.png",
-  "scripts/customizer.js": "scripts/customizer_5386031b.js",
-  "styles/main.css": "styles/main_5386031b.css",
-  "scripts/main.js": "scripts/main_5386031b.js"
+  "scripts/customizer.js": "scripts/customizer_60d8a6fa.js",
+  "styles/main.css": "styles/main_60d8a6fa.css",
+  "scripts/main.js": "scripts/main_60d8a6fa.js"
 }

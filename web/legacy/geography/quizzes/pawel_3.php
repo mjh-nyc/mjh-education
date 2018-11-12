@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'The municipality of Feldafing is located in southern Germany.',
 				'Feldafing is not far from Munich and Dachau.',
-				'Many survivors stayed in Displaced Persons camps for years after the war before they were able to find countries that would allow them to immigrate.'
+				'Many survivors stayed in Displaced Persons camps for years after the war before they were able to find countries that would allow them to immigrate.<br><br><a class="next-question" href="'+$legacyURL+'?name=pawel&question=4">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

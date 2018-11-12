@@ -1,5 +1,5 @@
 @if(!is_category())
-<div class="container hero" @if(!empty($page_template) && $page_template=='timeline') style="background: url('{{App::featuredImageSrc('header')}}') no-repeat"@endif>
+<div class="container hero @if(!empty($page_template) && $page_template=='timeline') timeline-header-wrapper @endif" @if(!empty($page_template) && $page_template=='timeline') style="background: url('{{App::featuredImageSrc('header')}}') no-repeat"@endif>
     <div class="row">
         {{-- If single lesson page, our header contains title, image and download buttons --}}
         @if(!empty($post) && $post->post_type == 'lessons')

@@ -6,11 +6,11 @@
             <div class="col-md-9">
                 <div class="non-grid posts-wrapper clearfix">
                     <div class="grid-item timeline size-3" >
-                        {{ __('World Events','sage')  }}
+                        <h4>{{ __('World Events','sage')  }}</h4>
                     </div>
                     @if($survivor_term)
                     <div class="grid-item timeline size-3" >
-                        {{ $survivor_term->name }}
+                        <h4>{{ $survivor_term->name }}</h4>
                     </div>
                     @endif
                     <div class="gutter-sizer"></div>
@@ -29,11 +29,12 @@
                                 @foreach($timeline['world-events'] as $post )
                                     <div class="timeline--item">
                                         <div class="timeline--date">
-                                            <span class="month">{{ get_field('timeline_month', $post['post_id']) }}</span>
-                                            <span class="day">{{ get_post_field('timeline_day', $post['post_id']) }}</span>
+                                            <h4>{{ get_post_field('post_title', $post['post_id']) }}</h4>
+                                            {{-- <span class="month">{{ get_field('timeline_month', $post['post_id']) }}</span>
+                                            <span class="day">{{ get_post_field('timeline_day', $post['post_id']) }}</span> --}}
                                         </div>
                                         <div class="timeline--excerpt">
-                                            <span class="small">{{ get_post_field('post_content', $post['post_id']) }}</span>
+                                            {{ get_post_field('post_content', $post['post_id']) }}
                                         </div>
                                         @if(!empty($post['related_items']))
                                         <div class="timeline--related-items">
@@ -56,11 +57,12 @@
                                 @foreach($timeline['survivor-stories'] as $post )
                                     <div class="timeline--item">
                                         <div class="timeline--date">
-                                            <span class="month">{{ get_field('timeline_month', $post['post_id']) }}</span>
-                                            <span class="day">{{ get_post_field('timeline_day', $post['post_id']) }}</span>
+                                            {{--<span class="month">{{ get_field('timeline_month', $post['post_id']) }}</span>
+                                            <span class="day">{{ get_post_field('timeline_day', $post['post_id']) }}</span> --}}
+                                            <h4>{{ get_post_field('post_title', $post['post_id']) }}</h4>
                                         </div>
                                         <div class="timeline--excerpt">
-                                            <span class="small">{{ get_post_field('post_content', $post['post_id']) }}</span>
+                                            {{ get_post_field('post_content', $post['post_id']) }}
                                         </div>
                                         @if($post['post_id'] == $selected_survivor_timeline_init_post_id && !empty($survivor_image))
                                             <div class="timeline--featured-image">

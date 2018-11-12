@@ -87,23 +87,6 @@ function users_validate_save_post() {
 add_action('acf/validate_save_post', 'users_validate_save_post', 10, 0);
 
 /**
- * Redirection of the default login page
- *
- * @hook init
- * @return null
- */
-function users_redirect_login_page() {
-	$login_page  = home_url('/login/');
-	$page_viewed = basename($_SERVER['REQUEST_URI']);
-
-	if($page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
-		wp_redirect($login_page);
-		exit;
-	}
-}
-add_action('init','users_redirect_login_page');
-
-/**
  * Redirection if login fails
  *
  * @hook wp_login_failed
@@ -117,22 +100,6 @@ function users_login_failed() {
 add_action('wp_login_failed', 'users_login_failed');
 
 /**
- * Redirection if login fields empty
- *
- * @hook authenticate
- * @return null
- */
-/* Where to go if any of the fields were empty */
-function users_verify_user_pass($user, $username, $password) {
-	$login_page  = home_url('/login/');
-	if($username == "" || $password == "") {
-		wp_redirect($login_page . "?login=empty");
-		exit;
-	}
-}
-add_filter('authenticate', 'users_verify_user_pass', 1, 3);
-
-/**
  * Redirection on logout
  *
  * @hook wp_logout
@@ -144,3 +111,14 @@ function users_logout_redirect() {
 	exit;
 }
 add_action('wp_logout','users_logout_redirect');
+
+/**
+ * User login form footer
+ *
+ * @hook wp_logout
+ * @return null
+ */
+function users_login_form_bottom() {
+	return '<div class="users-register"><a href="'.get_home_url().'/register">'.__("Register","sage").'</a></div>';
+}
+add_filter('login_form_bottom','users_login_form_bottom');

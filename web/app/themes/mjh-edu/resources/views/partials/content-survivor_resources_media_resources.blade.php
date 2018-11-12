@@ -1,5 +1,8 @@
 <header>
-    <h1 class="entry-title">{!! __('Resources Related To '.$survivor.'’s Story','sage') !!}</h1>
+    <div class="back-link">
+        &#8592; <a class="" href="/survivor-stories/{{ strtolower($survivor) }}">{!! _e("Back to ".$survivor."’s story ","sage") !!}</a>
+    </div>
+    <h1 class="entry-title">{!! get_the_title() !!}</h1>
 </header>
 <div class="entry-content">
     <div class="content">@php the_content() @endphp</div>

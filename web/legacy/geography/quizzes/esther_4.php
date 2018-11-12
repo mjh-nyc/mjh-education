@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'At different times during the war, Estonia was controlled both by the Nazis and the Russians.',
 				'Estonia is located south of Finland.',
-				'Estonia remained in the Soviet Union at the end of the war, regaining its independence in 1991.'
+				'Estonia remained in the Soviet Union at the end of the war, regaining its independence in 1991.<br><br><a class="next-question" href="'+$legacyURL+'?name=esther&question=5">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

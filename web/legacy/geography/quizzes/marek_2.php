@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Turin, (or Turino in Italian) is located in Italy.',
 				'Turin is located in the Piedmont region of Northern Italy.',
-				'Turin was bombed by the Allies because the factories in the town produced planes, tanks and cars for the Axis countries.'
+				'Turin was bombed by the Allies because the factories in the town produced planes, tanks and cars for the Axis countries.<br><br><a class="next-question" href="'+$legacyURL+'?name=marek&question=done">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

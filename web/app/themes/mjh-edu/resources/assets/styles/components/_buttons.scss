@@ -72,28 +72,56 @@
         content: "\f0ed";
     }
 }
+.cta-down-arrow {
+    &:before {
+        content: "\f107";
+    }
+}
 
 /* inputs can't have pseudo-classes 
 so we have to use background image to get the arrows to show up */
-%cta-input-arrow-white {
+%cta-input-icon {
     position: relative;
     background-repeat: no-repeat;
     background-size: 28px;
     background-position: 94% 42%;
-    background-image: url('../images/angle-right-fff.png');
+}
+%cta-input-arrow-white {
+    @extend %cta-input-icon;
+    background-image: url('~images/angle-right-fff.png');
 }
 %cta-input-arrow-black {
+    @extend %cta-input-icon;
+    background-image: url('~images/angle-right-000.png');
+}
+%cta-input-down-arrow-white {
     position: relative;
     background-repeat: no-repeat;
     background-size: 28px;
     background-position: 94% 42%;
-    background-image: url('../images/angle-right-000.png');
+    background-image: url('~images/angle-down-fff.png');
+}
+%cta-input-down-arrow-black {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: 94% 42%;
+    background-image: url('~images/angle-down-000.png');
 }
 
 .btn-lg, .btn-group-lg > .btn, .comment-form .btn-group-lg > input[type="submit"], .search-form .btn-group-lg > .search-submit {
     font-size: 1rem;
     @include media-breakpoint-up(md) {
         font-size: 1.25rem;
+    }
+}
+
+.search-submit {
+   @extend .cta;
+    @extend .cta-black;
+    @extend %cta-input-arrow-white;
+    &:hover {
+        @extend %cta-input-arrow-black;
     }
 }
 

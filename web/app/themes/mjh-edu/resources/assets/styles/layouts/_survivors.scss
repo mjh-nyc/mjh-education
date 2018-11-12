@@ -1,8 +1,10 @@
 /* stylelint-disable */
 
 
-/* Survivors listing page */
-.survivors-listing {
+/* Survivors, testimonies listing page */
+.survivors-listing,
+.testimonies-listing,
+.artifacts-listing {
 	@include listReset();
 	ul {
 		display: flex;
@@ -23,8 +25,25 @@
 			}
 		}
 	}
-	.survivor {
+	.survivor, 
+	.testimony,
+	.artifact {
 		text-align: center;
+		h4 {
+			margin-top: 1rem;
+		}
+	}
+}
+
+.testimonies-listing,
+.artifacts-listing {
+	ul li {
+		&:first-child,
+		&:nth-child(2) {
+			@include media-breakpoint-up(md) {
+				width:49%;
+			}
+		}
 	}
 }
 
