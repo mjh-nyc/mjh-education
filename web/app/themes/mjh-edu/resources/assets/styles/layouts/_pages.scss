@@ -136,3 +136,28 @@
 	}
 }
 
+.categories-listing {
+	@include media-breakpoint-up(xl) {
+		width: 60%;
+		margin: 0 auto;
+	}
+	.category {
+		margin-bottom: 1rem;
+		h4 {
+			display: inline;
+		}
+		.category__count {
+			display: inline-block;
+		    background: map-get($theme-colors, primary);
+		    border-radius: 16px;
+		    padding: 3px 11px 4px 11px;
+		    margin-top: -3px;
+		    position: relative;
+		    color: white;
+		    height: 30px;
+		    width: auto;
+		    text-align: center;
+		}
+	}
+}
+

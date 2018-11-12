@@ -41,6 +41,9 @@
 	label {
 		display: block;
 	}
+	p {
+		margin-bottom: 0.5rem;
+	}
 	input[type="text"],
 	input[type="password"] {
 		width: 100%;
@@ -155,3 +158,33 @@ textarea {
     }
 }
 
+.af-form {
+	@include media-breakpoint-up(md) {
+		width: 60%;
+		margin: 0 auto;
+	}
+	.af-field {
+		margin-bottom: 1rem;
+		input[type="text"] {
+			width:100%;
+		}
+		select {
+			@extend .form-control;
+		}
+	}
+	.af-submit {
+		padding: 0;
+		button {
+			border:none;
+			@extend .cta;
+			@extend .cta-black;
+			@extend %cta-input-arrow-white;
+			&:hover {
+				@extend %cta-input-arrow-black;
+			}
+		}
+	}
+	.af-success {
+		@extend h4;
+	}
+}

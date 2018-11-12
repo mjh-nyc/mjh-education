@@ -100,6 +100,12 @@ export default {
 			$( this ).addClass('animsition-link');
 		});*/
 
+		//wrap video embeds with elastic container to make them responsive
+		jQuery('.entry-content, .page-content')
+			.find( "iframe, object, embed" )
+			.wrap( "<div class='video-container'></div>" );
+
+
 	},
 	finalize() {
 		// JavaScript to be fired on all pages, after page specific JS is fired
