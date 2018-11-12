@@ -235,18 +235,23 @@ class App extends Controller
 	 */
 	public static function postExcerpt($id=false)
 	{
+
 		if (!$id){
 			$id = get_the_ID();
 		}
-		$excerpt = get_the_excerpt($id);
-		if ($excerpt) {
+		
+		if (has_excerpt($id)) {
+			$excerpt = get_the_excerpt($id);
 			$excerpt = App::truncateString($excerpt, 16);
-		}
-		//also if the title is too long, hide the description
-		if (strlen(get_the_title($id)) >30 && get_post_type($id)!='testimony') {
-			return false;
+		
+			//also if the title is too long, hide the description
+			if (strlen(get_the_title($id)) >30) {
+				return false;
+			} else {
+				return $excerpt;
+			}
 		} else {
-			return $excerpt;
+			return false;
 		}
 
 	}

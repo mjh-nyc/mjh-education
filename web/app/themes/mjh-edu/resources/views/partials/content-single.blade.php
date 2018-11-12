@@ -11,6 +11,9 @@
         {!! App::get_field('testimony_embed') !!}
       </div>
     @endif
+    @if(!empty($post) && $post->post_type == 'artifacts' && has_post_thumbnail())
+      {!! the_post_thumbnail('large') !!}
+    @endif
     <div class="entry-content-body">
       @php the_content() @endphp
     </div>

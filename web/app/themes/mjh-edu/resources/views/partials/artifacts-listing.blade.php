@@ -9,8 +9,8 @@
                     <li>
                         <div class="artifact">
                             <div class="artifact__image">
-                                {{-- get_the_permalink($artifact->ID) --}}
-                                <a href="{{ App::featuredImageSrc('large',$artifact->ID) }}" data-lity data-lity-desc="{{ $artifact->post_excerpt }}">
+                                {{-- App::featuredImageSrc('large',$artifact->ID) --}}
+                                <a href="{{ get_the_permalink($artifact->ID) }}">
                                     @if (has_post_thumbnail($artifact->ID))
                                         {!! get_the_post_thumbnail($artifact->ID, 'square@1x') !!}
                                     @else

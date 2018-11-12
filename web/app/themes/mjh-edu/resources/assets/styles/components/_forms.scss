@@ -122,9 +122,31 @@ textarea {
         	border-bottom: 4px solid map-get($theme-colors, background-overlay);
 	        td {
 	            padding:10px;
-	            &.acf-row-handle {
+	            &.acf-row-handle.order {
 	                display: none;
 	            }
+	            &.acf-row-handle.remove {
+	            	.-plus {
+	            		display: none;
+	            	}
+	            	.-minus {
+	            		position: relative;
+					    width: 100%;
+					    display: block;
+	            		&:after {
+	            			@include fa-inline-prep();
+	            			content: "\f014";
+					        position: absolute;
+					        left: 60%;
+					        top: 0;
+					        @include font-size(26);
+					       
+	            		}
+	            	}
+	            }
+	        }
+	        &.acf-clone {
+	           	display: none;
 	        }
 	    }
     }
