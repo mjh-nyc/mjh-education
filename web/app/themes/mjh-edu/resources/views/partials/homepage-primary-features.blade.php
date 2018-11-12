@@ -14,7 +14,7 @@
   </div>
   <div class="col-md-6 col-lg-3 feature">
     @if( !empty($feature_custom_feature))
-      @include('partials.content-card', ['item_id'=>$feature_custom_feature['ID'],'header'=>$feature_custom_feature['post_type_label']])
+      @include('partials.content-card', ['item_id'=>$feature_custom_feature['ID'],'header'=>App::get_group_field('features','custom_feature_label')])
     @endif    
   </div>
 </div>
