@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use WP_Query;
 
 class SingleSurvivor_resources extends Controller
 {
@@ -112,6 +113,29 @@ class SingleSurvivor_resources extends Controller
 			}
 		}
 		return false;
+	}
+
+	public static function getResourceBySurvivorResourceCategory($pParamHash){
+		$args = array(
+			'post_status' => 'publish',
+			'posts_per_page' => 1,
+			'post_type' => 'survivor_resources',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'survivors',
+					'field'    => 'term_id',
+					'terms'    => $pParamHash['survivors_term_id'],
+				),
+				array(
+				'taxonomy' => 'resource_category',
+				'field'    => 'term_id',
+				'terms'    => $pParamHash['resource_category_term_id'],
+				),
+			),
+			//'orderby' => 'menu_order',
+			//'order' => 'asc',
+		);
+		return new WP_Query($args);
 	}
 }
 

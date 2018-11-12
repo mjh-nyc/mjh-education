@@ -56,10 +56,8 @@ add_action( 'template_redirect', 'mjh_glossary_redirect_post' );
  * @return null
  */
 function mjh_redirects_survivor_taxonomy() {
-	$path = '';
 	if( !empty( $_SERVER['REDIRECT_URL'] ) ){
 		$path =  $_SERVER['REDIRECT_URL'];
-		$root_url = get_bloginfo('url');
 		$pathHash = explode("/", substr($path, 1));
 		$taxonomy = get_taxonomy( 'survivors' );
 		if(is_array($pathHash) && !empty($taxonomy->rewrite['slug']) && $pathHash[0]==$taxonomy->rewrite['slug']) {
@@ -81,6 +79,38 @@ function mjh_redirects_survivor_taxonomy() {
 	}
 }
 add_action('init', 'mjh_redirects_survivor_taxonomy',10, 0);
+
+/**
+ * Redirect survivor and resource type taxonomy to related survivor-resource post
+ *
+ * @hook init
+ * @return null
+ */
+function mjh_redirects_survivor_resources_category_taxonomy() {
+	if( !empty( $_SERVER['REDIRECT_URL'] ) ){
+		$path =  $_SERVER['REDIRECT_URL'];
+		$pathHash = explode("/", substr($path, 1));
+		if(is_array($pathHash) && $pathHash[0]=='survivor-resources') {
+			if(!empty($pathHash[1]) && !empty($pathHash[2]) ){
+				$termSlug = sanitize_title_for_query($pathHash[1]);
+				$termSurvivors = get_term_by( 'slug', $termSlug, 'survivors');
+				$termSlug = sanitize_title_for_query($pathHash[2]);
+				$termResourceCategory = get_term_by( 'slug', $termSlug, 'resource_category');
+				if(!empty($termSurvivors) && !empty($termResourceCategory)){
+					$pParamHash = array('resource_category_term_id' => $termResourceCategory->term_id ,'survivors_term_id' => $termSurvivors->term_id );
+					$survivor_resource = \App\Controllers\SingleSurvivor_resources::getResourceBySurvivorResourceCategory($pParamHash);
+					if($survivor_resource->post_count) {
+						$post = $survivor_resource->next_post();
+						wp_redirect(get_permalink($post->ID));
+						exit();
+					}
+				}
+			}
+
+		}
+	}
+}
+add_action('init', 'mjh_redirects_survivor_resources_category_taxonomy',10, 0);
 
 /**
  * Add query_var for timeline dropdown
