@@ -69,9 +69,47 @@ input[type="submit"] {
 		@extend %cta-input-arrow-black;
 	}
 }
+label {
+	@extend strong;
+	.acf-required {
+		color: red;
+	}
+	span {
+		font-weight: normal;
+	}
+}
 select {
 	/*-webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;*/
+}
+
+.users-register {
+	margin-top: 2rem;
+	.acf-field {
+		margin-bottom: 1rem;
+		@include listReset();
+		input[type="text"] {
+			width: 100%;
+		}
+		select {
+			@extend .form-control;
+		}
+
+		ul li {
+			display: inline-block;
+    		margin-right: 1rem;
+    		input {
+    			margin-right: 10px;
+    		}
+    		label {
+    			font-weight: normal;
+    		}
+		}
+	}
+	.acf-field-group {
+		padding: 10px 15px;
+		background-color: map-get($theme-colors, background-overlay);
+	}
 }
 
