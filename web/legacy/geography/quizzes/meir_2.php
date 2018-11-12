@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Lodz is located in Poland.',
 				'Lodz is in central Poland. Lodz was home to the second largest population of Jews in Poland before the war.',
-				'The Lodz ghetto was the second largest ghetto established by the Nazis.  People in the Lodz ghetto were forced to act as a massive slave labor force.  The economic value of the work they produced in the ghetto ensured that it was the last ghetto in Poland to be destroyed, in August 1944.'
+				'The Lodz ghetto was the second largest ghetto established by the Nazis.  People in the Lodz ghetto were forced to act as a massive slave labor force.  The economic value of the work they produced in the ghetto ensured that it was the last ghetto in Poland to be destroyed, in August 1944.<br><br><a class="next-question" href="'+$legacyURL+'?name=meir&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

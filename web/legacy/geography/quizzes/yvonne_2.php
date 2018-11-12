@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Toulouse is in southern France.',
 				'Toulouse can be found at the midpoint between the Atlantic Ocean and the Mediterranean Sea.',
-				'Jewish children were hidden in many different ways.  Some who could pass as “Aryans” pretended not to be Jewish.  Others were hidden in homes, attics, basements, farms, convents and other locations by people who were willing to put their lives at risk to protect them.'
+				'Jewish children were hidden in many different ways.  Some who could pass as “Aryans” pretended not to be Jewish.  Others were hidden in homes, attics, basements, farms, convents and other locations by people who were willing to put their lives at risk to protect them.<br><br><a class="next-question" href="'+$legacyURL+'?name=yvonne&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

@@ -1,11 +1,3 @@
-function openWin() {
-    geoWindow = window.open("", "geoWindow", "width=670, height=470");   // Opens a new window
-}
-
-function closeWin() {
-    geoWindow.close();   // Closes the new window
-}
-
 var MQS = {
 	
 	MQ_OBJECTS: [],	

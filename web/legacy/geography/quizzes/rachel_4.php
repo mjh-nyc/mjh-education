@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Krakow is in Poland.',
 				'Krakow is in south central Poland.',
-				'Before the war, Krakow was an exciting cosmopolitan city which was home to between to some 70,000 Jews.'
+				'Before the war, Krakow was an exciting cosmopolitan city which was home to between to some 70,000 Jews.<br><br><a class="next-question" href="'+$legacyURL+'?name=rachel&question=5">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

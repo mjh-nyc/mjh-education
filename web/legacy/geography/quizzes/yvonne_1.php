@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Paris is in northern France.',
 				'France borders Spain, Belgium, Luxembourg, Switzerland, and Italy.',
-				'From 1940 - 1942, France was divided in two.  The Occupied Zone in the north and west of France, was controlled by the Nazis.  The Free Zone in the south was run by Vichy France, a regime which collaborated with Nazi Germany, until it was occupied by Germany and Italy, in November 1942.'
+				'From 1940 - 1942, France was divided in two.  The Occupied Zone in the north and west of France, was controlled by the Nazis.  The Free Zone in the south was run by Vichy France, a regime which collaborated with Nazi Germany, until it was occupied by Germany and Italy, in November 1942.<br><br><a class="next-question" href="'+$legacyURL+'?name=yvonne&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

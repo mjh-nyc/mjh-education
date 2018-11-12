@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Rome is located near the coast of Italy.',
 				'Rome is about halfway down the Italian “boot.”',
-				'Rome is home to one of the oldest Jewish communities in the world.  Jews have been living in Rome since the era of the Roman Empire.'
+				'Rome is home to one of the oldest Jewish communities in the world.  Jews have been living in Rome since the era of the Roman Empire.<br><br><a class="next-question" href="'+$legacyURL+'?name=anna&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

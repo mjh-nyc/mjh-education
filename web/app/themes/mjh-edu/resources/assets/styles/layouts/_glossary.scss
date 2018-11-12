@@ -1,0 +1,50 @@
+/* stylelint-disable */
+
+.template-glossary-listing {
+	.glossary {
+		&__header {
+		}
+		&__nav {
+			list-style: none;
+			margin: 0 0 2rem 0;
+			padding:0;
+			li {
+				display: inline-block;
+				padding-right: 7px;
+			}
+		}
+
+		&__link {
+			&--inactive {
+				color: map-get($theme-colors, neutral);
+			}
+		}
+		&__lists {
+
+		}
+		&__lists-items-header {
+
+			display: flex;
+			justify-content: space-between;
+			border-top: 1px solid map-get($theme-colors, neutral);
+			border-bottom: 1px solid map-get($theme-colors, neutral);
+			padding-bottom: 1rem;
+			padding-top: 1rem;
+			margin-bottom: 1rem;
+			
+			h4 {
+				margin: 0;
+				/*offset the anchor links to account for fixed header */
+				&:target:before {
+					content:"";
+					display:block;
+					height:90px; /* fixed header height*/
+					margin:-90px 0 0; /* negative fixed header height */
+				}
+			}
+		}
+		&__lists-item {
+			margin-bottom: 1rem;
+		}
+	}
+}

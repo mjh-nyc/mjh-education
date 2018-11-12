@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Drujsk was in Poland.',
 				'Drujsk was in north eastern Poland.',
-				'Before the war, Poland was home to the largest population of Jews in Europe.'
+				'Before the war, Poland was home to the largest population of Jews in Europe.<br><br><a class="next-question" href="'+$legacyURL+'?name=esther&question=2">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

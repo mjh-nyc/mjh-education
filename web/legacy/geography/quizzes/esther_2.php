@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Warsaw is the capital of Poland.',
 				'Warsaw is located on the Vistula River.',
-				'Before WW II, Warsaw was the largest Jewish community in Europe, with over 350,000 Jews, 1/3 of the city’s total population. During the war, 80% of Warsaw was destroyed.  After the war it was rebuilt and is a thriving city once again.'
+				'Before WW II, Warsaw was the largest Jewish community in Europe, with over 350,000 Jews, 1/3 of the city’s total population. During the war, 80% of Warsaw was destroyed.  After the war it was rebuilt and is a thriving city once again.<br><br><a class="next-question" href="'+$legacyURL+'?name=esther&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

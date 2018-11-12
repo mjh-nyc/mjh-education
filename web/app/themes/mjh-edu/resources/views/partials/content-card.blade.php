@@ -7,7 +7,7 @@
 			{{ $header }}
 			@endif
 		</p>
-		<h3 class="content-card__title">{!! App::truncateString(get_the_title($item_id)) !!}</h3>
+		<h3 class="content-card__title">{!! App::truncateString(get_the_title($item_id), 20) !!}</h3>
 		<p>{!! App::postExcerpt($item_id) !!}</p>
 		<a href="{!! get_the_permalink($item_id); !!}" class="cta cta-white cta-icon cta-arrow animsition-link content-card__link">
 			{{ __('View', 'sage') }}

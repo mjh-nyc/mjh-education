@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Auschwitz (Oswiecim in Polish) is located in Poland.',
 				'Auschwitz is in south central Poland.',
-				'In Auschwitz-Birkenau, 1.3 million people were killed, 90% of whom were Jews.'
+				'In Auschwitz-Birkenau, 1.3 million people were killed, 90% of whom were Jews.<br><br><a class="next-question" href="'+$legacyURL+'?name=yvonne&question=4">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {

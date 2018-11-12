@@ -1,0 +1,117 @@
+/* stylelint-disable */
+.timeline-header-wrapper {
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    .timeline-header {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: white;
+        h1 {
+            margin: 0;
+            color: white;
+        }
+        select.survivor-select {
+            webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: auto;
+            border:none;
+            @extend .cta;
+            @extend .cta-white;
+            @extend %cta-input-down-arrow-black;
+            &:hover {
+                @extend %cta-input-icon;
+                @extend %cta-input-down-arrow-white;
+            }
+        }
+    }
+    /* overlay color */
+    &:after {
+        @extend %overlay;
+    }
+}
+
+/*** TIMELINE */
+.year-section {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 4rem;
+
+    .year-wrapper {
+        @extend .col-md-3;
+    }
+    h3 {
+        position:relative;
+        z-index: 10;
+        line-height: 3.5rem;
+        font-size: 450%;
+
+        &.fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 0;
+            &.absolute {
+                position: absolute;
+            }
+        }
+    }
+    .grid, .non-grid {
+        padding-right:0;
+        padding-left:0;
+        .grid-item {
+            &:nth-child(3) {
+                padding-top:0 !important;
+            }
+        }
+    }
+}
+
+/* GENERAL Grid */
+.grid, .non-grid {
+    /*empty div responsible for setting gutter widths*/
+    .gutter-sizer {
+        width:3.36322%;
+        @include media-breakpoint-up(lg) {
+            width:0
+        }
+    }
+    .grid-item {
+        float: left;
+        width: 100%;
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+        }
+        margin-bottom: 3.36322%;
+       
+        padding-left:0;
+        padding-right:0;
+        border-left:none;
+        
+        
+        @include media-breakpoint-up(lg) {
+            border-left-width: 1px;
+            border-left-style: solid;
+            padding-right:15px;
+            padding-left:15px;
+            
+        }
+        .timeline--item {
+            margin-bottom: 1rem;
+            h4 {
+                @include word-break;
+            }
+            a {
+                display:inline-block;
+            }
+        }
+        &.timeline--survivor-stories {
+            background-color: map-get($theme-colors, background);
+            padding-top: 10px;
+        }
+    }
+}

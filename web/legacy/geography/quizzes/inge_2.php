@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var qParams1Messages = new Array(
 				'Czechoslovakia (which is now two countries, the Czech Republic and Slovakia) shares its western border with Germany.',
 				'Inge and her family were transported across Germany, to north eastern Czechoslovakia.',
-				'Terezin was a fortress and a walled town built by the Hapsburgs in the late 1700s.  The ghetto was established in the fortress and the town.'
+				'Terezin was a fortress and a walled town built by the Hapsburgs in the late 1700s.  The ghetto was established in the fortress and the town.<br><br><a class="next-question" href="'+$legacyURL+'?name=inge&question=3">Next question</a>'
 			);
 			var qParamsNextLink = '';
 			var qParams1 = {
