@@ -116,10 +116,20 @@ textarea {
 		background-color: map-get($theme-colors, background-overlay);
 	}
 	.acf-table {
-		width: 100%;
-		.acf-row-handle {
-			min-width: 20px;
-		}
-	}
+        width: 100%;
+        background-color: #c1cad4;
+        tr {
+        	border-bottom: 4px solid map-get($theme-colors, background-overlay);
+	        td {
+	            padding:10px;
+	            &.acf-row-handle {
+	                display: none;
+	            }
+	        }
+	    }
+    }
+    .group_non_educator_college {
+    	background-color: #c1cad4;
+    }
 }
 
