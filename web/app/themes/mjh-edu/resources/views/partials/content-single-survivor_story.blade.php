@@ -18,7 +18,7 @@
   <div class="entry-content">
      @include('partials.entry-taxonomy-categories')
     <h2>{{ get_the_title() }}</h2>
-    {!! \App\Controllers\TemplateGlossaryListing::cmttGlossaryParse($post->post_content) !!}
+    {!! \App\Controllers\TemplateGlossaryListing::cmttGlossaryParse(apply_filters('the_content',get_the_content())) !!}
   </div>
   <footer>
     @include('partials/content-survivor-story-chapter-navigation')
