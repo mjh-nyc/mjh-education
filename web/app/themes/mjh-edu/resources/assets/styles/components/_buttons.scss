@@ -80,18 +80,19 @@
 
 /* inputs can't have pseudo-classes 
 so we have to use background image to get the arrows to show up */
-%cta-input-icon {
+
+%cta-input-arrow-white {
     position: relative;
     background-repeat: no-repeat;
     background-size: 28px;
     background-position: 94% 42%;
-}
-%cta-input-arrow-white {
-    @extend %cta-input-icon;
     background-image: url('~images/angle-right-fff.png');
 }
 %cta-input-arrow-black {
-    @extend %cta-input-icon;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: 94% 42%;
     background-image: url('~images/angle-right-000.png');
 }
 %cta-input-down-arrow-white {

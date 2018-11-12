@@ -23,7 +23,6 @@
             @extend .cta-white;
             @extend %cta-input-down-arrow-black;
             &:hover {
-                @extend %cta-input-icon;
                 @extend %cta-input-down-arrow-white;
             }
         }
