@@ -144,6 +144,7 @@ strong i, bold i, strong em, bold em {
 }
 
 .share {
+  padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
   border-bottom: 1px solid map-get($theme-colors, neutral);

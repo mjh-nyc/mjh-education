@@ -153,3 +153,6 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+//Add support for excerpt in pages
+add_post_type_support( 'page', 'excerpt' );
