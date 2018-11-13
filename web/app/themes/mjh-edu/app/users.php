@@ -171,6 +171,8 @@ function users_acf_load_field_username( $field )
 {
 	if(is_user_logged_in() ) {
 		$field['readonly'] = true;
+	} else {
+		$field['readonly'] = false;
 	}
 	return $field;
 }
@@ -200,13 +202,13 @@ function users_validate_save_post() {
 		// User Email
 		if (!empty($_POST['acf']['field_5bda42a5b3269'])) {
 			if (email_exists($_POST['acf']['field_5bda42a5b3269'])) {
-				acf_add_validation_error('acf[field_5bda42a5b3269]', __('This Email Address is already registered with us, try again', 'sage'));
+				acf_add_validation_error('acf[field_5bda42a5b3269]', __('This email address is already registered, try again.', 'sage'));
 			}
 		}
 		// User Login
 		if (!empty($_POST['acf']['field_5bdb7385658db'])) {
 			if (username_exists($_POST['acf']['field_5bdb7385658db'])) {
-				acf_add_validation_error('acf[field_5bdb7385658db]', __('This User Name is already registered with us, try again', 'sage'));
+				acf_add_validation_error('acf[field_5bdb7385658db]', __('This username is already registered, please try a different username.', 'sage'));
 			}
 		}
 	}
