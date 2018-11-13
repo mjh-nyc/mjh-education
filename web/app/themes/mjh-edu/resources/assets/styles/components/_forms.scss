@@ -103,7 +103,8 @@ textarea {
 	.acf-field {
 		margin-bottom: 1rem;
 		@include listReset();
-		input[type="text"] {
+		input[type="text"],
+		input[type="password"] {
 			width: 100%;
 		}
 		select {
@@ -119,6 +120,16 @@ textarea {
     		label {
     			font-weight: normal;
     		}
+		}
+		.acf-error-message {
+			p {
+				margin: 0;
+				color: red;
+			}
+		}
+		input[readonly="readonly"] {
+			@extend em;
+			opacity: 0.5;
 		}
 	}
 	.acf-field-group {
