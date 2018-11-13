@@ -109,7 +109,7 @@ strong i, bold i, strong em, bold em {
 .wrap {
   margin-top: 3rem;
   @include media-breakpoint-up(md) {
-    width:66.66%;
+    width:720px;
     margin-right: auto;
     margin-left: auto;
   }

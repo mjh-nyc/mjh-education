@@ -52,10 +52,10 @@
 /* SINGLE EVENT */
 .event-info {
 	@include listReset();
-	padding: 1rem;
-    background: map-get($theme-colors, background);
+	/*padding: 1rem;
+    background: map-get($theme-colors, background);*/
     .buy-tix {
-    	margin-top: 2rem;
+    	margin: 2rem 0;
     }
 }
 .calendar-options > div {
