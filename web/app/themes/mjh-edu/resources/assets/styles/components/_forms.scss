@@ -33,7 +33,8 @@
 /* custom forms */
 
 #loginform,
-.users-register {
+.users-register,
+.users-edit {
 	padding: 1rem;
     background: map-get($theme-colors, background);
 }
@@ -91,7 +92,13 @@ textarea {
 	width: 100%;
 }
 
-.users-register {
+#event-listing-form {
+	select {
+		@extend .form-control;
+	}
+}
+.users-register,
+.users-edit {
 	margin-top: 2rem;
 	.acf-field {
 		margin-bottom: 1rem;

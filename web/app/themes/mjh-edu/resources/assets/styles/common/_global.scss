@@ -36,6 +36,7 @@ h3 {
 h1 {
     text-transform: capitalize;
     @include font-size(32);
+    margin-bottom: 3rem;
     @include media-breakpoint-up(sm) {
         @include font-size(40);
     }
@@ -108,7 +109,7 @@ strong i, bold i, strong em, bold em {
 .wrap {
   margin-top: 3rem;
   @include media-breakpoint-up(md) {
-    width:66.66%;
+    width:720px;
     margin-right: auto;
     margin-left: auto;
   }

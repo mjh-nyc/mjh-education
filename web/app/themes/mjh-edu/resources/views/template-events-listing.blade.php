@@ -22,19 +22,26 @@
       </form>
     </div>
 
-  @if( $events )
-    <div class="event-listing-wrapper">
-      @foreach ($events as $event)
-        <article @php(post_class())>
-          @include('partials.content-event-card', ['item_id'=>$event->ID])
-        </article>
-      @endforeach
-    </div>
- @else
+    @if( $events )
+      <div class="event-listing-wrapper">
+        @foreach ($events as $event)
+          <article @php(post_class())>
+            @include('partials.content-event-card', ['item_id'=>$event->ID])
+          </article>
+        @endforeach
+
+        @if ($get_max_num_pages)
+          @include('partials.pagination',['max_num_pages'=>$get_max_num_pages])
+        @endif
+
+      </div>
+   @else
     <div style="margin: 4rem 0;">
       <div class="alert alert-warning">{!! __("There are no events to display","sage") !!} </div>
       {!! get_search_form(false) !!}
     </div>
+    
+
   @endif
 
   @endwhile

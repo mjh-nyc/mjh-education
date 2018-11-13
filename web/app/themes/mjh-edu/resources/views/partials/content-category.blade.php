@@ -1,7 +1,7 @@
 @foreach($category_posts->posts as $category_post)
     @php $current_start_count++ @endphp
     <article @php post_class() @endphp>
-      <div class="post--count">{{$current_start_count}}</div>
+      {{-- <div class="post--count">{{$current_start_count}}</div> --}}
       <div class="post--content">
         <header>
           <h2 class="entry-title">

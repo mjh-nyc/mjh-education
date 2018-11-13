@@ -94,7 +94,7 @@
       @if (App::get_field('event_ticket_url') && !$status)
         <div class="col-12">
           <div class="buy-tix item">
-            <a href="{!! App::get_field('event_ticket_url') !!}" target="_blank" class="cta cta-white cta-icon cta-arrow">{!! App::get_field('event_ticket_button_label') !!}</a>
+            <a href="{!! App::get_field('event_ticket_url') !!}" target="_blank" class="cta cta-black cta-icon cta-arrow">{!! App::get_field('event_ticket_button_label') !!}</a>
           </div>
         </div>
       @endif

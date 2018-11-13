@@ -14,7 +14,7 @@ class TemplateArtifactsListing extends Controller
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
         $args = array( 
             'post_type' => 'artifacts',
-            'posts_per_page' => 9,
+            'posts_per_page' => 11,
             'post_status' => 'publish',
             'orderby' => 'post_date',
             'order' => 'DESC',

@@ -5,7 +5,7 @@
 	    	<img src="{{App::featuredImageSrc('square@1x',$item_id)}}" alt="{{ App::featuredImageAlt($item_id) }}">
 	    </div>
 	@endif
-    <h4 class="slide-card__title">{{ get_the_title($item_id) }}</h4>
+    <h4 class="slide-card__title">{!! get_the_title($item_id) !!}</h4>
     <div class="slide-card__details">
         <a class="cta cta-white cta-icon cta-arrow animsition-link" href="{!! get_the_permalink($item_id); !!}">{{ __('Get this lesson', 'sage') }}</a>
     </div>

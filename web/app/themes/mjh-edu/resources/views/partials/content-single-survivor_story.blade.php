@@ -17,7 +17,7 @@
   </header>
   <div class="entry-content">
      @include('partials.entry-taxonomy-categories')
-   <h2>{{ get_the_title() }}</h2>
+   <h2>{!! get_the_title() !!}</h2>
     {!! \App\Controllers\TemplateGlossaryListing::cmttGlossaryParse(apply_filters('the_content',get_the_content())) !!}
   </div>
   <footer>
