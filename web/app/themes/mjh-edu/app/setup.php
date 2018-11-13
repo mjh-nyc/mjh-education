@@ -83,12 +83,6 @@ add_action('after_setup_theme', function () {
     add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
 
     /**
-     * Add google analytics support
-     * @link https://discourse.roots.io/t/google-analytics-via-soil-ga-code-not-appearing-anywhere/12982
-     */
-    add_theme_support('soil-google-analytics', 'UA-29738632-5');
-
-    /**
      * Enable selective refresh for widgets in customizer
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
