@@ -19,6 +19,12 @@
 				display: block;
 			}
 		}
+        .account-links {
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: inline;
+            }
+        }
 		.logo {
 			@include media-breakpoint-up(md) {
 				text-align: center;
@@ -40,14 +46,22 @@
 		}
 		.navigation {
 			text-align: right;
-			.search {
-				@include font-size(30);
+            .account-link {
+				@include font-size(24);
+                span {
+                    @include font-size(18);
+                }
 				display: inline-block;
 				margin-right: 15px;
+                vertical-align: top;
+                color: map-get($theme-colors, text-color);
 				@include transition(all $hamburger-hover-transition-duration ease);
 				&:hover {
 					transform: scale($hamburger-hover-scale);
 				}
+                &.nav-active {
+                    color: white;
+                }
 			}
 		}
 	}
@@ -163,8 +177,9 @@
     z-index: 2000;
 
     .top-row {
-    	.social-channels a {
-    		color: white;
+    	.social-channels a,
+        .account-links a {
+    		color: white !important;
     	}
     	.logo svg .a {
     		fill: white;
@@ -202,7 +217,8 @@
             margin-top: 150px;
         }
     }
-    .social-channels {
+    .social-channels,
+    .account-links {
 		display: block;
 		@include media-breakpoint-up(md) {
 			display: none;
@@ -379,5 +395,11 @@
             	}
             }
         }
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include font-size(20);
     }
 }

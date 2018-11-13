@@ -36,7 +36,7 @@
                                         <div class="timeline--excerpt">
                                             {{ get_post_field('post_content', $post['post_id']) }}
                                         </div>
-                                        @if(!empty($post['related_items']))
+                                        {{-- @if(!empty($post['related_items']))
                                         <div class="timeline--related-items">
                                             <!-- RELATED ITEMS HERE -->
                                             <ul class="listing">
@@ -47,7 +47,7 @@
                                                 @endforeach
                                             </ul>
                                         </div>
-                                        @endif
+                                        @endif --}}
                                     </div>
                                 @endforeach
                             @endif
