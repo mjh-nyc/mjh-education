@@ -29,3 +29,7 @@
     @endif
     
 </div>
+
+@if ($get_max_num_pages)
+    @include('partials.pagination',['max_num_pages'=>$get_max_num_pages])
+@endif
