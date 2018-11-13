@@ -1,4 +1,4 @@
-@if(!is_category())
+@if(!is_category() && !is_archive() && !is_search() && !is_404())
 <div class="container hero @if(!empty($page_template) && $page_template=='timeline') timeline-header-wrapper @endif" @if(!empty($page_template) && $page_template=='timeline') style="background: url('{{App::featuredImageSrc('header')}}') no-repeat"@endif>
     <div class="row">
         {{-- If single lesson page, our header contains title, image and download buttons --}}
