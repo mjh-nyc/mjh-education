@@ -204,3 +204,58 @@ $size:20px;
         }
     }
 }
+
+
+/* My Account Tabs */
+
+.nav.nav-pills {
+    border-bottom: 1px solid map-get($theme-colors, primary);
+    .nav-link {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        text-decoration: none;
+    }
+}
+/*.tabs{
+    @extend .card-shadow;
+    padding:0px;
+    list-style:none;
+    background:#fff;
+    display:inline-block;
+    border-radius:50px;
+    position:relative;
+    a {
+        text-decoration:none;
+        color: map-get($theme-colors, text-color);
+        text-transform:uppercase;
+        padding:10px 20px;
+        display:inline-block;
+        position:relative;
+        z-index:1;
+        transition-duration:0.6s;
+        
+        &.active{
+            color:#fff;
+        }
+
+        i {
+            margin-right:5px;
+        }
+    }
+
+    .selector{
+        height:100%;
+        display:inline-block;
+        position:absolute;
+        left:0px;
+        top:0px;
+        z-index:1;
+        border-radius:50px;
+        transition-duration:0.6s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        background: map-get($theme-colors, secondary);
+    }
+}*/
+
+

@@ -52,6 +52,7 @@ import templateSurvivorsListing from './routes/templateSurvivorsListing';
 import templateTimelineListing from './routes/templateTimelineListing';
 import singleSurvivorStory from './routes/singleSurvivorStory';
 import templateEventsListing from './routes/templateEventsListing';
+import templateProfile from './routes/templateProfile';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -62,13 +63,15 @@ const routes = new Router({
   // About Us page, note the change from about-us to aboutUs.
   aboutUs,
   // Survivor listing template
-    templateSurvivorsListing,
+  templateSurvivorsListing,
   // Survivor listing template
-    templateTimelineListing,
+  templateTimelineListing,
   // Survivor story detail template
-    singleSurvivorStory,
-    // Events listing template
-    templateEventsListing,
+  singleSurvivorStory,
+  // Events listing template
+  templateEventsListing,
+  //User profile
+  templateProfile,
 });
 
 // Load Events

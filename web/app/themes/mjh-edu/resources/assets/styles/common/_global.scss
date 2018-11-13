@@ -36,6 +36,7 @@ h3 {
 h1 {
     text-transform: capitalize;
     @include font-size(32);
+    margin-bottom: 3rem;
     @include media-breakpoint-up(sm) {
         @include font-size(40);
     }
