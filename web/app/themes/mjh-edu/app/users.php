@@ -171,8 +171,8 @@ function users_acf_load_field_username( $field )
 {
 	if(is_user_logged_in() ) {
 		$field['readonly'] = true;
-		return $field;
 	}
+	return $field;
 }
 add_filter('acf/load_field/key=field_5bdb7385658db', 'users_acf_load_field_username', 10, 3);
 
