@@ -37,6 +37,15 @@ class Category extends Controller
 	}
 
 	/**
+	 * Get taxonomy information
+	 *
+	 * @return int
+	 */
+	public function catgoryTaxonomy(){
+		return get_taxonomy( 'category' );
+	}
+
+	/**
 	 * Static function to get post per page
 	 *
 	 * @return int

@@ -7,7 +7,7 @@
                     <div class="category__name">
                         <span class="category__count">{!! $category->count!!}</span>
                         <h4>
-                            <a class="category__link" href="{!! get_home_url() !!}/category/{{$category->slug}}">
+                            <a class="category__link" href="{!! get_home_url() !!}/{!! $category_taxonomy->rewrite['slug'] !!}/{{$category->slug}}">
                                 {{$category->name}}
                             </a>
                         </h4>

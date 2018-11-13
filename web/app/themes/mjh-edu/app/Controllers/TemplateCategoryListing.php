@@ -29,4 +29,13 @@ class TemplateCategoryListing extends Controller
 			return array();
 		}
 	}
+
+	/**
+	 * Get taxonomy information
+	 *
+	 * @return int
+	 */
+	public function categoryTaxonomy(){
+		return get_taxonomy( 'category' );
+	}
 }
