@@ -12,7 +12,9 @@
 						</a>
 					</div>
 					<div class="col-3 navigation">
-						<!--<a href="#" class="search"><i class="fa fa-search" aria-hidden="true"><span class="sr-only">@php _e("Search","sage"); @endphp</span></i></a>-->
+            <div class="account-links">
+              {!! App::get_account_links() !!}
+            </div>
 						<div class="hamburger hamburger--spin">
 							<div class="hamburger-box">
 								<div class="hamburger-inner"></div>
@@ -53,9 +55,14 @@
             {!! wp_nav_menu(['theme_location' => 'primary_navigation']) !!}
           @endif
         </nav>
-        <div class="social-channels">
-          {!! App::get_social() !!}
-        </div>
+        <footer>
+          <div class="social-channels">
+            {!! App::get_social() !!}     
+          </div>
+          <div class="account-links">
+            {!! App::get_account_links() !!}
+          </div>
+
       </div>
     </div>
   </div>

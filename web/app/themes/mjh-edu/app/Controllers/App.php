@@ -591,6 +591,16 @@ class App extends Controller
 		) );
 	}
 
+	/**
+     * Return account links
+     *
+     * @return varchar
+     */
+    public static function get_account_links()
+    {
+    	$account_links='<a href="/my-account/" class="account-link animsition-link"><i class="fa fa-user-circle-o" aria-hidden="true"><span class="sr-only">{{ __("My Account / Log in","sage") }}</span></i></a>';
+    	return $account_links;
+    }
 
     /**
      * Get social channels, these come from the ACF options page under Settings-->Theme Options
