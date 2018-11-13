@@ -92,6 +92,11 @@ textarea {
 	width: 100%;
 }
 
+#event-listing-form {
+	select {
+		@extend .form-control;
+	}
+}
 .users-register,
 .users-edit {
 	margin-top: 2rem;

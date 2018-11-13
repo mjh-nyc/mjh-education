@@ -22,19 +22,24 @@
       </form>
     </div>
 
-  @if( $events )
-    <div class="event-listing-wrapper">
-      @foreach ($events as $event)
-        <article @php(post_class())>
-          @include('partials.content-event-card', ['item_id'=>$event->ID])
-        </article>
-      @endforeach
-    </div>
- @else
+    @if( $events )
+      <div class="event-listing-wrapper">
+        @foreach ($events as $event)
+          <article @php(post_class())>
+            @include('partials.content-event-card', ['item_id'=>$event->ID])
+          </article>
+        @endforeach
+
+        {!! App::get_posts_nav() !!}
+        
+      </div>
+   @else
     <div style="margin: 4rem 0;">
       <div class="alert alert-warning">{!! __("There are no events to display","sage") !!} </div>
       {!! get_search_form(false) !!}
     </div>
+    
+
   @endif
 
   @endwhile
