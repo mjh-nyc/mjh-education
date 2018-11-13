@@ -15,6 +15,10 @@ function mjh_redirects_events() {
 		$root_url = get_bloginfo('url');
 
 		switch($path){
+			case'/lessons/':
+				wp_redirect( $root_url.'/lesson-plans' );
+				exit;
+				break;
 			case'/events/':
 				wp_redirect( $root_url.'/current-events' );
 				exit;

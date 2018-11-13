@@ -1,4 +1,4 @@
-@if (!empty($themes))
+@if (!empty($themes) && !is_category() && !is_archive() && !is_search() && !is_404())
 <div class="post-categories">
 	<h4>{{ __('Related Content', 'sage') }}</h4>
 	<ul>
