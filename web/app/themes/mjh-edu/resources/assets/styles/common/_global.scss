@@ -105,6 +105,32 @@ strong i, bold i, strong em, bold em {
   @include bentonBdIt();
 }
 
+
+blockquote {
+  @extend strong;
+  display: block;
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: map-get($theme-colors, background);
+  padding: 2em 1.5rem 0;
+  margin: 1.5em 0;
+  position: relative;
+  &:before {
+    @include font-size(60);
+    content: '\201C';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 3rem;
+    height: 2rem;
+    color: map-get($theme-colors, background);
+    text-align: center;
+    font-family: serif;
+  }
+}
+
 /* force content into 8 columns on all secondary pages */
 .wrap {
   margin-top: 3rem;

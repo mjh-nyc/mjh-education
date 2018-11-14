@@ -171,6 +171,8 @@ function users_acf_load_field_username( $field )
 {
 	if(is_user_logged_in() ) {
 		$field['readonly'] = true;
+	} else {
+		$field['readonly'] = false;
 	}
 	return $field;
 }
@@ -200,13 +202,13 @@ function users_validate_save_post() {
 		// User Email
 		if (!empty($_POST['acf']['field_5bda42a5b3269'])) {
 			if (email_exists($_POST['acf']['field_5bda42a5b3269'])) {
-				acf_add_validation_error('acf[field_5bda42a5b3269]', __('This Email Address is already registered with us, try again', 'sage'));
+				acf_add_validation_error('acf[field_5bda42a5b3269]', __('This email address is already registered, try a different email address or log in!', 'sage'));
 			}
 		}
 		// User Login
 		if (!empty($_POST['acf']['field_5bdb7385658db'])) {
 			if (username_exists($_POST['acf']['field_5bdb7385658db'])) {
-				acf_add_validation_error('acf[field_5bdb7385658db]', __('This User Name is already registered with us, try again', 'sage'));
+				acf_add_validation_error('acf[field_5bdb7385658db]', __('This username is already registered, please select a different username.', 'sage'));
 			}
 		}
 	}
@@ -226,7 +228,7 @@ function users_validate_edit_profile_save_post() {
 		// User Email Change
 		if (!empty($_POST['acf']['field_5bda42a5b3269']) && ( $_POST['acf']['field_5bda42a5b3269'] != $user->user_email )) {
 			if (email_exists($_POST['acf']['field_5bda42a5b3269'])) {
-				acf_add_validation_error('acf[field_5bda42a5b3269]', __('This Email Address is already registered with us, try again', 'sage'));
+				acf_add_validation_error('acf[field_5bda42a5b3269]', __('This email address is already registered, try a different one or log in!', 'sage'));
 			}
 		}
 		//Password Change
@@ -234,13 +236,13 @@ function users_validate_edit_profile_save_post() {
 			if (!empty($_POST['acf']['field_5bea24624ccf8']) && !empty($_POST['acf']['field_5bea1c105b2f5']) && !empty($_POST['acf']['field_5bea1c37a09d5'])) {
 				if ( wp_check_password( $_POST['acf']['field_5bea24624ccf8'], $user->data->user_pass, $user->ID) ){
 					if($_POST['acf']['field_5bea1c105b2f5'] != $_POST['acf']['field_5bea1c37a09d5'] ){
-						acf_add_validation_error( 'acf[field_5bea1c105b2f5]', __('New and confirm password does not match, try again','sage') );
+						acf_add_validation_error( 'acf[field_5bea1c105b2f5]', __('Password confirmation failed, try again.','sage') );
 					}
 				}else{
-					acf_add_validation_error( 'acf[field_5bea24624ccf8]', __('Current password does not match, try again','sage') );
+					acf_add_validation_error( 'acf[field_5bea24624ccf8]', __('Current password entered does not match our records, please try again.','sage') );
 				}
 			} else {
-				acf_add_validation_error('acf[field_5bea1be6be692]', __('Please fill out all password fields and try again', 'sage'));
+				acf_add_validation_error('acf[field_5bea1be6be692]', __('Please fill out all password fields and try again.', 'sage'));
 			}
 		}
 	}
@@ -321,6 +323,9 @@ add_action('wp_logout','users_logout_redirect');
  * @return null
  */
 function users_login_form_bottom() {
-	return '<div class="users-register"><a href="'.get_home_url().'/register">'.__("Register","sage").'</a></div>';
+	return '<div class="users-reset-link"><a href="'.get_home_url().'/wp/wp-login.php?action=lostpassword">'.__("I forgot my password","sage").'</a></div><div class="users-register-link"><a href="'.get_home_url().'/register/">'.__("Register","sage").'</a></div>';
 }
+
+
+
 add_filter('login_form_bottom','users_login_form_bottom');
