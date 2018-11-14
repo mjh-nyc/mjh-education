@@ -20,6 +20,11 @@ function theme_prefix_setup() {
         'flex-height' => true,
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
+    /* Disable Admin Bar for All Users Except for Administrators */ 
+    if (!current_user_can('administrator') && !is_admin()) {
+      show_admin_bar(false);
+    }
+
 
 }
 add_action( 'after_setup_theme', 'App\\theme_prefix_setup' );
@@ -331,3 +336,4 @@ function hook_meta() {
 }
 add_action('wp_head', __NAMESPACE__ . '\\hook_meta');
 /* END meta tags ****************************/
+

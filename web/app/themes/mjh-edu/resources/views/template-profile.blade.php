@@ -11,11 +11,6 @@
     @include('partials.page-header')
     
     <!-- Nav pills -->
-    {{-- <nav class="tabs">
-      <div class="selector"></div>
-      <a href="#" class="nav-link @if(empty($updated))active @endif"><i class="fa fa-home"></i> {!! __('Home','sage') !!}</a>
-      <a href="#" class="@if(!empty($updated))active @endif"><i class="fa fa-drivers-license"></i>{!! __('Edit Profile','sage') !!}</a>
-    </nav> --}}
 
     <ul class="nav nav-pills" role="tablist">
       <li class="nav-item">
@@ -24,6 +19,7 @@
       <li class="nav-item">
           <a class="nav-link @if(!empty($updated))active @endif" data-toggle="pill" href="#edit-profile"><i class="fa fa-drivers-license"></i> {!! __('Edit Profile','sage') !!}</a>
       </li>
+      <li class="nav-item"><a href="{{wp_logout_url( '/login/' )}}" class="nav-link"><i class="fa fa-power-off"></i> {!! __('Log Out','sage') !!}</a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
