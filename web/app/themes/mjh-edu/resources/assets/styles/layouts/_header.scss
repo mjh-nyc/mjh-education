@@ -142,11 +142,12 @@
 					fill: white;
 				}
 			}
-		}
-	}
-	.social-channels {
-		a {
-			color: white;
+            .social-channels,
+            .account-links {
+                a {
+                    color: white;
+                }
+            }
 		}
 	}
 }
