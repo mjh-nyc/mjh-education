@@ -277,6 +277,20 @@ function users_acf_save_post_delete( $post_id ) {
 add_action('acf/save_post', 'users_acf_save_post_delete', 20);
 
 /**
+ * Redirection for user registration
+ *
+ * @hook init
+ * @return null
+ */
+function users_redirect_register() {
+	global $pagenow;
+	if ( ( strtolower($pagenow) == 'wp-login.php') && ( (!empty($_GET['action']) && strtolower( $_GET['action']) == 'register') || (!empty($_GET['registration']) && strtolower($_GET['registration']) == 'disabled') ) ) {
+		wp_redirect( home_url('/register'));
+	}
+}
+add_action('init','users_redirect_register');
+
+/**
  * Redirection if login fails
  *
  * @hook wp_login_failed
