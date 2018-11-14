@@ -284,7 +284,7 @@ add_action('acf/save_post', 'users_acf_save_post_delete', 20);
  */
 function users_redirect_register() {
 	global $pagenow;
-	if ( ( strtolower($pagenow) == 'wp-login.php') && ( strtolower( $_GET['action']) == 'register' || strtolower($_GET['registration']) == 'disabled' ) ) {
+	if ( ( strtolower($pagenow) == 'wp-login.php') && ( (!empty($_GET['action']) && strtolower( $_GET['action']) == 'register') || (!empty($_GET['registration']) && strtolower($_GET['registration']) == 'disabled') ) ) {
 		wp_redirect( home_url('/register'));
 	}
 }
