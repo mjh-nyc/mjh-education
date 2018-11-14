@@ -31,6 +31,7 @@ export default {
 		$hamburger.on('click', function() {
 			$(this).toggleClass('is-active');
 			$('.social-channels a').toggleClass('nav-active');
+			$('.account-link').toggleClass('nav-active');
 			$('.logo svg').toggleClass('nav-active');
 			if ($body.hasClass('nav_open')) {
 				$body.removeClass('nav_open').addClass('nav_closed');

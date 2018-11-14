@@ -210,10 +210,17 @@ $size:20px;
 
 .nav.nav-pills {
     border-bottom: 1px solid map-get($theme-colors, primary);
-    .nav-link {
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        text-decoration: none;
+    position: relative;
+    .nav-item {
+        .nav-link {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            text-decoration: none;
+        }
+        &:last-child {
+            position:absolute;
+            right: 0;
+        }
     }
 }
 /*.tabs{

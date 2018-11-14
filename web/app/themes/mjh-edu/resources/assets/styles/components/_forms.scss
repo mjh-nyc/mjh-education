@@ -103,7 +103,8 @@ textarea {
 	.acf-field {
 		margin-bottom: 1rem;
 		@include listReset();
-		input[type="text"] {
+		input[type="text"],
+		input[type="password"] {
 			width: 100%;
 		}
 		select {
@@ -119,6 +120,16 @@ textarea {
     		label {
     			font-weight: normal;
     		}
+		}
+		.acf-error-message {
+			p {
+				margin: 0;
+				color: red;
+			}
+		}
+		input[readonly="readonly"] {
+			@extend em;
+			opacity: 0.5;
 		}
 	}
 	.acf-field-group {
@@ -165,6 +176,16 @@ textarea {
     }
 }
 
+/* on the edit form, hide the checkboxes */
+.users-edit {
+	.acf-field-5bd7f0eb4cdd8,
+	.acf-field-5bd7f23780d51,
+	.acf-field-5bd7f3463649a,
+	.acf-field-5bd7f2e174023 {
+		display: none;
+	}
+}
+
 .af-form {
 	@include media-breakpoint-up(md) {
 		width: 60%;
@@ -193,5 +214,11 @@ textarea {
 	}
 	.af-success {
 		@extend h4;
+	}
+}
+
+.post-password-form {
+	* {
+		display: block;
 	}
 }

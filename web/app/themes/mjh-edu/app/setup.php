@@ -20,6 +20,11 @@ function theme_prefix_setup() {
         'flex-height' => true,
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
+    /* Disable Admin Bar for All Users Except for Administrators */ 
+    if (!current_user_can('administrator') && !is_admin()) {
+      show_admin_bar(false);
+    }
+
 
 }
 add_action( 'after_setup_theme', 'App\\theme_prefix_setup' );
@@ -220,6 +225,49 @@ function my_custom_sizes( $sizes ) {
     ) );
 }
 
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl','App\\my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return get_option('blogname');
+}
+add_filter( 'login_headertitle','App\\my_login_logo_url_title' );
+
+//change the default WP login screen logo
+function my_login_logo() {
+
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+    ?>
+    <style type="text/css">
+        .login {
+            background-color: #ccc;
+        }
+        #login {
+            width:50%  !important;
+        }
+        .login h1 a {
+            background-image: url('<?php echo $logo[0]; ?>') !important;
+            background-size:100% auto !important;
+            width:340px !important;
+            height:auto
+        }
+        @media (max-width: 768px) {
+          #login { width:95% !important; }
+          .login h1 a {
+            width:240px !important;
+          }
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts','App\\my_login_logo', 1 );
+
+
+
+
 /********************************************
 /* Adding open graph sharing meta tags *****/
 function hook_meta() {
@@ -288,3 +336,4 @@ function hook_meta() {
 }
 add_action('wp_head', __NAMESPACE__ . '\\hook_meta');
 /* END meta tags ****************************/
+
