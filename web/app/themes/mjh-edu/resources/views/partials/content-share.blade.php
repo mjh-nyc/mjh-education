@@ -32,6 +32,6 @@
         </div>
     </div>
     <div class="back-link">
-        &#8592; <a class="" href="{{ get_post_type_archive_link( $post->post_type ) }}">{!! _e("See All ","sage") !!}</a>
+        &#8592; <a class="" href="@if ($post->post_type=='timeline') /timeline/ @else {{get_post_type_archive_link( $post->post_type ) }} @endif">{!! _e("See All ","sage") !!}</a>
     </div>
 </div>
