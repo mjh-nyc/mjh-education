@@ -4,7 +4,7 @@
 
 		@foreach ($supporting_features as $feature)
 		<div class="col-md-4 feature">
-			@include('partials.content-card', ['item_id'=>$feature['supporting_feature'], 'header'=>''])
+			@include('partials.content-card', ['item_id'=>$feature['supporting_feature'], 'header'=>'','feature_type'=>'supporting'])
 		</div>
 		@endforeach
 	@endif

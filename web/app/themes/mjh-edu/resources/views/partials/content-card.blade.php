@@ -14,7 +14,7 @@
 				{!! App::postExcerpt($item_id) !!}
 			@endif
 		</h3>
-		@if ( strtolower(get_the_title($item_id)) != "timeline")
+		@if ( strtolower(get_the_title($item_id)) != "timeline" && $feature_type != 'primary')
 			<p>{!! App::postExcerpt($item_id) !!}</p>
 		@endif
 		<a href="{!! get_the_permalink($item_id); !!}" class="cta cta-white cta-icon cta-arrow animsition-link content-card__link">
