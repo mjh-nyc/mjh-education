@@ -16,6 +16,7 @@
         <p>{{ __('Please check your email to verify your account and login information.', 'sage') }}</p>
     @else
         <div class="users-login"><a href="{!! get_home_url()!!}/login">{!! __("Log in if you are already registered","sage")!!}</a></div>
+        <div class="users-reset-link"><a href="{!! get_home_url()!!}/wp/wp-login.php?action=lostpassword">{!!__("I forgot my password","sage")!!}</a></div>
         <form method="post" class="users-register">
             <input type="hidden" name="register" value="register" />
            @php acf_form('new-user') @endphp
