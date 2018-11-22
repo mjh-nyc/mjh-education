@@ -6,6 +6,7 @@ export default {
 			$hamburger 		= $('.hamburger');
 
 
+
 		// Initiate Typekit Fonts
 		window.WebFontConfig = {
 			typekit: {

@@ -167,6 +167,7 @@
 	z-index: 1999;
   }
 }
+
 .stuck {
     position: fixed;
     background-color: #000;
@@ -194,7 +195,11 @@
     	}
     }
 }
-
+body.admin-bar {
+    .stuck {
+        top: 30px;
+    }
+}
 
 .overlay-nav {
     display: none;

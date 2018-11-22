@@ -1,7 +1,7 @@
 @if(App::featuredImage())
 	<div class="featured-image">
 		@if(!empty($post) && $post->post_type == 'lessons')
-	    	{!! the_post_thumbnail('medium') !!}
+			{!! the_post_thumbnail('header') !!}
 	    @else
 	    	{!! the_post_thumbnail('header') !!}
 	    @endif
