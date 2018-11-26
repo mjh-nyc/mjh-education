@@ -3,6 +3,8 @@
         &#8592; <a class="" href="/survivor-stories/{{ strtolower($survivor) }}">{!! _e("Back to ".$survivor."’s story ","sage") !!}</a>
     </div>
     <h1 class="entry-title">{!! get_the_title() !!}</h1>
+    <div>{!! __('To continue your study of this topic and to help with your research, use the following additional sources. Books preceded by an asterisk are recommended for middle and high school students.
+','sage') !!} </div>
 </header>
 <div class="entry-content">
     <div class="content">@php the_content() @endphp</div>
