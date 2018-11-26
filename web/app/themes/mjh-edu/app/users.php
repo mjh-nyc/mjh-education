@@ -325,7 +325,20 @@ add_action('wp_logout','users_logout_redirect');
 function users_login_form_bottom() {
 	return '<div class="users-reset-link"><a href="'.get_home_url().'/wp/wp-login.php?action=lostpassword">'.__("I forgot my password","sage").'</a></div><div class="users-register-link"><a href="'.get_home_url().'/register/">'.__("Register","sage").'</a></div>';
 }
-
-
-
 add_filter('login_form_bottom','users_login_form_bottom');
+
+/**
+ * Change password text
+ *
+ * @hook gettext
+ * @return null
+ */
+function users_change_password_reset_text_filter( $translated_text, $untranslated_text, $domain ) {
+	switch( $untranslated_text ) {
+		case 'Enter your new password below.':
+			$translated_text = __( 'Randomly generated password provided. You can change this and enter your own password below.','sage' );
+		break;
+	}
+	return $translated_text;
+}
+add_filter('gettext', 'users_change_password_reset_text_filter', 20, 3);
