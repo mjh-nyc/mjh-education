@@ -34,7 +34,6 @@ h3 {
 }
 
 h1 {
-    text-transform: capitalize;
     @include font-size(32);
     margin-bottom: 3rem;
     @include media-breakpoint-up(sm) {
@@ -101,8 +100,13 @@ i, em {
 }
 
 i strong, i bold, em strong, em bold,
-strong i, bold i, strong em, bold em {
+strong i, bold i, strong em, bold em,
+h4 em {
   @include bentonBdIt();
+}
+h1 em, h2 em, h3 em {
+  font-family: 'EksellDisplay';
+  font-style: italic;
 }
 
 

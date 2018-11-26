@@ -19,7 +19,7 @@
                                 </a>
                             </div>
                             <div class="artifact__title">
-                                <h4>{{ $artifact->post_title }}</h4>
+                                <h4>{!! $artifact->post_title !!}</h4>
                             </div>
                         </div>
 
