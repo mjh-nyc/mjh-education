@@ -10,7 +10,7 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @foreach ($lessons as $lesson)
-                    <a class="dropdown-item animsition-link" href="{{get_permalink($lesson->ID)}}">{{$lesson->post_title}}</a>
+                    <a class="dropdown-item animsition-link" href="{{get_permalink($lesson->ID)}}">{!! $lesson->post_title !!}</a>
                 @endforeach
               </div>
             </div>
