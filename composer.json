@@ -84,7 +84,8 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "^5.5",
     "mjh-nyc/mjhedu-custom-configurations": "dev-master",
     "wpackagist-plugin/advanced-forms": "^1.0",
-    "deliciousbrains/wp-offload-s3-pro": "^1.5"
+    "deliciousbrains/wp-offload-s3-pro": "^1.5",
+    "wpackagist-plugin/export-users-to-csv": "1.1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
