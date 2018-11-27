@@ -21,9 +21,7 @@
 @endsection
 
 @section('secondary-features')
-    @if( !empty($feature_secondary_features))
-        @include('partials.homepage-secondary-features')
-    @endif
+    @include('partials.homepage-secondary-features')
 @endsection
 
 @section('supporting-features')

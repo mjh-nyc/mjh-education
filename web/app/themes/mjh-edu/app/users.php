@@ -350,7 +350,7 @@ add_action('wp_logout','users_logout_redirect');
  * @return null
  */
 function users_login_form_bottom() {
-	return '<div class="users-reset-link"><a href="'.get_home_url().'/wp/wp-login.php?action=lostpassword">'.__("I forgot my password","sage").'</a></div><div class="users-register-link"><a href="'.get_home_url().'/register/">'.__("Register","sage").'</a></div>';
+	return '<div class="users-reset-link"><a href="'.get_home_url().'/wp/wp-login.php?action=lostpassword">'.__("I forgot my password","sage").'</a></div><div class="users-register-link"><hr>'.__("Don’t have an account? Registration is free and only takes a few minutes!","sage").'<a href="'.get_home_url().'/register/" class="cta cta-white cta-icon cta-arrow animsition-link" style="margin-top:10px;">'.__("Register","sage").'</a></div>';
 }
 add_filter('login_form_bottom','users_login_form_bottom');
 

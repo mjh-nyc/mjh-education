@@ -18,7 +18,7 @@
 			<p>{!! App::postExcerpt($item_id) !!}</p>
 		@endif
 		<a href="{!! get_the_permalink($item_id); !!}" class="cta cta-white cta-icon cta-arrow animsition-link content-card__link">
-			{{ __('View', 'sage') }}
+			{{ $button_label }}
 		</a>
 	</div>
 </div>
