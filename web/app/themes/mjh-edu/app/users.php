@@ -369,3 +369,23 @@ function users_change_password_reset_text_filter( $translated_text, $untranslate
 	return $translated_text;
 }
 add_filter('gettext', 'users_change_password_reset_text_filter', 20, 3);
+
+/**
+ * Custom validation of user share form on my-account page
+ *
+ * @hook acf/validate_save_post
+ * @return null
+ */
+function users_validate_share_email() {
+	//Check we are validating a form with no post id associated and managed by af_form
+	if(isset($_POST['_acf_post_id']) && $_POST['_acf_post_id']=='0' && !empty($_POST['af_form'])) {
+		// Validate to make sure its only a valid email
+		if (!empty($_POST['acf']['field_5bfc90948fdb0'])) {
+			$email = $_POST['acf']['field_5bfc90948fdb0'];
+			if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
+				acf_add_validation_error('acf[field_5bfc90948fdb0]', __('This email address is invalid, please try again.', 'sage'));
+			}
+		}
+	}
+}
+add_action('acf/validate_save_post', 'users_validate_share_email', 10, 0);

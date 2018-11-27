@@ -19,7 +19,7 @@
       <li class="nav-item">
           <a class="nav-link @if(!empty($updated))active @endif" data-toggle="pill" href="#edit-profile"><i class="fa fa-drivers-license"></i> {!! __('Edit Profile','sage') !!}</a>
       </li>
-      <li class="nav-item"><a href="{{wp_logout_url( '/login/' )}}" class="nav-link"><i class="fa fa-power-off"></i> {!! __('Log Out','sage') !!}</a></li>
+      <li class="nav-item"><a href="{!! wp_logout_url( '/login/' ) !!}" class="nav-link"><i class="fa fa-power-off"></i> {!! __('Log Out','sage') !!}</a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
