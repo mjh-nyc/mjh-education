@@ -30,11 +30,8 @@ function users_generate_new_user_id( $post_id, $form ) {
 
 	if ( !empty( $_POST['acf']['field_5bda42a5b3269']) ) {
 		$user_fields['user_email'] = sanitize_email( $_POST['acf']['field_5bda42a5b3269'] );
+		$user_fields['user_login'] = users_create_userlogin_by_email($user_fields['user_email']);
 	}
-	if ( !empty( $_POST['acf']['field_5bdb7385658db']) ) {
-		$user_fields['user_login'] = sanitize_user( $_POST['acf']['field_5bdb7385658db'] );
-	}
-
 	$user_id = wp_insert_user( $user_fields );
 
 	if ( is_wp_error( $user_id ) ) {
@@ -48,6 +45,36 @@ function users_generate_new_user_id( $post_id, $form ) {
 }
 add_action( 'acf/pre_save_post', 'users_generate_new_user_id', 10, 2 );
 
+/**
+ * Create a user name (required by wordpress) on registration based on email address
+ *
+ * @return string
+ */
+function users_create_userlogin_by_email($email){
+	// Explode the email and check, return complete string if nothing in first key
+	$emailHash = explode("@", $email,2);
+	if(!empty($emailHash[0])) {
+
+		if (username_exists($emailHash[0])) {
+			$user_login = false;
+			$count =0;
+			// If string exists, we append a number to the end and loop till string is unique
+			while (!$user_login) {
+				$count++;
+				$check_username = $emailHash[0].$count;
+				// If string does not exists, return this
+				if (!username_exists($check_username)) {
+					$user_login = $check_username;
+				}
+			}
+			return $user_login;
+		}else{
+			return $emailHash[0];
+		}
+	}else{
+		return $email;
+	}
+}
 
 /**
  * Update wp base user data and update password
@@ -151,7 +178,7 @@ add_filter('acf/load_value/key=field_5bda42a5b3269', 'users_acf_load_value_email
  *
  * @hook acf/load_value/<field-key>
  * @return string
- */
+
 function users_acf_load_value_username( $value, $post_id, $field )
 {
 	if(is_user_logged_in() ) {
@@ -160,13 +187,13 @@ function users_acf_load_value_username( $value, $post_id, $field )
 	}
 }
 add_filter('acf/load_value/key=field_5bdb7385658db', 'users_acf_load_value_username', 10, 3);
-
+ */
 /**
  * Disable field user name for user edit
  *
  * @hook acf/load_field/<field-key>
  * @return array
- */
+
 function users_acf_load_field_username( $field )
 {
 	if(is_user_logged_in() ) {
@@ -177,7 +204,7 @@ function users_acf_load_field_username( $field )
 	return $field;
 }
 add_filter('acf/load_field/key=field_5bdb7385658db', 'users_acf_load_field_username', 10, 3);
-
+ */
 /**
  * Send verification email for new users
  *
@@ -257,7 +284,7 @@ add_action('acf/validate_save_post', 'users_validate_edit_profile_save_post', 10
  */
 function users_acf_save_post_delete( $post_id ) {
 	//Username
-	delete_field('field_5bdb7385658db',$post_id);
+	//delete_field('field_5bdb7385658db',$post_id);
 	//First Name
 	delete_field('field_5bda425e64353',$post_id);
 	//Last Name
