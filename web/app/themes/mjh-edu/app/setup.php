@@ -80,7 +80,7 @@ add_action('after_setup_theme', function () {
     add_image_size( 'square@1x', 400, 400, true);
     add_image_size( 'header', 1600, 550, true);
     add_image_size( 'homepage-header', 1600, 750);
-	add_image_size( 'lessons-header', 1600, 1143);
+	  add_image_size( 'lessons-header', 600, 400, true);
 
     /**
      * Enable HTML5 markup support

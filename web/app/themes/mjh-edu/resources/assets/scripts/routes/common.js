@@ -103,7 +103,7 @@ export default {
 		});*/
 
 		//wrap video embeds with elastic container to make them responsive
-		jQuery('.entry-content, .page-content')
+		jQuery('.entry-content, .page-content, .page')
 			.find( "iframe, object, embed" )
 			.wrap( "<div class='video-container'></div>" );
 

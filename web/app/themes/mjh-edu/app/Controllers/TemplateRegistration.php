@@ -22,7 +22,7 @@ class TemplateRegistration extends Controller
 			'id'		=> 'new-user',
 			'post_id'	=> 'new_user',
 			'field_groups'=>array('group_5bda592161422','group_5bd1f1e25075b'),
-			'submit_value' => __("Submit", 'acf'),
+			'submit_value' => __("Register", 'acf'),
 			'updated_message' => ''
 		));
 	}
