@@ -62,6 +62,7 @@
 		}
 		.dropdown-menu {
 			width: 100%;
+			z-index: 5000;
 			.dropdown-item {
 				white-space: pre-wrap;
 				width: 100%;
