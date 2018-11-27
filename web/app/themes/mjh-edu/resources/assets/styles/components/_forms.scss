@@ -34,7 +34,8 @@
 
 #loginform,
 .users-register,
-.users-edit {
+.users-edit,
+.af-form {
 	padding: 1rem;
     background: map-get($theme-colors, background);
 }
@@ -187,10 +188,10 @@ textarea {
 }
 
 .af-form {
-	@include media-breakpoint-up(md) {
+	/*@include media-breakpoint-up(md) {
 		width: 60%;
 		margin: 0 auto;
-	}
+	}*/
 	.af-field {
 		margin-bottom: 1rem;
 		input[type="text"] {
