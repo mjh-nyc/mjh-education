@@ -12,7 +12,7 @@
           </main>
         </div>
       </div>
-      <div class="container-fluid">
+      <div class="container">
         <div class="content">
           @yield('carousel')
         </div>

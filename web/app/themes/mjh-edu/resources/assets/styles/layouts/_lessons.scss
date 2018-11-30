@@ -7,11 +7,17 @@
 	&__header {
 		text-align: center;
 		padding-top: 4rem;
-		padding-bottom: 3rem;
+		padding-bottom: 0;
 		@include make-col-ready();
 	    @include media-breakpoint-up(md) {
 	      @include make-col(6);
 	      @include make-col-offset(3);
+	    }
+	    @include media-breakpoint-up(lg) {
+	    	padding-top: 2rem;
+	    }
+	    h3 {
+	    	font-size: 200%;
 	    }
 	}
 	.carousel {
@@ -19,14 +25,52 @@
   		flex-wrap: nowrap;
   		overflow-x: auto;
   		-webkit-overflow-scrolling: touch;
-  		&::-webkit-scrollbar {
+  		/*&::-webkit-scrollbar {
   			display: none;
+  		}*/
+  		.slick-prev, .slick-next {
+  			font-size: 0;
+		    line-height: 0;
+		    position: absolute;
+		    top: 20px;
+		    display: block;
+		    width: 20px;
+		    height: 20px;
+		    padding: 0;
+		    -webkit-transform: translate(0, -50%);
+		    -ms-transform: translate(0, -50%);
+		    transform: translate(0, -50%);
+		    cursor: pointer;
+		    color: transparent;
+		    border: none;
+		    outline: none;
+		    background: #000;
   		}
+  		.slick-prev {
+		    left: -25px;
+		}
+		.slick-next {
+			right: -25px;
+		}
+		.slick-next:before {
+		    content: '→';
+		}
+		.slick-prev:before {
+		    content: '←';
+		}
+		.slick-prev:before, .slick-next:before {
+		    font-size: 20px;
+		    line-height: 1;
+		    opacity: .75;
+		    color: white;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		}
+
+
 		.slide-card {
 			@include transition(background, 0.3s, ease);
-			align-self: flex-start;
 			padding: 15px;
-			flex: 0 0 auto;
 			margin-right: 0;
 			width: 350px;
 			/*&:hover {

@@ -80,8 +80,8 @@
 .hero-area {
 	margin-top: -$sticky-header-height;
     background-size: cover;
-    padding-top: 150px;
-    padding-bottom: 200px;
+    padding-top: 200px;
+    padding-bottom: 160px;
     position: relative;
     .page-header {
         position: relative;
@@ -90,6 +90,9 @@
         h1 {
             margin: 0;
             color: white;
+            p {
+                margin-bottom: 1rem;
+            }
         }
     }
     /* overlay color */
