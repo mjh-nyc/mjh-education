@@ -76,12 +76,15 @@
     }
 }
 
+.hero {
+    margin-top: 2rem;
+}
 
 .hero-area {
 	margin-top: -$sticky-header-height;
     background-size: cover;
     padding-top: 200px;
-    padding-bottom: 160px;
+    padding-bottom: 200px;
     position: relative;
     .page-header {
         position: relative;

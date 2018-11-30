@@ -7,6 +7,10 @@ export default {
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 4,
+        adaptiveHeight: true,
+        autoplaySpeed:5000,
+        autoplay: true,
+        pauseOnHover: true,
         responsive: [
           {
             breakpoint: 1024,
@@ -14,7 +18,6 @@ export default {
               slidesToShow: 3,
               slidesToScroll: 3,
               infinite: true,
-              dots: true,
             },
           },
           {
@@ -38,7 +41,7 @@ export default {
       });
 
       //get offset for lesson position from left
-      var $referenceContainer = $( '.wrap.container'),
+      /*var $referenceContainer = $( '.wrap.container'),
           $carousel = $( '.carousel' ),
           offset = $referenceContainer.offset();
 
@@ -71,7 +74,7 @@ export default {
           }
         },
       })
-      inview.options.enabled = true;
+      inview.options.enabled = true;*/
 
       //add rollover to lesson cards
       $(".slide-card").on({

@@ -137,7 +137,7 @@ blockquote {
 
 /* force content into 8 columns on all secondary pages */
 .wrap {
-  margin-top: 3rem;
+  margin-top: 1rem;
   @include media-breakpoint-up(md) {
     width:720px;
     margin-right: auto;
@@ -176,7 +176,7 @@ blockquote {
 .share {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid map-get($theme-colors, neutral);
   .share-options {
     @include clearfix;
