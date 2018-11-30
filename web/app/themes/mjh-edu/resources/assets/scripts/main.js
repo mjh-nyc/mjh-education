@@ -35,7 +35,7 @@ import 'waypoints/lib/shortcuts/inview.min';
 import 'sticky-kit/dist/sticky-kit.min';
 
 //Import slick
-//import 'slick-carousel/slick/slick';
+import 'slick-carousel/slick/slick';
 
 //**** //END ******************/
 /*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/

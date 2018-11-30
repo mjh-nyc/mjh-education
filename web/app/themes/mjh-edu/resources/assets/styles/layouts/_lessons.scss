@@ -7,26 +7,93 @@
 	&__header {
 		text-align: center;
 		padding-top: 4rem;
-		padding-bottom: 3rem;
+		padding-bottom: 0;
 		@include make-col-ready();
 	    @include media-breakpoint-up(md) {
 	      @include make-col(6);
 	      @include make-col-offset(3);
 	    }
+	    @include media-breakpoint-up(lg) {
+	    	padding-top: 2rem;
+	    }
+	    h3 {
+	    	font-size: 200%;
+	    }
 	}
 	.carousel {
+		position: relative;
 		display: flex;
   		flex-wrap: nowrap;
   		overflow-x: auto;
   		-webkit-overflow-scrolling: touch;
-  		&::-webkit-scrollbar {
+  		/*&::-webkit-scrollbar {
   			display: none;
+  		}*/
+  		
+  		.slick-arrow {
+  			position: absolute;
+		    height: 40px;
+		    width: 40px;
+		    
+            top: 5px;
+            left: 50%;
+            background: #fff;
+		    overflow: hidden;
+		    border-radius: 50%;
+		    z-index: 10;
+		    box-shadow: 0 4px 6px rgba(0,0,0,.15);
+		    border: 0;
+		    font-size: 0;
+		    line-height: 0;
+		    -webkit-transition: all .2s;
+		    -o-transition: all .2s;
+		    transition: all .2s;
+
+		    &.slick-disabled {
+		    	opacity: 0.5;
+		    }
+		    &:hover {
+		    	background: map-get($theme-colors, text-color);
+		    	&:before {
+		    		color: #fff;
+		    	}
+		    }
+
+            &.slick-prev {
+            	text-indent: -4px;
+	            margin-left: -50px;
+	            &:before {
+	            	content: "\F104";
+	            }
+	        }
+	        &.slick-next {
+	        	text-indent: 4px;
+	            &:before {
+	            	content: "\F105";
+	            }
+	        }
+	        &:before {
+	        	font-family: FontAwesome;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			    text-indent: 0;
+			    font-size: 30px;
+			    line-height: 1;
+			    color: map-get($theme-colors, text-color);
+	        }
+        }
+
+        .slick-list {
+        	margin-top: 60px;
+        }
+  		.slick-slide {
+  			margin-right:10px; 
   		}
+
+
 		.slide-card {
 			@include transition(background, 0.3s, ease);
-			align-self: flex-start;
 			padding: 15px;
-			flex: 0 0 auto;
 			margin-right: 0;
 			width: 350px;
 			/*&:hover {
@@ -87,7 +154,17 @@
 		h1, h2, h3, h4 {
 			color: white;
 		}
+
+		.row {
+
+		}
+
 		.featured-image {
+			height: 100%;
+			min-height: 350px;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
 			img {
 				width: 100%;
 				height: auto;
@@ -101,8 +178,15 @@
 		}
 		.post-links {
 			@include listReset();
-			ul li {
-				margin:2.22rem 0;
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				li {
+					&:first-child {
+						margin-right:15px;
+					}
+				}
 			}
 		}
 		.all {

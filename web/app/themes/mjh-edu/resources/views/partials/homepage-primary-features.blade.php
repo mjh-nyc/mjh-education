@@ -6,13 +6,13 @@
     </div>
     @endif
   </div>
-  <div class="col-md-6 col-lg-3 feature">
+  <div class="col-sm-6 col-lg-3 feature">
     @if( !empty($feature_lesson_plan))
       @include('partials.content-card', ['item_id'=>$feature_lesson_plan['ID'],'header'=>App::get_group_field('features','featured_lesson_plan_label'), 'feature_type'=>'primary', 'button_label'=>App::get_group_field('features','featured_lesson_plan_button_label')])
     @endif
 
   </div>
-  <div class="col-md-6 col-lg-3 feature">
+  <div class="col-sm-6 col-lg-3 feature">
     @if( !empty($feature_custom_feature))
       @include('partials.content-card', ['item_id'=>$feature_custom_feature['ID'],'header'=>App::get_group_field('features','custom_feature_label'),'feature_type'=>'primary','button_label'=>App::get_group_field('features','custom_feature_button_label')])
     @endif    

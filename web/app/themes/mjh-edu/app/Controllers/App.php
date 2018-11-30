@@ -390,10 +390,31 @@ class App extends Controller
     {
         $image_alt = "";
         if ($id) {
-            $image_alt = get_post_meta( $id, '_wp_attachment_image_alt', true);
+        	$img_id  = get_post_thumbnail_id($id);
+ 			$image_alt = get_post_meta($img_id,'_wp_attachment_image_alt', true);
         }
         return $image_alt;
     }
+
+    /**
+     * Return featured image caption, pass post ID
+     *
+     * @return string
+     */
+    public static function featuredImageCaption($id=false)
+    {
+        $image_caption = "";
+        if ($id) {
+        	$thumbnail_id    = get_post_thumbnail_id($id);
+  			$thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+			if ($thumbnail_image && isset($thumbnail_image[0])) {
+				$image_caption = $thumbnail_image[0]->post_excerpt;
+			}
+        }
+        return $image_caption;
+    }
+
 
 	/**
 	 * Check current template with variable

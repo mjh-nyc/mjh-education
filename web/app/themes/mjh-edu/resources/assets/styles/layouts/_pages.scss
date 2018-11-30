@@ -39,7 +39,7 @@
 	position: relative;
 	background-size: cover;
 	&:after {
-		@extend %overlay;
+		@extend %gradient-overlay;
 	}
 	margin-top: 30px;
 	@include media-breakpoint-up(md) {
@@ -61,7 +61,10 @@
     	flex-direction: column;
     	justify-content: space-between;
 		&__title {
-
+			@include font-size(18);
+			@include media-breakpoint-up(xl) {
+				@include font-size(30);
+			}
 		}
 		&__image {
 
@@ -111,7 +114,7 @@
 			text-align: center;
 			color: map-get($theme-colors, text-color);
 			@include media-breakpoint-up(lg) {
-				height: 300px;
+				height: 350px;
 			}
 			a {
 				align-self: center !important;
