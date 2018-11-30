@@ -2,7 +2,7 @@
 <div class="slide-card lesson-card" @if ($header) data-header="{{ $header }}" @endif>
     @if(App::featuredImageSrc())
 	    <div class="slide-card__image">
-	    	<img src="{{App::featuredImageSrc('square@1x',$item_id)}}" alt="{{ App::featuredImageAlt($item_id) }}">
+	    	<a href="{!! get_the_permalink($item_id); !!}"><img src="{{App::featuredImageSrc('square@1x',$item_id)}}" alt="{{ App::featuredImageAlt($item_id) }}"></a>
 	    </div>
 	@endif
     <h4 class="slide-card__title">{!! get_the_title($item_id) !!}</h4>

@@ -83,7 +83,7 @@ export default {
               backgroundColor: "#2C4D53",
             }, 200 );
             $( this ).find('h4').css('color','white');
-            $( this ).find('a').css('visibility','visible');
+            $( this ).find('.cta').css('visibility','visible');
           },
           mouseleave: function () {
             //stuff to do on mouse leave
@@ -91,7 +91,7 @@ export default {
               backgroundColor: "transparent",
             }, 200 );
             $( this ).find('h4').css('color','#222');
-            $( this ).find('a').css('visibility','hidden');
+            $( this ).find('.cta').css('visibility','hidden');
           },
       });
 
