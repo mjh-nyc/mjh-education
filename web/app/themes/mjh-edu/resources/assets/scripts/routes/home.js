@@ -77,26 +77,31 @@ export default {
       inview.options.enabled = true;*/
 
       //add rollover to lesson cards
-      $(".slide-card").on({
-          mouseenter: function () {
-            $( this ).animate({
-              backgroundColor: "#2C4D53",
-            }, 200 );
-            $( this ).find('h4').css('color','white');
-            $( this ).find('.cta').css('visibility','visible');
-          },
-          mouseleave: function () {
-            //stuff to do on mouse leave
-            $( this ).animate({
-              backgroundColor: "transparent",
-            }, 200 );
-            $( this ).find('h4').css('color','#222');
-            $( this ).find('.cta').css('visibility','hidden');
-          },
+      function lessonCardRollover() {
+          $(".slide-card").on({
+              mouseenter: function () {
+                  $(this).animate({
+                      backgroundColor: "#2C4D53",
+                  }, 200);
+                  $(this).find('h4').css('color', 'white');
+                  $(this).find('.cta').css('visibility', 'visible');
+              },
+              mouseleave: function () {
+                  //stuff to do on mouse leave
+                  $(this).animate({
+                      backgroundColor: "transparent",
+                  }, 200);
+                  $(this).find('h4').css('color', '#222');
+                  $(this).find('.cta').css('visibility', 'hidden');
+              },
+          });
+      }
+      // Call rollover function to call rollover function again since breakpoints slick event kills js events
+      lessonCardRollover();
+      // Slick slider on breakpoint trigger
+      jQuery('.slider').on('breakpoint', function(){
+          lessonCardRollover();
       });
-
-    
-
 
   },
   finalize() {
