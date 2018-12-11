@@ -237,34 +237,89 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle','App\\my_login_logo_url_title' );
 
-//change the default WP login screen logo
+//change the default WP login screen logo and styles
 function my_login_logo() {
 
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
     ?>
+    <link rel="stylesheet" href="https://use.typekit.net/gzh5wlp.css">
     <style type="text/css">
         .login {
-            background-color: #ccc;
+          background-color: #ccc;
+          font-family: benton-sans, sans-serif;
+          font-style: normal;
+          font-weight: 500;
         }
         #login {
-            width:50%  !important;
+            width:50%;
         }
         .login h1 a {
-            background-image: url('<?php echo $logo[0]; ?>') !important;
-            background-size:100% auto !important;
-            width:340px !important;
-            height:auto
+            background-image: url('<?php echo $logo[0]; ?>');
+            background-size:100% auto;
+            width:340px;
+        }
+        .wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
+                 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+          text-decoration: none !important;
+          display: inline-block;
+
+          border-radius: 25px;
+          height: 50px;
+          line-height: 50px;
+          font-size:18px;
+          padding: 0 70px 0 30px;
+          
+          transition: all 0.2s;
+          
+          background-color: #222;
+          color: white;
+          border-color: transparent;
+          text-shadow: none;
+
+          background-image: url('/app/themes/mjh-edu/dist/images/angle-right-fff.png');
+          background-position: 94% 43%;
+          background-size: 30px;
+          background-repeat: no-repeat;
+
+        }
+        .wp-core-ui .button.button-large:hover, .wp-core-ui .button-group.button-large .button:hover {
+          color: #222;
+          background: white;
+          border-color: transparent;
+          text-shadow: none;
+          background-image: url('/app/themes/mjh-edu/dist/images/angle-right-000.png');
+          background-position: 94% 43%;
+          background-size: 30px;
+          background-repeat: no-repeat;
+        }
+        .wp-core-ui .button-primary.active, .wp-core-ui .button-primary.active:hover, .wp-core-ui .button-primary.active:focus, .wp-core-ui .button-primary:active {
+            color: white;
+            background: #222;
+            border-color: transparent;
+            text-shadow: none;
+            border:none;
+        }
+        .forgetmenot {
+          margin-top: 15px;
         }
         @media (max-width: 768px) {
-          #login { width:95% !important; }
+          #login { width:95%; }
           .login h1 a {
-            width:240px !important;
+            width:240px;
+          }
+          .wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
+            border-radius: 20px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px 0 20px;
+            font-size: 16px;
           }
         }
     </style>
 <?php }
-add_action( 'login_enqueue_scripts','App\\my_login_logo', 1 );
+add_action( 'login_head','App\\my_login_logo',20);
 
 
 
