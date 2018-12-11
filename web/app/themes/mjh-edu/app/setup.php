@@ -278,7 +278,7 @@ function my_login_logo() {
           border-color: transparent;
           text-shadow: none;
 
-          background-image: url('/app/themes/mjh-edu/dist/images/angle-right-fff.png');
+          background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/angle-right-fff.png');
           background-position: 94% 43%;
           background-size: 30px;
           background-repeat: no-repeat;
@@ -289,7 +289,7 @@ function my_login_logo() {
           background: white;
           border-color: transparent;
           text-shadow: none;
-          background-image: url('/app/themes/mjh-edu/dist/images/angle-right-000.png');
+          background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/angle-right-000.png');
           background-position: 94% 43%;
           background-size: 30px;
           background-repeat: no-repeat;

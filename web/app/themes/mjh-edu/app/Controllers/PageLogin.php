@@ -27,10 +27,12 @@ class PageLogin extends Controller
 	 */
 	public function fail_message(){
 		$fail_message = "";
-		if ($_GET["login"] == "failed") {
-			$fail_message = '<div class="alert alert-danger" role="alert">';
-			$fail_message .=__("The email address and password combination you entered does not match our records for this account, please try again.","sage");
-			$fail_message .='</div>';
+		if (isset($_GET["login"])) {
+			if ($_GET["login"] == 'failed') {
+				$fail_message = '<div class="alert alert-danger" role="alert">';
+				$fail_message .=__("The email address and password combination you entered does not match our records for this account, please try again.","sage");
+				$fail_message .='</div>';
+			}
 		}
 		return $fail_message;
 	}
