@@ -268,7 +268,7 @@ function my_login_logo() {
           border-radius: 25px;
           height: 50px;
           line-height: 50px;
-          font-size:18px;
+          font-size:16px;
           padding: 0 70px 0 30px;
           
           transition: all 0.2s;
@@ -313,8 +313,8 @@ function my_login_logo() {
             border-radius: 20px;
             height: 40px;
             line-height: 40px;
-            padding: 0 20px 0 20px;
-            font-size: 16px;
+            padding: 0 50px 0 20px;
+            font-size: 14px;
           }
         }
     </style>
