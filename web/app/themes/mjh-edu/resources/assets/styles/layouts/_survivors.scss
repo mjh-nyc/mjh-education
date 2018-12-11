@@ -16,12 +16,12 @@
 			height: auto;
 		}
 		li {
-			width: 100%;
+			width: 49%;
 			@include media-breakpoint-up(sm) {
-				width: 49%
+				width: 30%
 			}
 			@include media-breakpoint-up(md) {
-				width:30%;
+				width:23%;
 			}
 		}
 	}
