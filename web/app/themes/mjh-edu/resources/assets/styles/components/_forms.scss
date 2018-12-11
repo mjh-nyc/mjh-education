@@ -216,10 +216,24 @@ textarea {
 	.af-success {
 		@extend h4;
 	}
+	/*messages*/
+	.acf-notice {
+		&.-error {
+			color: red;
+		}
+		&.-success {
+			color: green;
+		}
+  		&.-warning {
+  			color: yellow;
+  		}
+  	}
 }
+  
 
 .post-password-form {
 	* {
 		display: block;
 	}
 }
+

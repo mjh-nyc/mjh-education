@@ -2,9 +2,12 @@
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
   <body @php body_class() @endphp>
+    @if (!isset($_GET['inline']))
     <div class="animsition">
       @php do_action('get_header') @endphp
       @include('partials.header')
+    @endif
+      
       <div class="wrap container" role="document">
         <div class="content">
           <main class="main">
@@ -17,9 +20,12 @@
           @endif
         </div>
       </div>
+    @if (!isset($_GET['inline']))
       @php do_action('get_footer') @endphp
       @include('partials.footer')
       @php wp_footer() @endphp
+    
     </div>
+    @endif
   </body>
 </html>
