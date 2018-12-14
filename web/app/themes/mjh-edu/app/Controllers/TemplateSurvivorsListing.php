@@ -29,7 +29,7 @@ class TemplateSurvivorsListing extends Controller
 				$term = get_category($term_id);
 				$terms[] = array(
 					'name' => $term->name,
-					'link' => $this->getInitSurvivorStoryPostLink($term_id),
+					'link' => $this->getInitSurvivorStoryPostLink($term_id->term_id),
 					'survivors_current_image' => get_field('survivors_current_image','survivors_'.$term->term_id),
 					'survivors_past_image' => get_field('survivors_past_image','survivors_'.$term->term_id),
 				);
