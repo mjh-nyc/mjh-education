@@ -166,3 +166,35 @@
 	}
 }
 
+.media_resources--listing {
+	.media_resources--item {
+		margin-bottom: 1rem;
+		.media_resource {
+			&--title {
+				@include bentonBd();
+			}
+			&--attribution {
+				color: map-get($theme-colors, neutral);
+			}
+		}
+	}
+	/*&.films {
+		.media_resources--item {
+			.media_resource {
+				&--attribution {
+					@include bentonBd();
+					color: map-get($theme-colors, text-color);
+				}
+			}
+		}
+	}*/
+}
+
+.entry-content {
+	ul, ol {
+		li {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
