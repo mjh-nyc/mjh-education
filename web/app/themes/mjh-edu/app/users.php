@@ -483,3 +483,17 @@ function mjh_registration_welcome_email( $user_id ) {
 
 }
 add_action('user_register', 'mjh_registration_welcome_email', 20, 1 );
+
+/**
+ * Custom validation for honeypot field on contact form
+ *
+ * @hook af/form/validate/key
+ * @return null
+ */
+function mjh_contact_validate_email() {
+	$contact_validate_email = af_get_field( 'contact_validate_email' );
+	if ( !empty($contact_validate_email) ) {
+		af_add_error( 'contact_validate_email', __('Thank you for your submission. We will contact you shortly.','sage') );
+	}
+}
+add_action( 'af/form/validate/key=form_5bf57489bfcf1', 'mjh_contact_validate_email' );

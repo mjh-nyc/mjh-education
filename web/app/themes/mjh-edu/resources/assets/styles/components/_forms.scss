@@ -237,3 +237,10 @@ textarea {
 	}
 }
 
+.page.contact {
+	.acf-form {
+		.af-field-contact-validate-email{
+			display: none;
+		}
+	}
+}
