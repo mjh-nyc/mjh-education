@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5c51439595aa1b7fc9e04908644c28d",
+    "content-hash": "879bde8fc4efa9625cfe23030d1f7a4e",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -577,6 +577,17 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/export-users-to-csv/"
+        },
+        {
+            "name": "yoast/wordpress-seo-premium",
+            "version": "9.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://mjhnyc.org/roa6f70qqmf4rz2n5o0k/wordpress-seo-premium-9.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-plugin"
         }
     ],
     "packages-dev": [
