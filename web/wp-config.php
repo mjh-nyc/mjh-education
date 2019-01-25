@@ -6,4 +6,6 @@
  */
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/config/application.php';
+define( 'WPCACHEHOME', '/www/mjhedu/web/app/plugins/wp-super-cache/' );
+define('WP_CACHE', getenv('WP_CACHE'));
 require_once ABSPATH . 'wp-settings.php';
