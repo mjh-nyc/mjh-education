@@ -5,6 +5,7 @@ WP-Cache Config Sample File
 See wp-cache.php for author details.
 */
 
+$dismiss_gc_warning = 1;
 $cache_page_secret = 'e36127aaa01c5054129d052221e9ead6';
 $wp_cache_mobile_groups = '';
 $wp_cache_home_path = '/wp/';
