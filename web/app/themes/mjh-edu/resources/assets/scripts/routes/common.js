@@ -44,17 +44,17 @@ export default {
 		$body.addClass('nav_closed');
 		
 		//navigation overlay
-		$hamburger.bind('click', function() {
-			resetMenuSize ();
+		$hamburger.bind('click', function(event) {
+			resetMenuSize (event);
 		});
 		
-		var resetMenuSize = function () {
+		var resetMenuSize = function (event) {
 			event.preventDefault();
 			$('.overlay-nav').css({ 'height': $(document).height() }).fadeToggle();
 			$("html, body").animate({ scrollTop: 0 });
 		};
 
-		$('#menu-main-navigation .menu-item-has-children > a').bind('click', function() {
+		$('#menu-main-navigation .menu-item-has-children > a').bind('click', function(event) {
 			event.preventDefault();
 			$(this).parent().toggleClass('open').find('ul').slideToggle();
 			//adjust overlay height
