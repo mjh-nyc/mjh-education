@@ -314,6 +314,8 @@ body.admin-bar {
             list-style: none;
             padding: 0;
             li {
+                padding-top: 10px;
+                padding-bottom: 10px;
                 @include font-size(17);
                 @include bentonBd();
                 @include media-breakpoint-up(md) {
@@ -327,8 +329,10 @@ body.admin-bar {
                     display: inline-block;
                     padding: 0;
                     width: 100%;
-                    line-height: 50px;
+                    line-height: normal;
                     text-decoration: none;
+                    padding-right: 25px;
+                    
                     &:hover {
                         text-decoration:underline;
                     }
@@ -356,7 +360,7 @@ body.admin-bar {
                 	@include fa-inline-prep();
                     transition: all 0.3s;
                     font-size: 25px;
-                    line-height: 1;
+                    line-height: normal;
                     color: white;
                     
                     content: "\f105";
@@ -380,9 +384,11 @@ body.admin-bar {
                 padding: 0 0 10px 17px;
                 li {
                     border: 0;
+                    padding-top: 5px;
+                    padding-bottom: 0;
                     @include bentonReg();
                     @include font-size(14);
-                    line-height: 2;
+                    line-height: normal;
                     @include media-breakpoint-up(md) {
                         @include font-size(18);
                     }
@@ -390,7 +396,7 @@ body.admin-bar {
                         @include font-size(24);
                     }
                     a {
-                        line-height: 2;
+                        line-height: normal;
                     }
                     a:before {
                         display: none;

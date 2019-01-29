@@ -151,14 +151,20 @@ $size:20px;
             float: left;
             background: $crumbs-back;
             text-align: center;
-            padding: 10px 20px 0 40px;
             position: relative;
-            margin: 0 10px 0 0; 
+            
             height: 40px;
             @include font-size(18);
             text-decoration: none;
             color: $text-color;
-
+            padding: 9px 10px 0 30px;
+            margin: 0 5px 0 0;
+            
+            @include media-breakpoint-up(sm) {
+                padding: 10px 20px 0 40px;
+                margin: 0 10px 0 0; 
+               
+            }
             &:after {
                 content: "";  
                 border-top: $size solid transparent;
