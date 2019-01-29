@@ -22,6 +22,7 @@ export default {
 			$overlay_nav			= DOMCACHE.get('.overlay-nav');
 
 
+
 		// Add image loazy load
 		//Lazy load images and background images where class lazy has been added
 		$('.lazy').unveil({

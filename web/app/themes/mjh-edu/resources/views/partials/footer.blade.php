@@ -17,6 +17,7 @@
     </div>
   </div>
 </footer>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29738632-5"></script>
 <script>
