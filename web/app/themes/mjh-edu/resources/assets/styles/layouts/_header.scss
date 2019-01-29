@@ -160,13 +160,16 @@
 
 
 .sticky {
-	height: $sticky-header-height;
+	height: $sticky-header-height-mobile;
 	@include clearfix;
 	@include transition(background .3s ease);
 
    	@include media-breakpoint-up(sm) {
-    	padding-top: 10px;
+        height: $sticky-header-height;
   	}
+    @include media-breakpoint-up(md) {
+        padding-top: 10px;
+    }
   .sticky-container {
 	width: 100%;
 	position: relative;

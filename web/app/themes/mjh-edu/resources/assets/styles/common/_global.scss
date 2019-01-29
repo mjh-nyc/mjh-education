@@ -1,7 +1,7 @@
 /* stylelint-disable */
 @font-face {
     font-family: 'EksellDisplay';
-    font-display: auto;
+    font-display: fallback;
     src: url('../fonts/EksellDisplayWeb-Medium.eot');
     src: url('../fonts/EksellDisplayWeb-Medium.eot?#iefix') format('embedded-opentype'), 
     url('../fonts/EksellDisplayWeb-Medium.woff2') format('woff2'), 

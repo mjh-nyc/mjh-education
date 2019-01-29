@@ -1,7 +1,12 @@
 export default {
   init() {
+    
+
+  },
+  finalize() {
+    // JavaScript to be fired on the home page, after the init JS
     // JavaScript to be fired on the home page
-      jQuery('.slider').slick({
+     jQuery('.slider').slick({
         dots: false,
         infinite: false,
         speed: 300,
@@ -99,12 +104,9 @@ export default {
       // Call rollover function to call rollover function again since breakpoints slick event kills js events
       lessonCardRollover();
       // Slick slider on breakpoint trigger
+      
       jQuery('.slider').on('breakpoint', function(){
           lessonCardRollover();
       });
-
-  },
-  finalize() {
-    // JavaScript to be fired on the home page, after the init JS
   },
 };
