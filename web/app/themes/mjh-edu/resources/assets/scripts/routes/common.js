@@ -1,6 +1,17 @@
 export default {
 	init() {
 
+		
+
+
+
+		
+
+
+	},
+	finalize() {
+		// JavaScript to be fired on all pages, after page specific JS is fired
+
 		//https://coderwall.com/p/q19via/jquery-dom-cache-object
 		var DOMCACHESTORE = {};
 		var DOMCACHE = {
@@ -20,9 +31,6 @@ export default {
 			$account_link			= DOMCACHE.get('.account-link'),
 			$logo_SVG				= DOMCACHE.get('.logo svg'),
 			$overlay_nav			= DOMCACHE.get('.overlay-nav');
-
-
-
 		// Add image loazy load
 		//Lazy load images and background images where class lazy has been added
 		$('.lazy').unveil({
@@ -129,10 +137,5 @@ export default {
 		jQuery('.entry-content, .page-content, .page')
 			.find( "iframe, object, embed" )
 			.wrap( "<div class='video-container'></div>" );
-
-
-	},
-	finalize() {
-		// JavaScript to be fired on all pages, after page specific JS is fired
 	},
 };	
