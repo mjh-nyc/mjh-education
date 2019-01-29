@@ -37,6 +37,9 @@ import 'sticky-kit/dist/sticky-kit.min';
 //Import slick
 import 'slick-carousel/slick/slick';
 
+//Import unveil2
+import 'unveil2/dist/jquery.unveil2.min';
+
 //**** //END ******************/
 /*^*^*^**^*^*^*^*^*^*^*^*^*^*^*/
 

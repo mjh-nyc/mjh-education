@@ -372,9 +372,10 @@ class App extends Controller
             $id = get_the_ID();
         }
         if (has_post_thumbnail( $id ) ) {
-            $image = get_the_post_thumbnail_url($id, $size);
-        } 
-        if (!$image) {
+        	$thumb_id = get_post_thumbnail_id($id);
+        	$thumb_url_array = wp_get_attachment_image_src($thumb_id, $size, true);
+            $image = $thumb_url_array[0];
+        } else {
             //use default image entered under social in theme toptions
             $image = get_field('social','option');
         }

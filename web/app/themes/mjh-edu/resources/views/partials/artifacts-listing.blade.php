@@ -14,7 +14,7 @@
                                     @if (has_post_thumbnail($artifact->ID))
                                         {!! get_the_post_thumbnail($artifact->ID, 'square@1x') !!}
                                     @else
-                                        <img src="@asset('images/image-feature-placeholder.png')" alt="{{ __('Artifact preview','sage') }}">
+                                        <img src="@asset('images/image-feature-placeholder.png')" alt="{{ __('Artifact preview','sage') }}" class="lazy">
                                     @endif
                                 </a>
                             </div>
