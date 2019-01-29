@@ -1,5 +1,5 @@
 {{-- You must pass the post ID to this template as $item_id --}}
-<div class="content-wrapper" style="background-image:url({{App::featuredImageSrc('square@1x',$item_id)}})">
+<div class="content-wrapper lazy" data-src="{{App::featuredImageSrc('square@1x',$item_id)}}|{{App::featuredImageSrc('square@2x',$item_id)}}">
 	<div class="content-card">
 		<span class="sr-only">{{ App::featuredImageAlt($item_id) }}</span>
 		<p class="small">

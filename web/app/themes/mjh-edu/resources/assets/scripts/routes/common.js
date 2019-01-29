@@ -1,12 +1,33 @@
 export default {
 	init() {
 
-		//cache DOM elements
-		var $body 			= $('body'),
-			$hamburger 		= $('.hamburger');
+		//https://coderwall.com/p/q19via/jquery-dom-cache-object
+		var DOMCACHESTORE = {};
+		var DOMCACHE = {
+			get: function(selector, force) {
+				if (DOMCACHESTORE[selector] !== undefined && force === undefined) {
+					return DOMCACHESTORE[selector];
+				}
+				DOMCACHESTORE[selector] = $(selector);
+				return DOMCACHESTORE[selector];
+			},
+		};
+
+		//cache DOM elements we'll be using in script below
+		var $body 					= DOMCACHE.get('body'),
+			$hamburger 				= DOMCACHE.get('.hamburger'),
+			$social_channel_links	= DOMCACHE.get('.social-channels a'),
+			$account_link			= DOMCACHE.get('.account-link'),
+			$logo_SVG				= DOMCACHE.get('.logo svg'),
+			$overlay_nav			= DOMCACHE.get('.overlay-nav');
 
 
-
+		// Add image loazy load
+		//Lazy load images and background images where class lazy has been added
+		$('.lazy').unveil({
+			offset: 100,
+		});
+		
 		// Initiate Typekit Fonts
 		window.WebFontConfig = {
 			typekit: {
@@ -28,12 +49,13 @@ export default {
 		})
 		sticky.options.enabled = true;
 
+		//cache DOM
 		// init hamburger navigation icon
 		$hamburger.on('click', function() {
 			$(this).toggleClass('is-active');
-			$('.social-channels a').toggleClass('nav-active');
-			$('.account-link').toggleClass('nav-active');
-			$('.logo svg').toggleClass('nav-active');
+			$social_channel_links.toggleClass('nav-active');
+			$account_link.toggleClass('nav-active');
+			$logo_SVG.toggleClass('nav-active');
 			if ($body.hasClass('nav_open')) {
 				$body.removeClass('nav_open').addClass('nav_closed');
 			} else {
@@ -50,7 +72,7 @@ export default {
 		
 		var resetMenuSize = function () {
 			event.preventDefault();
-			$('.overlay-nav').css({ 'height': $(document).height() }).fadeToggle();
+			$overlay_nav.css({ 'height': $(document).height() }).fadeToggle();
 			$("html, body").animate({ scrollTop: 0 });
 		};
 
