@@ -75,6 +75,10 @@ img {
   height: auto;
 }
 
+figure {
+  max-width: 100% !important;
+}
+
 /* global link styles */
 a {
   &:link, &:visited {
