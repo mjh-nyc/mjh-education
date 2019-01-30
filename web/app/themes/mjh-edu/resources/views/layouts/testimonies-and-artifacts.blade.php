@@ -23,5 +23,6 @@
       @include('partials.footer')
       @php wp_footer() @endphp
     </div>
+    @include('partials.trackers')
   </body>
 </html>
