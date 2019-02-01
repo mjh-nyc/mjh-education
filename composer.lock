@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "450f28cf150813b91668cd7b3ea68cdf",
+    "content-hash": "34fe27a1a04ede86b7ab33af4cb0f53c",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -579,16 +579,16 @@
             "homepage": "https://wordpress.org/plugins/export-users-to-csv/"
         },
         {
-            "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.6.4",
+            "name": "wpackagist-plugin/w3-total-cache",
+            "version": "0.9.7.2",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.6.4"
+                "url": "https://plugins.svn.wordpress.org/w3-total-cache/",
+                "reference": "tags/0.9.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.6.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -596,7 +596,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-super-cache/"
+            "homepage": "https://wordpress.org/plugins/w3-total-cache/"
         },
         {
             "name": "yoast/wordpress-seo-premium",
