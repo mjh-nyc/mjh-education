@@ -99,7 +99,8 @@
     "deliciousbrains/wp-offload-s3-pro": "^1.5",
     "wpackagist-plugin/export-users-to-csv": "1.1.1",
     "yoast/wordpress-seo-premium": "^9.5",
-    "wpackagist-plugin/w3-total-cache": "0.9.7.2"
+    "wpackagist-plugin/w3-total-cache": "0.9.7.2",
+    "wpackagist-plugin/autoptimize": "2.4.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
