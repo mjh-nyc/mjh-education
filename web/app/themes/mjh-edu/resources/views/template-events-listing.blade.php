@@ -8,7 +8,8 @@
     @include('partials.page-header')
     @include('partials.content-page')
 
-    <div class="event-form">
+    
+    <!--<div class="event-form">
       <form id="event-listing-form" name="event-listing-form" method='get' action="{!! APP::getPermalink() !!}">
         <h4><label for="event-category">@php _e("Display","sage"); @endphp</label></h4>
         <div class="styled-select slate">
@@ -20,7 +21,7 @@
           </select>
         </div>
       </form>
-    </div>
+    </div>-->
 
     @if( $events )
       <div class="event-listing-wrapper">
@@ -29,12 +30,10 @@
             @include('partials.content-event-card', ['item_id'=>$event->ID])
           </article>
         @endforeach
-
-        @if ($get_max_num_pages)
-          @include('partials.pagination',['max_num_pages'=>$get_max_num_pages])
-        @endif
-
       </div>
+      @if ($get_max_num_pages)
+        @include('partials.pagination',['max_num_pages'=>$get_max_num_pages])
+      @endif
    @else
     <div style="margin: 4rem 0;">
       <div class="alert alert-warning">{!! __("There are no events to display","sage") !!} </div>
