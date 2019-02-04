@@ -1,9 +1,11 @@
 {{-- You must pass the post ID to this template as $item_id --}}
 <div class="event-card">
-  <div class="event-card__image" style="background-image:url({{App::featuredImageSrc('square@2x',$item_id)}})">
-    <span class="sr-only">{{ App::featuredImageAlt($item_id) }}</span>
-    <span class="card-category" @if (App::get_field('event_type',$item_id) == 'recurring') style="background:#033EFB" @endif >{!! App::postTermsString($item_id,'event_category') !!}</span>
-  </div>
+  <a href="{!! get_the_permalink($item_id); !!}">
+    <div class="event-card__image lazy" data-src="{{App::featuredImageSrc('square@1x',$item_id)}}">
+      <span class="sr-only">{{ App::featuredImageAlt($item_id) }}</span>
+      <span class="card-category" @if (App::get_field('event_type',$item_id) == 'recurring') style="background:#033EFB" @endif >{!! App::postTermsString($item_id,'event_category') !!}</span>
+    </div>
+  </a>
   <div class="event-card__info">
     <h3 class="card-title">{!!  App::truncateString(get_the_title($item_id), 20) !!}</h3>
   </div>

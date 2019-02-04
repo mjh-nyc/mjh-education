@@ -5,14 +5,16 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	align-items: stretch;
 	article {
+		align-self: stretch;
 		width:100%;
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(sm) {
 			width:48%;
 		}
-		@include media-breakpoint-up(xl) {
+		/*@include media-breakpoint-up(xl) {
 			width:31%;
-		}
+		}*/
 	}
 }
 .event-card {

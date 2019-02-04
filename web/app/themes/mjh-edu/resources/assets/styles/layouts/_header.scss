@@ -336,12 +336,12 @@ body.admin-bar {
                     &:hover {
                         text-decoration:underline;
                     }
-                    @include media-breakpoint-up(md) {
+                    /*@include media-breakpoint-up(md) {
                         line-height: 60px;
                     }
                     @include media-breakpoint-up(lg) {
                         line-height: 77px;
-                    }
+                    }*/
                 }
                 &.current-menu-item {
                     a {
