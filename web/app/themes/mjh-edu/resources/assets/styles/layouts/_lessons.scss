@@ -20,6 +20,29 @@
 	    	font-size: 200%;
 	    }
 	}
+	&__listing {
+		.listing-grid {
+			margin-top: 2rem;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			.lesson-card {
+				width: 49%;
+				margin-bottom: 2rem;
+				@include media-breakpoint-up(md) {
+					width: 32%;
+				}
+				@include media-breakpoint-up(lg) {
+					width: 24%;
+				}
+				h4 {
+					margin-top: 1rem;
+				}
+			}
+		}
+		
+	}
 	.carousel {
 		position: relative;
 		display: flex;
