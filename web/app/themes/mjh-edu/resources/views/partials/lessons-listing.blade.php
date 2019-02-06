@@ -30,7 +30,7 @@
 </div>
 
 @if (App::get_field('credits_text'))
-<div class="credits container">
+<div class="credits">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
