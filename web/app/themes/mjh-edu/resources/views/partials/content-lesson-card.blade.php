@@ -6,7 +6,9 @@
 	    </div>
 	@endif
     <h4 class="slide-card__title">{!! get_the_title($item_id) !!}</h4>
-    <div class="slide-card__details">
-        <a class="cta cta-white cta-icon cta-arrow animsition-link" href="{!! get_the_permalink($item_id); !!}">{{ __('Get this lesson', 'sage') }}</a>
-    </div>
+    @if($header)
+	    <div class="slide-card__details">
+	        <a class="cta cta-white cta-icon cta-arrow animsition-link" href="{!! get_the_permalink($item_id); !!}">{{ __('Get this lesson', 'sage') }}</a>
+	    </div>
+	 @endif
 </div>

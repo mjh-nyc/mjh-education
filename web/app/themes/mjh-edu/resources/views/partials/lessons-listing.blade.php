@@ -1,5 +1,5 @@
 <div class="lessons-listing">
-    @include('partials.page-header')
+    <!--
     {{-- Lessons Dropdown --}}
     @if (!empty($lessons))
         <div class="lessons-listing__select">
@@ -17,7 +17,27 @@
         </div>
     @endif
     {{-- Lessons Dropdown --}}
-    <div class="lessons-listing__content">
-        @include('partials.content-page')
+    -->
+    <div class="lesson-plans">
+        <div class="lesson-plans__listing row" id="pinContainer">
+            <div class="col-12 listing-grid">
+            @foreach ($lessons as $lesson)
+                @include('partials.content-lesson-card', ['item_id'=>$lesson->ID,'header'=>''] )
+            @endforeach
+            </div>
+        </div>
     </div>
 </div>
+
+@if (App::get_field('credits_text'))
+<div class="credits container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4>{{ App::get_field('credits_header') }}</h4>
+            {!! App::get_field('credits_text') !!}
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+@endif
