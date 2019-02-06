@@ -26,15 +26,41 @@
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: flex-start;
 			.lesson-card {
-				width: 49%;
+				width: 48%;
 				margin-bottom: 2rem;
+				margin-right: 4%;
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
 				@include media-breakpoint-up(md) {
 					width: 32%;
+					margin-right: 2%;
+					&:nth-child(2n) {
+						margin-right: 2%;
+					}
+					&:nth-child(3n) {
+						margin-right: 0;
+					}
 				}
 				@include media-breakpoint-up(lg) {
-					width: 24%;
+					width: 23%;
+					margin-right: 2.66666%;
+					&:nth-child(2n),
+					&:nth-child(3n) {
+						margin-right: 2.66666%;
+					}
+					&:nth-child(4n) {
+						margin-right: 0;
+					}
+				}
+				a {
+					&:hover {
+						img {
+							opacity:0.5;
+						}
+					}
 				}
 				h4 {
 					margin-top: 1rem;
