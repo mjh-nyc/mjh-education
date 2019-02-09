@@ -64,6 +64,9 @@
 				}
 				h4 {
 					margin-top: 1rem;
+					a {
+			    		color: map-get($theme-colors, text-color);
+			    	}
 				}
 			}
 		}
