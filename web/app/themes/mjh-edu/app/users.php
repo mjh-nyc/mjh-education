@@ -39,7 +39,7 @@ function users_generate_new_user_id( $post_id, $form ) {
 		wp_die( $user_id->get_error_message() );
 	} else {
 		// Set the 'post_id' to the newly created user_id, including the 'user_' ACF uses to target a user
-		$_POST['users-register']['uid']=$user_id;
+		$_POST['new-user']['uid']=$user_id;
 		return 'user_' . $user_id;
 	}
 }

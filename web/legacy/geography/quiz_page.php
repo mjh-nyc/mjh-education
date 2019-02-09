@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title>Quiz : New York's Holocaust Curriculum</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="quiz.css">
 </head>
 
-<body background="#FFFFFF" style="background-color: #FFFFFF">
+<body style="background-color: #FFFFFF">
 
 	<div id="content" style="margin: 0 auto; width: 650px">
 		<?php

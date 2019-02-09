@@ -317,11 +317,27 @@ function my_login_logo() {
             font-size: 14px;
           }
         }
+        .login-footer{
+            text-align: center;
+        }
+        .login-footer .link{
+            text-decoration: none;
+            color: #555d66;
+        }
+        .login-footer .link:hover {
+            color: #00a0d2;
+        }
+        .login-footer .link:focus {
+            color: #124964;
+        }
     </style>
 <?php }
 add_action( 'login_head','App\\my_login_logo',20);
 
-
+function mjh_login_footer(){
+	echo('<div class="login-footer"><p><a class="link" href="/privacy-policy">Privacy Policy</a></p></div>');
+}
+add_action( 'login_footer','App\\mjh_login_footer', 50, 2 );
 
 
 /********************************************

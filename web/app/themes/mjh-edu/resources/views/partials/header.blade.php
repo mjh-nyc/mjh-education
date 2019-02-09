@@ -27,7 +27,7 @@
 	</div>
 	@if (is_front_page())
     <!-- featured image and page title area -->
-    <div class="hero-area parallax-window" data-parallax="scroll" data-image-src="{{App::featuredImageSrc('homepage-header')}}" data-over-scroll-fix="true" alt="{{App::featuredImageAlt(get_post_thumbnail_id())}}">
+    <div class="hero-area parallax-window" data-parallax="scroll" data-image-src="{{App::featuredImageSrc('homepage-header')}}" data-over-scroll-fix="true" alt="{{App::featuredImageAlt(get_the_ID())}}">
       <div class="sr-only">{{App::featuredImageAlt(get_post_thumbnail_id())}}</div>
       <div class="container">
       	<div class="row">
@@ -36,6 +36,7 @@
       			@include('partials.page-header')
       		</div>
       	</div>
+	  </div>
     </div>
   	<!-- //end featured image and page title area -->
 	@else
@@ -62,7 +63,7 @@
           <div class="account-links">
             {!! App::get_account_links() !!}
           </div>
-
+		</footer>
       </div>
     </div>
   </div>
