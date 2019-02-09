@@ -17,9 +17,8 @@
         @endwhile
         <div class="users-login"><a href="{!! get_home_url()!!}/login">{!! __("Already have an account? Log in","sage")!!} &#8594;</a></div>
         <div class="users-reset-link"><a href="{!! get_home_url()!!}/wp/wp-login.php?action=lostpassword">{!!__("Forgot your password?","sage")!!} &#8594;</a></div>
-        <form method="post" class="users-register">
-            <input type="hidden" name="register" value="register" />
+        <div class="users-register">
            @php acf_form('new-user') @endphp
-        </form>
+        </div>
     @endif
 @endsection
