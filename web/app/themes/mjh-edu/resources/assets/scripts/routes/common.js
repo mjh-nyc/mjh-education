@@ -128,6 +128,10 @@ export default {
 			$(".parallax-mirror").fadeOut("fast");
 		});
 
+		if(jQuery(".parallax-window").attr('alt')){
+            jQuery(".parallax-mirror img").attr("alt",jQuery(".parallax-window").attr('alt'));
+		}
+
 		//add animsition-link class to menu items
 		/*$('#menu-main-navigation a').each(function() {
 			$( this ).addClass('animsition-link');
@@ -137,5 +141,12 @@ export default {
 		jQuery('.entry-content, .page-content, .page')
 			.find( "iframe, object, embed" )
 			.wrap( "<div class='video-container'></div>" );
+
+		// Set acf tables to presentation role for accessibility
+		if(jQuery( ".acf-table" ).length > 0){
+			jQuery( ".acf-table" ).each(function( ) {
+				$( this ).attr('role','presentation');
+			});
+		}
 	},
 };	
