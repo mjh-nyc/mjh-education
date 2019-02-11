@@ -1,7 +1,9 @@
 <div class="lesson-plans">
     <header class="lesson-plans__header">
         <h3>{{ App::get_field('lesson_plans_homepage_header','option') }}</h3>
-        <p>{{ App::get_field('lesson_plans_homepage_teaser','option') }}</p>
+        <div class="lesson-plans__teaser">
+            <p>{{ App::get_field('lesson_plans_homepage_teaser','option') }}</p>
+        </div>
     </header>
     <div class="row" id="pinContainer">
         <div class="carousel slider horizontal-scroll-wrapper squares" id="slideContainer">
