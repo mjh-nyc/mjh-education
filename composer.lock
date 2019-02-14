@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b3521fc781b3463b3d0ab34889a5bae",
+    "content-hash": "ea8b6457cb5d81636e095ea7a550e246",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -286,10 +286,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
-                "reference": "1.3.6"
+                "reference": "1.3.7"
             },
             "type": "wordpress-muplugin",
-            "time": "2019-02-06 16:43:32"
+            "time": "2019-02-14 19:04:59"
         },
         {
             "name": "oscarotero/env",
@@ -676,12 +676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "344bf4ed1263c75e7f96b87b80c52e8373561e19"
+                "reference": "54ee79a17e8cdc4ff8a1570198d5bc669a5803b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/344bf4ed1263c75e7f96b87b80c52e8373561e19",
-                "reference": "344bf4ed1263c75e7f96b87b80c52e8373561e19",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/54ee79a17e8cdc4ff8a1570198d5bc669a5803b8",
+                "reference": "54ee79a17e8cdc4ff8a1570198d5bc669a5803b8",
                 "shasum": ""
             },
             "conflict": {
@@ -814,7 +814,7 @@
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "tecnickcom/tcpdf": "<6.2.22",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
+                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
                 "theonedemon/phpwhois": "<=4.2.5",
                 "titon/framework": ">=0,<9.9.99",
                 "truckersmp/phpwhois": "<=4.3.1",
@@ -872,7 +872,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2019-02-05T19:58:17+00:00"
+            "time": "2019-02-14T08:06:11+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
