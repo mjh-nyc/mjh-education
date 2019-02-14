@@ -209,6 +209,13 @@
 			color: white;
 		}
 
+		.post-header {
+			padding-top: 15px;
+			@include media-breakpoint-up(md) {
+				padding-top: 0;
+			}
+		}
+
 		.row {
 
 		}
