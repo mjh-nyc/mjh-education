@@ -2,11 +2,13 @@
 <div class="content-wrapper lazy" data-src="{{App::featuredImageSrc('square@1x',$item_id)}}|{{App::featuredImageSrc('square@2x',$item_id)}}">
 	<div class="content-card">
 		<span class="sr-only">{{ App::featuredImageAlt($item_id) }}</span>
-		<p class="small">
-			@if ($header != 'pages') 
-				{{ $header }}
-			@endif
-		</p>
+		<header>
+			<p class="small">
+				@if ($header != 'pages') 
+					{{ $header }}
+				@endif
+			</p>
+		</header>
 		<h3 class="content-card__title">
 			@if ( strtolower(get_the_title($item_id)) != "timeline")
 				{!! App::truncateString(get_the_title($item_id), 20) !!}

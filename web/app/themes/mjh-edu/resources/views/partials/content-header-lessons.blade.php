@@ -2,6 +2,7 @@
 @include('partials.content-featured-image')
 </div>
 <div class="lesson-header @if(App::featuredImage()) col-md-7 @else col-md-8 no-featured-image @endif">
+    <div class="post-header">{!! App::get_field('benefactor_label','option') !!}</div>
     <div class="post-title"><h1>{!! App::title() !!}</h1></div>
     <div class="post-links">
         <ul>
