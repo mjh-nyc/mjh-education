@@ -78,7 +78,7 @@
 		}
 		&__title {
 			@include font-size(36);
-			@include media-breakpoint-up(md) {
+			@include media-breakpoint-up(xl) {
 				@include font-size(30);
 			}
 		}
@@ -112,6 +112,32 @@
 		z-index: 200;
 		.content-card {
 			justify-content: space-between;
+			h3 {
+				@include font-size(36);
+				@include media-breakpoint-up(sm) {
+					@include font-size(24);
+				}
+				@include media-breakpoint-up(md) {
+					@include font-size(36);
+				}
+				@include media-breakpoint-up(lg) {
+					@include font-size(18);
+				}
+				@include media-breakpoint-up(xl) {
+					@include font-size(28);
+				}
+			}
+		}
+		.content-wrapper {
+			height: 100%;
+		}
+		.feature {
+			&:nth-child(2) {
+				margin-bottom: 30px;
+				@include media-breakpoint-up(sm) {
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 	&__secondary {
