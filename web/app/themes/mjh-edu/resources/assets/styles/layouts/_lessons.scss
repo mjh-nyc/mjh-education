@@ -11,9 +11,6 @@
 	    @include media-breakpoint-up(lg) {
 	    	padding-top: 2rem;
 	    }
-	    h3 {
-	    	font-size: 200%;
-	    }
 	}
 	&__teaser {
 		@include make-col-ready();

@@ -35,36 +35,27 @@ h3 {
 }
 
 h1 {
-    @include font-size(32);
+    @include font-size(40);
     margin-bottom: 3rem;
-    @include media-breakpoint-up(sm) {
-        @include font-size(40);
-    }
     @include media-breakpoint-up(lg) {
         @include font-size(48);
     }
 }
 h2 {
-    @include font-size(20);
-    @include media-breakpoint-up(sm) {
-        @include font-size(28);
+    @include font-size(36);
+    @include media-breakpoint-up(lg) {
+        @include font-size(40);
     }
+}
+h3 {
+    @include font-size(30);
     @include media-breakpoint-up(lg) {
         @include font-size(36);
     }
 }
-h3 {
-    @include font-size(18);
-    @include media-breakpoint-up(sm) {
-        @include font-size(24);
-    }
-    @include media-breakpoint-up(lg) {
-        @include font-size(30);
-    }
-}
 h4 {
   @include bentonBd();
-  @include font-size(16);
+  @include font-size(18);
   @include media-breakpoint-up(sm) {
     @include font-size(24);
   }
