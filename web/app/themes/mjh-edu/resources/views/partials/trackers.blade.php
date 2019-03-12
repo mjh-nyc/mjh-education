@@ -22,6 +22,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1335537099825695');
   fbq('track', 'PageView');
+  @if( !empty($recent_user_register_time))
+  fbq('track', 'CompleteRegistration');
+  @endif
 </script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1335537099825695&ev=PageView&noscript=1"
