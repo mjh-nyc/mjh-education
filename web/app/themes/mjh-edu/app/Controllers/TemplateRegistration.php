@@ -53,10 +53,12 @@ class TemplateRegistration extends Controller
 			$id = (int)substr($_REQUEST['id'], 5);
 			// Get dates and check recent registration
 			$udata = get_userdata( $id );
-			$registered = strtotime($udata->user_registered);
-			$minute_check = strtotime('- 1 minute');
-			if($registered > $minute_check){
-				return true;
+			if(!empty($udata)) {
+				$registered = strtotime($udata->user_registered);
+				$minute_check = strtotime('- 1 minute');
+				if ($registered > $minute_check) {
+					return true;
+				}
 			}
 		}
 		return false;
