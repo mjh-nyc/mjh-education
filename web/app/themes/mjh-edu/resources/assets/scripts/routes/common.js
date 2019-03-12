@@ -58,6 +58,7 @@ export default {
 		})
 		sticky.options.enabled = true;
 
+
 		//cache DOM
 		// init hamburger navigation icon
 		$hamburger.on('click', function() {

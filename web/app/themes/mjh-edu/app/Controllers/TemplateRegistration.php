@@ -23,9 +23,12 @@ class TemplateRegistration extends Controller
 			'post_id'	=> 'new_user',
 			'field_groups'=>array('group_5bda592161422','group_5bd1f1e25075b'),
 			'submit_value' => __("Register", 'acf'),
-			'updated_message' => ''
+			'updated_message' => '',
+			'return' => '?updated=true&id=%post_id%',
 		));
 	}
+
+
 	/**
 	 * Check if form is validated
 	 *
@@ -38,4 +41,25 @@ class TemplateRegistration extends Controller
 			return false;
 		}
 	}
+
+	/**
+	 * Check if user registered date is less than a minute in future, called after registration
+	 *
+	 * @return boolean
+	 */
+	public function recentUserRegisterTime(){
+		if(!empty($_REQUEST['id'])){
+			//Remove `user_` and set id
+			$id = (int)substr($_REQUEST['id'], 5);
+			// Get dates and check recent registration
+			$udata = get_userdata( $id );
+			$registered = strtotime($udata->user_registered);
+			$minute_check = strtotime('- 1 minute');
+			if($registered > $minute_check){
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
