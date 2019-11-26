@@ -468,9 +468,9 @@ function mjh_registration_welcome_email( $user_id ) {
 	//$wpdb->update($wpdb->users, array('user_activation_key' => time() . ':' . $hash_key), array('user_login' => $user->user_login));
 	$regurl = wp_login_url()."?action=rp&key=".$key."&login=".$user->user_nicename;
 
-	$subject = __("Welcome to New York’s Holocaust Curriculum Online Community","sage");
+	$subject = __("Welcome to the Museum of Jewish Heritage Holocaust Curriculum Online Community","sage");
 	$message = __("Dear","sage")." ".$first_name.",\n\n";
-	$message .= __("Thank you for your interest in New York’s Holocaust Curriculum. We welcome you to our online community and hope that you find the lesson plans and resources helpful in teaching new generations about the Holocaust.","sage")."\n\n";
+	$message .= __("Thank you for your interest in Museum of Jewish Heritage Holocaust Curriculum. We welcome you to our online community and hope that you find the lesson plans and resources helpful in teaching new generations about the Holocaust.","sage")."\n\n";
 	$message .= __("Your username is the same as your email address, please use it to log in to the site.","sage")."\r\n\r\n";
 	$message .= __("To set your password, please visit","sage")." ".$regurl."\r\n\r\n";
 	$message .= __("If you have questions or encounter difficulties, please contact outreach@mjhnyc.org","sage")."\r\n\r\n";
