@@ -595,15 +595,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-forms",
-            "version": "1.6.3",
+            "version": "1.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-forms/",
-                "reference": "tags/1.6.3"
+                "reference": "tags/1.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.6.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.7.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
