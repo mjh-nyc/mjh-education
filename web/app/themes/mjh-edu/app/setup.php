@@ -20,7 +20,7 @@ function theme_prefix_setup() {
         'flex-height' => true,
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
-    /* Disable Admin Bar for All Users Except for Administrators */ 
+    /* Disable Admin Bar for All Users Except for Administrators */
     if (!current_user_can('administrator') && !is_admin()) {
       show_admin_bar(false);
     }
@@ -235,7 +235,7 @@ add_filter( 'login_headerurl','App\\my_login_logo_url' );
 function my_login_logo_url_title() {
     return get_option('blogname');
 }
-add_filter( 'login_headertitle','App\\my_login_logo_url_title' );
+add_filter( 'login_headertext','App\\my_login_logo_url_title' );
 
 //change the default WP login screen logo and styles
 function my_login_logo() {
@@ -260,7 +260,7 @@ function my_login_logo() {
             width:340px;
         }
         .wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
-                 
+
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
           text-decoration: none !important;
           display: inline-block;
@@ -270,9 +270,9 @@ function my_login_logo() {
           line-height: 50px;
           font-size:16px;
           padding: 0 70px 0 30px;
-          
+
           transition: all 0.2s;
-          
+
           background-color: #222;
           color: white;
           border-color: transparent;
