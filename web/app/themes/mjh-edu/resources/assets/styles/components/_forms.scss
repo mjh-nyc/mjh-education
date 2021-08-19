@@ -37,7 +37,10 @@
 .users-edit,
 .af-form {
 	padding: 1rem;
-    background: map-get($theme-colors, background);
+  background: map-get($theme-colors, background);
+}
+.acf-hidden {
+	display: none;
 }
 #loginform {
 	label {
