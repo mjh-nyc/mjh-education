@@ -16,7 +16,7 @@
         @include('partials.content-page')
         @endwhile
         <div class="users-login"><a href="{!! get_home_url()!!}/login">{!! __("Already have an account? Log in","sage")!!} &#8594;</a></div>
-        <div class="users-reset-link"><a href="{!! get_home_url()!!}/wp/wp-login.php?action=lostpassword">{!!__("Forgot your password?","sage")!!} &#8594;</a></div>
+        <div class="users-reset-link"><a href="{!! get_home_url()!!}/mjh-login/?action=lostpassword">{!!__("Forgot your password?","sage")!!} &#8594;</a></div>
         <div class="users-register">
            @php acf_form('new-user') @endphp
         </div>
