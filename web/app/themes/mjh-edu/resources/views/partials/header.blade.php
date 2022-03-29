@@ -44,6 +44,39 @@
 	@endif
 </header>
 
+
+<div class="overlay-nav container-fluid no-gutters" style="">
+  <div class="container">
+    <div class="overlay-toggle">
+      <a href="#" id="primary-nav-close"><span class="sr-only"> @php _e("Close Navigation","sage"); @endphp</span></a>
+    </div>
+    <div class="row">
+      <div class="wrapper">
+        @if (!empty($site_navigations['button_top_navigation']))
+          {!! $site_navigations['button_top_navigation'] !!}
+        @endif
+        <div class="site-search">
+          {!! get_search_form(false) !!}
+        </div>
+        <nav class="nav-primary">
+          @if (!empty($site_navigations['primary_navigation']))
+            {!! $site_navigations['primary_navigation'] !!}
+          @endif
+        </nav>
+          @if (!empty($site_navigations['mini_top_navigation']))
+            {!! $site_navigations['mini_top_navigation'] !!}
+          @endif
+        <div class="social-channels">
+          {!! App::get_social() !!}
+        </div>
+          <div class="account-links">
+            {!! App::get_account_links() !!}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php /* TODO: kept for reference, remove when port is finished
 <div class="overlay-nav container-fluid no-gutters" style="">
   <div class="container">
     <div class="row">
@@ -58,7 +91,7 @@
         </nav>
         <footer>
           <div class="social-channels">
-            {!! App::get_social() !!}     
+            {!! App::get_social() !!}
           </div>
           <div class="account-links">
             {!! App::get_account_links() !!}
@@ -68,3 +101,4 @@
     </div>
   </div>
 </div>
+ */ ?>

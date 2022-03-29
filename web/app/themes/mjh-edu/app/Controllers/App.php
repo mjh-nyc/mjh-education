@@ -239,11 +239,11 @@ class App extends Controller
 		if (!$id){
 			$id = get_the_ID();
 		}
-		
+
 		if (has_excerpt($id)) {
 			$excerpt = get_the_excerpt($id);
 			$excerpt = App::truncateString($excerpt, 16);
-		
+
 			//also if the title is too long, hide the description
 			//if (strlen(get_the_title($id)) >30) {
 				//return false;
@@ -336,7 +336,7 @@ class App extends Controller
     }
 
     /**
-     * get field data from a group 
+     * get field data from a group
      *
      * @return varchar
      */
@@ -356,7 +356,7 @@ class App extends Controller
         }  else {
             return false;
         }
-        
+
     }
 
 
@@ -714,4 +714,25 @@ class App extends Controller
 			exit;
 		}
 	}
+
+    /**
+     * Get site navigations from MJH via rest api
+     *
+     * @return array
+     */
+    public function siteNavigations()
+    {
+        $navigations = array();
+        $mjh_navigation_rest_api_url = get_field('mjh_navigation_rest_api_url', 'option');
+        if (!empty($mjh_navigation_rest_api_url)) {
+            $response = wp_remote_get($mjh_navigation_rest_api_url);
+            if (is_array($response) && !is_wp_error($response)) {
+                $response_body = json_decode($response['body'], true);
+                if (!empty($response_body)) {
+                    $navigations = $response_body;
+                }
+            }
+        }
+        return $navigations;
+    }
 }
