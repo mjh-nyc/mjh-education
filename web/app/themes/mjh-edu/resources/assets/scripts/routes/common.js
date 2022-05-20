@@ -12,25 +12,6 @@ export default {
 	finalize() {
 		// JavaScript to be fired on all pages, after page specific JS is fired
 
-		//https://coderwall.com/p/q19via/jquery-dom-cache-object
-		var DOMCACHESTORE = {};
-		var DOMCACHE = {
-			get: function(selector, force) {
-				if (DOMCACHESTORE[selector] !== undefined && force === undefined) {
-					return DOMCACHESTORE[selector];
-				}
-				DOMCACHESTORE[selector] = $(selector);
-				return DOMCACHESTORE[selector];
-			},
-		};
-
-		//cache DOM elements we'll be using in script below
-		var $body 					= DOMCACHE.get('body'),
-			$hamburger 				= DOMCACHE.get('.hamburger'),
-			$social_channel_links	= DOMCACHE.get('.social-channels a'),
-			$account_link			= DOMCACHE.get('.account-link'),
-			$logo_SVG				= DOMCACHE.get('.logo svg'),
-			$overlay_nav			= DOMCACHE.get('.overlay-nav');
 		// Add image loazy load
 		//Lazy load images and background images where class lazy has been added
 		$('.lazy').unveil({
@@ -50,53 +31,83 @@ export default {
 			s.parentNode.insertBefore(wf, s);
 		})(document);
 
-		//init sticky header
+
+		//Navigation
+		/**********************/
+		var $open_menu = 'id'; //temp before it gets set below;
+        //primary navigation
+        jQuery('#menu-primary-navigation .menu-item-has-children > a, #menu-collapsible-sidenavigation .menu-item-has-children > a').bind('click', function(event) {
+            event.preventDefault();
+            //close any open menus
+            if($open_menu!=jQuery(this).parent().attr('id')) {
+              jQuery('#' + $open_menu).removeClass('open').find('ul').css('display','none');
+            }
+            //open selected menu
+            jQuery(this).parent().toggleClass('open').find('ul').slideToggle(100);
+            //set as current
+            $open_menu = jQuery(this).parent().attr('id');
+        });
+        //wrap submenus
+        jQuery('.menu-primary-navigation-container .sub-menu').wrap('<div class="sub-menu-container"></div>');
+
+        // JavaScript to be fired on all pages in tablet and mobile views
+        jQuery('#primary-nav-toggle').bind('click', function(event) {
+            event.preventDefault();
+            jQuery(this).toggleClass('open');
+            jQuery('.overlay-nav').css({ 'height': jQuery(document).height() }).fadeToggle();
+            jQuery("html, body").animate({ scrollTop: 0 });
+            //position the close button aprparent ent over the menu button
+            var offset = jQuery('#primary-nav-toggle').offset();
+            var close_btn_offset = $(window).width() - offset.left - jQuery('#primary-nav-toggle').width();
+            jQuery('.overlay-nav .overlay-toggle').css('right',close_btn_offset+'px');
+        })
+        jQuery('#primary-nav-close').bind('click', function(event) {
+            event.preventDefault();
+            jQuery('.overlay-nav').fadeOut();
+            jQuery('#primary-nav-toggle').removeClass('open');
+            jQuery('#menu-overlay-navigation .open').removeClass('open').find('ul').hide();
+        })
+        jQuery('#menu-overlay-navigation .menu-item-has-children > a').bind('click', function(event) {
+            event.preventDefault();
+            jQuery(this).parent().toggleClass('open').find('ul').slideToggle();
+            //adjust overlay height
+            //becuase we're animating the navigation items down, we have to wait for the animation to complete
+            setTimeout(function () {
+                jQuery('.overlay-nav').css({ 'height': jQuery(document).height() });
+                 jQuery(".subPageNav").trigger("sticky_kit:recalc");
+            }, 1000);
+
+
+        })
+        //automatically expand parent if we're on a subpage
+        jQuery('#menu-overlay-navigation .current-menu-parent').toggleClass('open').find('ul').slideToggle();
+
+
+        //init sticky header
 		var Waypoint = window.Waypoint;
 		var sticky = new Waypoint.Sticky({
-			element: $('.sticky')[0],
-			offset: -1,
+			element: jQuery('.sticky')[0],
 		})
 		sticky.options.enabled = true;
 
+		var $miniSearchOpen = jQuery('#menu-mini-top-search--open');
+		var $miniSearchClose = jQuery('#menu-mini-top-search--close');
+		var $miniSearchForm = jQuery('#menu-mini-top-search--form');
 
-		//cache DOM
-		// init hamburger navigation icon
-		$hamburger.on('click', function() {
-			$(this).toggleClass('is-active');
-			$social_channel_links.toggleClass('nav-active');
-			$account_link.toggleClass('nav-active');
-			$logo_SVG.toggleClass('nav-active');
-			if ($body.hasClass('nav_open')) {
-				$body.removeClass('nav_open').addClass('nav_closed');
-			} else {
-				$body.removeClass('nav_closed').addClass('nav_open');
-			}
-		});
-		//on initial load, set body class
-		$body.addClass('nav_closed');
-		
-		//navigation overlay
-		$hamburger.bind('click', function(event) {
-			resetMenuSize (event);
-		});
-		
-		var resetMenuSize = function (event) {
+		$miniSearchOpen.on( "click", function(event) {
 			event.preventDefault();
-			$overlay_nav.css({ 'height': $(document).height() }).fadeToggle();
-			$("html, body").animate({ scrollTop: 0 });
-		};
+			$miniSearchForm.slideToggle(100);
+			//focus
+			$miniSearchForm.find('.search-field').focus();
+		});
+		$miniSearchClose.on( "click", function(event) {
+			event.preventDefault();
+			$miniSearchForm.slideToggle(100);
+		});
 
-		$('#menu-main-navigation .menu-item-has-children > a').bind('click', function(event) {
-			event.preventDefault();
-			$(this).parent().toggleClass('open').find('ul').slideToggle();
-			//adjust overlay height
-			//becuase we're animating the navigation items down, we have to wait for the animation to complete
-			setTimeout(function () {
-				$('.overlay-nav').css({ 'height': $(document).height() });
-			}, 1000);
-		})
-		//automatically expand parent if we're on a subpage
-		$('#menu-main-navigation .current-menu-parent').toggleClass('open').find('ul').slideToggle();
+        //END navigation **********/
+
+
 
 
 		//Set autocomplete off for the search form

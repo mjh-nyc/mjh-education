@@ -11,6 +11,7 @@
 }
 body, html {
   height: 100%;
+  font-size: 19px;
 }
 body {
     @include bentonReg();
@@ -19,7 +20,7 @@ body {
         @include font-size(16);
     }
     @include media-breakpoint-up(lg) {
-        @include font-size(18);
+        @include font-size(19);
     }
     &.home {
       background-color: map-get($theme-colors, background);
@@ -268,4 +269,56 @@ footer.content-info {
     }
   }
 }
+
+
+.sticky-container {
+    max-width: 940px;
+   @include media-breakpoint-up(xl) {
+        max-width: 1110px;
+    }
+  
+  margin: 0 auto;
+  padding-bottom: 20px;
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 0;
+  }
+  .row {
+    align-items: center;
+  }
+}
+.sticky {
+    /*-webkit-transition: background .2s linear;
+    -moz-transition: background .2s linear;
+    -ms-transition: background .2s linear;
+    -o-transition: background .2s linear;
+    transition: background .2s linear;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.stuck {
+    position: fixed;
+    @extend .container;
+    background-color: black;
+    -webkit-box-shadow: 0 12px 28px 0 rgba(0,0,0,.4);
+    box-shadow: 0 12px 28px 0 rgba(0,0,0,.4);
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    //modify some header css
+    .menu-primary-navigation-container,
+    .menu-button-top-navigation-container {
+        margin-top: 10px;
+    }
+     .home-link-sticky {
+        margin-top: 7px !important;
+        display: block !important;
+    }
+}
+//if admin menu is out, add 30 pix to stuck menu
+.admin-bar .stuck {
+    top: 30px;
+}
+
+
 /* stylelint-enable */
