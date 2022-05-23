@@ -1,4 +1,5 @@
-<div class="row features features__secondary">
+{{-- NOT USED / ARCHIVED --}}
+{{--<div class="row features features__secondary">
 	@php $secondary_features = App::get_repeater_field('secondary_features'); @endphp
 	@if(!empty($secondary_features))
 		 @foreach ($secondary_features as $feature)
@@ -7,4 +8,4 @@
 		 	</div>
 		 @endforeach
 	@endif
-</div>
+</div>--}}

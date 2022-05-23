@@ -1,4 +1,5 @@
-<div class="lesson-plans">
+{{-- NOT USED / ARCHIVED --}}
+{{--<div class="lesson-plans">
     <header class="lesson-plans__header">
         <h3>{!! App::get_field('lesson_plans_homepage_header','option') !!}</h3>
         <div class="lesson-plans__teaser">
@@ -12,4 +13,4 @@
         @endforeach
         </div>
     </div>
-</div>
+</div>--}}

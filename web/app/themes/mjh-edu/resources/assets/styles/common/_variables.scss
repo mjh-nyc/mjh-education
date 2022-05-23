@@ -4,7 +4,7 @@
 /** Set Fontawesome relative path **/
 $fa-font-path: "~font-awesome/fonts/" !default;
 
-$default-font-size:	18;
+$default-font-size:	19;
 
 /* usage example: map-get($theme-colors, primary); */
 $theme-colors: (
@@ -16,7 +16,9 @@ $theme-colors: (
 	text-color:			#222222,
 	dark:				#141414,
 	link:				#033EFB,
-	link-hover:			#73479C
+	link-hover:			#73479C,
+	alert:				#091e3f,
+	highlight:			#00bcd4
 );
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
