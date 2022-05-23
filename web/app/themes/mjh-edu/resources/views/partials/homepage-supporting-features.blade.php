@@ -1,4 +1,5 @@
-<div class="row features features__supporting">
+{{-- NOT USED / ARCHIVED --}}
+{{--<div class="row features features__supporting">
 	@php $supporting_features = App::get_repeater_field('supporting_features'); @endphp
 	@if(!empty($supporting_features))
 
@@ -8,4 +9,4 @@
 		</div>
 		@endforeach
 	@endif
-</div>
+</div>--}}

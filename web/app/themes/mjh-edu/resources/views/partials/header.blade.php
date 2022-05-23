@@ -60,19 +60,7 @@
 </header>
 
 @if (is_front_page())
-  <!-- featured image and page title area -->
-  <div class="hero-area parallax-window" data-parallax="scroll" data-image-src="{{App::featuredImageSrc('homepage-header')}}" data-over-scroll-fix="true" alt="{{App::featuredImageAlt(get_the_ID())}}">
-    <div class="sr-only">{{App::featuredImageAlt(get_post_thumbnail_id())}}</div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-          @include('partials.page-header')
-        </div>
-      </div>
-  </div>
-  </div>
-  <!-- //end featured image and page title area -->
+  
 @else
   @include('partials.content-header')
 @endif

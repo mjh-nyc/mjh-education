@@ -34,21 +34,69 @@ export default {
 
 		//Navigation
 		/**********************/
-		var $open_menu = 'id'; //temp before it gets set below;
+		//If making code changes, be sure to replicate to education site nav, as it pulls its navigation from the main site.
+        var $open_menu = 'id'; //temp before it gets set below;
         //primary navigation
-        jQuery('#menu-primary-navigation .menu-item-has-children > a, #menu-collapsible-sidenavigation .menu-item-has-children > a').bind('click', function(event) {
-            event.preventDefault();
-            //close any open menus
-            if($open_menu!=jQuery(this).parent().attr('id')) {
-              jQuery('#' + $open_menu).removeClass('open').find('ul').css('display','none');
-            }
-            //open selected menu
-            jQuery(this).parent().toggleClass('open').find('ul').slideToggle(100);
-            //set as current
-            $open_menu = jQuery(this).parent().attr('id');
-        });
+        var topMenuClick = function(event) {
+          event.preventDefault();
+          //close any open menus unless there's a 3rd level 
+          if($open_menu!=jQuery(this).parent().attr('id')) {
+            jQuery('#' + $open_menu).removeClass('open').find('ul').css('display','none');
+          }
+          //open selected menu
+          jQuery(this).parent().toggleClass('open').find('ul').slideToggle(100);
+          //set as current
+          $open_menu = jQuery(this).parent().attr('id');
+          setTimeout(adjustMenuHeight,500);
+        }
+        //adjust menu hight if a 3rd level nav is present and we're on a child page
+        //gotta do this on a timer above
+        var adjustMenuHeight = function() {
+          //open the 3rd level menu if we're on the page that's a child
+          var thirdLevelIsCurrent = jQuery('#menu-primary-navigation .menu-item-has-children .has-submenu .current-menu-ancestor');
+          if(thirdLevelIsCurrent.length > 0) {
+            thirdLevelIsCurrent.find('a').first().click();
+          }
+        }
+
+
+        var $open_sub_menu = 'id'; //temp before it gets set below;
+        var secondaryMenuClick = function(event) {
+          event.preventDefault();
+          var thisParent = jQuery(this).parent();
+          var thisSubMenu = thisParent.find('.sub-menu-container');
+          var thisMainParent = jQuery(this).parent().parent();
+          if($open_sub_menu!=thisParent.attr('id')) {
+            jQuery('#' + $open_sub_menu).removeClass('current-menu-item');
+            jQuery('#' + $open_sub_menu).find('.sub-menu-container').removeClass('open');
+          }
+          thisParent.addClass('current-menu-item');
+          $open_sub_menu = thisParent.attr('id');
+          thisSubMenu.addClass('open');
+          //adjust parent height
+          //get height of the submenu
+          var submenu_height = thisSubMenu.find('.sub-menu').height();
+          if(submenu_height >  thisMainParent.height()) {
+            thisMainParent.height(submenu_height);
+          } else {
+            thisMainParent.css('height','auto');
+          }
+        }
+
+        jQuery('#menu-primary-navigation .menu-item-has-children > a, #menu-collapsible-sidenavigation .menu-item-has-children > a').bind('click', topMenuClick);
         //wrap submenus
         jQuery('.menu-primary-navigation-container .sub-menu').wrap('<div class="sub-menu-container"></div>');
+
+        //if there are 3rd level items, add class
+        jQuery('.menu-primary-navigation-container .sub-menu .sub-menu').parent().parent().parent().addClass('has-submenu');
+        jQuery('.menu-primary-navigation-container .sub-menu .menu-item-has-children > a').unbind('click', topMenuClick);
+        jQuery('.menu-primary-navigation-container .sub-menu .menu-item-has-children > a').bind('click', secondaryMenuClick);
+      
+        //open the 3rd level menu if we're on the page that's a child
+        var thirdLevelIsCurrent = jQuery('#menu-primary-navigation .menu-item-has-children .has-submenu .current-menu-ancestor');
+        if(thirdLevelIsCurrent.length > 0) {
+          thirdLevelIsCurrent.find('a').first().click();
+        }
 
         // JavaScript to be fired on all pages in tablet and mobile views
         jQuery('#primary-nav-toggle').bind('click', function(event) {
@@ -135,14 +183,14 @@ export default {
 			overlayParentElement: 'body',
 			transition: function(url) { window.location.href = url; },
 		}).one('animsition.inStart', function(){
-			$(".parallax-mirror").fadeIn("slow");
+			//$(".parallax-mirror").fadeIn("slow");
 		}).one('animsition.outStart', function(){
-			$(".parallax-mirror").fadeOut("fast");
+			//$(".parallax-mirror").fadeOut("fast");
 		});
 
-		if(jQuery(".parallax-window").attr('alt')){
+		/*if(jQuery(".parallax-window").attr('alt')){
             jQuery(".parallax-mirror img").attr("alt",jQuery(".parallax-window").attr('alt'));
-		}
+		}*/
 
 		//add animsition-link class to menu items
 		/*$('#menu-main-navigation a').each(function() {

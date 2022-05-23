@@ -1,4 +1,5 @@
-<div class="row features features__primary">
+{{-- NOT USED / ARCHIVED --}}
+{{--<div class="row features features__primary">
   <div class="col-lg-6">
     @if( !empty(App::get_group_field('features','video_embed')))
     <div class="video-container card-shadow feature">
@@ -17,4 +18,4 @@
       @include('partials.content-card', ['item_id'=>$feature_custom_feature['ID'],'header'=>App::get_group_field('features','custom_feature_label'),'feature_type'=>'primary','button_label'=>App::get_group_field('features','custom_feature_button_label')])
     @endif    
   </div>
-</div>
+</div>--}}
