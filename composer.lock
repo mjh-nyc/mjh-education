@@ -444,10 +444,9 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
-                "reference": "1.4.1"
+                "reference": "1.4.2"
             },
-            "type": "wordpress-muplugin",
-            "time": "2021-08-17T06:15:47+00:00"
+            "type": "wordpress-muplugin"
         },
         {
             "name": "oscarotero/env",
