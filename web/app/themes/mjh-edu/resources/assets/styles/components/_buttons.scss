@@ -14,8 +14,8 @@
     @include font-size(16);
     @include media-breakpoint-up(lg) {
         border-radius: 25px;
-        height: 50px;
-        line-height: 50px;
+        height: 53px;
+        line-height: 55px;
         @include font-size(18);
         padding: 0 70px 0 30px;
     }
@@ -62,7 +62,7 @@
         @include font-size(26);
         @include media-breakpoint-up(lg) {
             @include font-size(32);
-            top: 50%;
+            top: 48%;
         }
     }
     &.cta-white {
@@ -281,4 +281,20 @@ $size:20px;
     }
 }*/
 
-
+%directional-button {
+    background: white;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    border: 0;
+    font-size: 0;
+    line-height: 0;
+    transition: all 0.2s;
+    &:hover {
+        background: black;
+    }
+}

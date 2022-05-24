@@ -70,16 +70,19 @@ export default {
             jQuery('#' + $open_sub_menu).removeClass('current-menu-item');
             jQuery('#' + $open_sub_menu).find('.sub-menu-container').removeClass('open');
           }
-          thisParent.addClass('current-menu-item');
-          $open_sub_menu = thisParent.attr('id');
-          thisSubMenu.addClass('open');
-          //adjust parent height
-          //get height of the submenu
-          var submenu_height = thisSubMenu.find('.sub-menu').height();
-          if(submenu_height >  thisMainParent.height()) {
-            thisMainParent.height(submenu_height);
-          } else {
-            thisMainParent.css('height','auto');
+          if(!thisParent.hasClass('current-menu-item')) {
+            $open_sub_menu = thisParent.attr('id');
+            thisSubMenu.addClass('open');
+            //adjust parent height
+            //get height of the submenu
+            var submenu_height = thisSubMenu.find('.sub-menu').height();
+            //alert(submenu_height + ' vs ' + thisMainParent.height());
+            if(submenu_height >  thisMainParent.height()) {
+              thisMainParent.height(submenu_height);
+            } else {
+              thisMainParent.css('height','auto');
+            }
+            thisParent.addClass('current-menu-item');
           }
         }
 
