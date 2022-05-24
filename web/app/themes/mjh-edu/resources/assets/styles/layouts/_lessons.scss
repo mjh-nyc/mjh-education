@@ -6,11 +6,8 @@
 	position: relative;
 	&__header {
 		text-align: center;
-		padding-top: 4rem;
+		padding-top: 2rem;
 		padding-bottom: 0;
-	    @include media-breakpoint-up(lg) {
-	    	padding-top: 2rem;
-	    }
 	}
 	&__teaser {
 		@include make-col-ready();
@@ -157,6 +154,7 @@
 		    h4 {
 		    	padding-top: 1rem;
 		    	padding-bottom: 1rem;
+		    	font-size: 1rem;
 		    }
 		    a.cta {
 		    	visibility: hidden;

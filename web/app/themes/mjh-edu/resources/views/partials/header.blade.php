@@ -3,7 +3,14 @@
   <div class="container brand-wrapper">
     <div class="row justify-content-between brand">
       <div class="col-6 col-lg-4">
-        {!!  get_custom_logo() !!}
+        @php $logo = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ),'full') @endphp
+        <a href="https://mjhnyc.org" class="custom-logo-link" rel="home">
+          @if($logo)
+            <img src="{{$logo[0]}}" alt="{{get_bloginfo()}}" width="{{$logo[1]}}" height="{{$logo[1]}}">
+          @else
+            {{get_bloginfo()}}
+          @endif
+        </a>
       </div>
 
       <div class="col-6 col-lg-8 right align-items-center">

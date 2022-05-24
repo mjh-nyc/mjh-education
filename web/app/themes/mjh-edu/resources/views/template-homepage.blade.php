@@ -4,26 +4,21 @@
 
 @extends('layouts.home')
 
-@section('hero')
-  @while(have_posts()) 
-    @php(the_post()) 
-  @endwhile
+
+@section('hero-slider')
+    @include('partials.homepage-hero-slider')
 @endsection
 
-@section('primary-features')
-    @include('partials.homepage-primary-features')
-@endsection
-
-@section('carousel')
+@section('lessons-carousel')
     @if( !empty($lessons))
         @include('partials.homepage-lessons')
     @endif
 @endsection
 
-@section('secondary-features')
-    @include('partials.homepage-secondary-features')
-@endsection
-
-@section('supporting-features')
-    @include('partials.homepage-supporting-features')
+@section('custom-carousel')
+    @if( have_rows('custom_carousel') )
+        @while( have_rows('custom_carousel') ) @php(the_row())
+            @include('partials.homepage-custom-carousel')
+        @endwhile
+    @endif
 @endsection
