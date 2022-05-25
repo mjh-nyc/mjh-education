@@ -69,6 +69,8 @@ export default {
           if($open_sub_menu!=thisParent.attr('id')) {
             jQuery('#' + $open_sub_menu).removeClass('current-menu-item');
             jQuery('#' + $open_sub_menu).find('.sub-menu-container').removeClass('open');
+            //reset parent height
+            thisMainParent.css('height','auto');
           }
           if(!thisParent.hasClass('current-menu-item')) {
             $open_sub_menu = thisParent.attr('id');
