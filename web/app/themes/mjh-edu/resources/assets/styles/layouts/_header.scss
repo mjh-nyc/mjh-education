@@ -471,7 +471,7 @@
                 .sub-menu-container {
                     display: none;
                     position: relative;
-                    width: 100%;
+                    width: 50%;
                     left: 0;
                     -webkit-box-shadow: none;
                     box-shadow: none;
@@ -481,6 +481,7 @@
                     .sub-menu {
                         padding: 0;
                         column-count: 1;
+                        max-width: 100%;
                         @include media-breakpoint-down(md) {
                             display: block !important;
                         }
