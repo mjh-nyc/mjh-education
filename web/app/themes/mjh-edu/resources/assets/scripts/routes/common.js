@@ -74,7 +74,20 @@ export default {
           }
           if(!thisParent.hasClass('current-menu-item')) {
             $open_sub_menu = thisParent.attr('id');
+            //make submenu items invisible, then animate them in
+            var thisSubMenuListItems = thisSubMenu.find('li');
+            thisSubMenuListItems.each(function() {
+							jQuery(this).css('opacity',0);
+							//jQuery(this).css('padding-left',0);
+						});
             thisSubMenu.addClass('open');
+            //now fade them in
+            var fadeDelay = 200;
+            thisSubMenuListItems.each(function() {
+							jQuery(this).fadeTo( fadeDelay, 1);
+							fadeDelay = fadeDelay + 300;
+							//jQuery(this).animate({ 'padding-left' : '20px' }, 20);
+						});
             //adjust parent height
             //get height of the submenu
             var submenu_height = thisSubMenu.find('.sub-menu').height();

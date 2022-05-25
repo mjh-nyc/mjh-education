@@ -452,6 +452,7 @@
                         line-height: normal;
                         color:black;
                         white-space: normal;
+                        transition: all 0.3s;
                     }
                     a:after,a:before {
                         display: none;
@@ -463,8 +464,38 @@
                         background-color: $color-highlight;*/
                         //border-bottom: 3px solid $color-highlight;
                         @include bentonBd();
+                        position: relative;
+                        transition: all 0.3s;
+                        
+                    }
+                    &.current-menu-item > a {
+                        padding-left: 20px;
+                    }
+                    &.current-menu-item > a:before{
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        -ms-transform: rotate(-90deg);
+                        /* IE 9 */
+                        -webkit-transform: rotate(-90deg);
+                        /* Chrome, Safari, Opera */
+                        transform: rotate(-90deg);
+                        transition: all 0.3s;
+                        font-family: FontAwesome;
+                        font-size: 20px;
+                        line-height: 1;
+                        color: black;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        text-indent: 0;
+                        content: "\f107";
+                        position: absolute;
+                        right: -20px;
+                        top: 10px;
+                        left: -10px;
 
                     }
+
                 }
 
                 //Overwrite the above for 3rd level nav items
