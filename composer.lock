@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3741b8312c224040c55518e598a5d615",
+    "content-hash": "fd4ba6f2b18799508dba536adb9c9290",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -444,7 +444,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
-                "reference": "1.4.2"
+                "reference": "1.4.3"
             },
             "type": "wordpress-muplugin"
         },
