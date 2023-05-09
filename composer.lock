@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45deaf3b76fb2db93b588a1efc8997fe",
+    "content-hash": "f0f36f7676e6d4c29540df27602bcb55",
     "packages": [
         {
             "name": "composer/installers",
@@ -150,6 +150,21 @@
                 }
             ],
             "time": "2022-08-20T06:45:11+00:00"
+        },
+        {
+            "name": "deliciousbrains-plugin/wp-offload-media",
+            "version": "3.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-offload-media&version=3.2.1"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "amazon-s3-and-cloudfront-pro"
+            }
         },
         {
             "name": "deliciousbrains/wp-offload-s3-pro",

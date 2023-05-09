@@ -76,6 +76,10 @@
         "my-yoast": {
             "type": "composer",
             "url": "https://my.yoast.com/packages/"
+        },
+        "4": {
+            "type": "composer",
+            "url": "https://composer.deliciousbrains.com"
         }
     },
     "require": {
@@ -96,7 +100,8 @@
         "roots/wordpress": "^6.2",
         "roots/bedrock-autoloader": "^1.0",
         "roots/bedrock-disallow-indexing": "^2.0",
-        "wpengine/advanced-custom-fields-pro": "^6.1"
+        "wpengine/advanced-custom-fields-pro": "^6.1",
+        "deliciousbrains-plugin/wp-offload-media": "^3.2"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.0.2",

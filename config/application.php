@@ -94,6 +94,13 @@ Config::define('DISALLOW_FILE_EDIT', true);
 // Disable plugin and theme updates and installation from the admin
 Config::define('DISALLOW_FILE_MODS', true);
 
+//AWS/Wp-Offload-Media API Credentials
+Config::define( 'AS3CF_SETTINGS', serialize( array(
+    'provider' => 'aws',
+    'access-key-id' => env('AWS_ACCESS_KEY') ?: '',
+    'secret-access-key' => env('AWS_SECRET_ACCESS_KEY') ?: '',
+) ) );
+
 /**
  * Debugging Settings
  */
