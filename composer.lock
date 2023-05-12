@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1eaaa4999b4b2649249a3b67eea85878",
+    "content-hash": "b9b4158eded4c919594509b4281faa59",
     "packages": [
         {
             "name": "composer/installers",
@@ -239,13 +239,29 @@
         },
         {
             "name": "mjh-nyc/mjhedu-custom-configurations",
-            "version": "dev-master",
+            "version": "1.4.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
-                "reference": "1.4.3"
+                "url": "git@github.com:mjh-nyc/mjhedu-custom-configurations.git",
+                "reference": "ea667915c212aed3cea79c0ae19df5103addfa9e"
             },
-            "type": "wordpress-muplugin"
+            "require": {
+                "php": ">=8.0"
+            },
+            "type": "wordpress-muplugin",
+            "authors": [
+                {
+                    "name": "Cloudred",
+                    "homepage": "https://cloudred.com"
+                }
+            ],
+            "description": "MJH Edu custom configurations must use plugin",
+            "homepage": "https://github.com/mjh-nyc/mjhedu-custom-configurations",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "time": "2023-05-12T21:27:49+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -2202,7 +2218,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "mjh-nyc/mjhedu-custom-configurations": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

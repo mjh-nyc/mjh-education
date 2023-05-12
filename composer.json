@@ -61,17 +61,9 @@
             }
         },
         "3": {
-            "type": "package",
-            "package": {
-                "name": "mjh-nyc/mjhedu-custom-configurations",
-                "version": "dev-master",
-                "type": "wordpress-muplugin",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/mjh-nyc/mjhedu-custom-configurations.git",
-                    "reference": "1.4.3"
-                }
-            }
+            "type": "git",
+            "url": "git@github.com:mjh-nyc/mjhedu-custom-configurations.git",
+            "no-api": true
         },
         "my-yoast": {
             "type": "composer",
@@ -89,7 +81,7 @@
         "oscarotero/env": "^2.1",
         "roots/wp-password-bcrypt": "^1.0.0",
         "roots/wp-config": "1.0.0",
-        "mjh-nyc/mjhedu-custom-configurations": "dev-master",
+        "mjh-nyc/mjhedu-custom-configurations": "^1.0.0",
         "wpackagist-plugin/advanced-forms": "^1.0",
         "deliciousbrains/wp-offload-s3-pro": "^1.5",
         "wpackagist-plugin/wp-super-cache": "^1.6.4",
