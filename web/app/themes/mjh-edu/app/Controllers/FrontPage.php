@@ -9,7 +9,7 @@ class FrontPage extends Controller
 	/**
 	 * Set variable for ACF `feature` group, field name `featured_lesson_plan`
 	 *
-	 * @return array
+	 * @return array | boolean
 	 */
 	public function featureLessonPlan(){
 		$customFeatureObj = App::get_group_field('features', 'featured_lesson_plan');
@@ -21,7 +21,7 @@ class FrontPage extends Controller
 	/**
 	 * Set variable for ACF `feature` group, field name `custom_feature`
 	 *
-	 * @return array
+	 * @return array | boolean
 	 */
 	public function featureCustomFeature(){
 		$customFeatureObj = App::get_group_field('features', 'custom_feature');
@@ -33,11 +33,11 @@ class FrontPage extends Controller
 	/**
 	 * Set variable for ACF `secondary_features` group, get all fields into an array
 	 *
-	 * @return array
+	 * @return array | boolean
 	 */
 	public function featureSecondaryFeatures(){
 		$group_secondary_features = App::get_group_field('secondary_features');
-		if(!empty($group_secondary_features)){
+		if(!empty($group_secondary_features) && is_array($group_secondary_features)){
 			$featureHash = array();
 			foreach($group_secondary_features as $key=>$secondary_feature){
 				if(!empty($secondary_feature->ID) ) {
