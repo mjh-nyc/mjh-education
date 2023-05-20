@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9b4158eded4c919594509b4281faa59",
+    "content-hash": "cc029bee3d457cd75f8b2227a0a6f2d1",
     "packages": [
         {
             "name": "composer/installers",
@@ -165,15 +165,6 @@
             "extra": {
                 "installer-name": "amazon-s3-and-cloudfront-pro"
             }
-        },
-        {
-            "name": "deliciousbrains/wp-offload-s3-pro",
-            "version": "1.5.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://deliciousbrains.com/dl/wp-offload-s3-pro-latest.zip?licence_key=1af4b9aa-71f7-4036-a5ef-300592795795&site_url=mjhnyc.org"
-            },
-            "type": "wordpress-plugin"
         },
         {
             "name": "graham-campbell/result-type",
