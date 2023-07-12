@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc029bee3d457cd75f8b2227a0a6f2d1",
+    "content-hash": "f87b356083f3dc0ef3f1359aa3e817a4",
     "packages": [
         {
             "name": "composer/installers",
@@ -230,11 +230,11 @@
         },
         {
             "name": "mjh-nyc/mjhedu-custom-configurations",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:mjh-nyc/mjhedu-custom-configurations.git",
-                "reference": "ea667915c212aed3cea79c0ae19df5103addfa9e"
+                "reference": "8e0179ed30d68c5421f6281211536048df198c51"
             },
             "require": {
                 "php": ">=8.0"
@@ -252,7 +252,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2023-05-12T21:27:49+00:00"
+            "time": "2023-07-12T04:03:05+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -2217,5 +2217,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
