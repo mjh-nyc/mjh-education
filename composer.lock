@@ -153,10 +153,10 @@
         },
         {
             "name": "deliciousbrains-plugin/wp-offload-media",
-            "version": "3.2.1",
+            "version": "3.2.4",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-offload-media&version=3.2.1"
+                "url": "https://composer.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-offload-media&version=3.2.4"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -1251,10 +1251,10 @@
         },
         {
             "name": "wpengine/advanced-custom-fields-pro",
-            "version": "6.1.6",
+            "version": "6.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.1.6"
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.1.7"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -1266,17 +1266,17 @@
         },
         {
             "name": "yoast/wordpress-seo",
-            "version": "20.7",
+            "version": "20.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast-dist/wordpress-seo.git",
-                "reference": "d622c23fb04d7ad3cf03d497d6bf954406b139a4"
+                "reference": "22f5e01f4d30e7e602a0b27e6b8d3af4d1d6fcb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://my.yoast.com/packages/dist/yoast/wordpress-seo/yoast-wordpress-seo-d622c23fb04d7ad3cf03d497d6bf954406b139a4-zip-a91ccc.zip",
-                "reference": "d622c23fb04d7ad3cf03d497d6bf954406b139a4",
-                "shasum": "07a8edaf62af89d9a712d608f337d503003d8d53"
+                "url": "https://my.yoast.com/packages/dist/yoast/wordpress-seo/yoast-wordpress-seo-22f5e01f4d30e7e602a0b27e6b8d3af4d1d6fcb6-zip-6e1eea.zip",
+                "reference": "22f5e01f4d30e7e602a0b27e6b8d3af4d1d6fcb6",
+                "shasum": "dc31a0a5eca0f4f5463a5e6bafaba9de3dc95ab6"
             },
             "require": {
                 "composer/installers": "^1.12 || ^2.0",
@@ -1312,9 +1312,15 @@
             },
             "scripts": {
                 "test": [
+                    "@php ./vendor/phpunit/phpunit/phpunit --no-coverage"
+                ],
+                "coverage": [
                     "@php ./vendor/phpunit/phpunit/phpunit"
                 ],
                 "integration-test": [
+                    "@php ./vendor/phpunit/phpunit/phpunit -c phpunit-integration.xml.dist --no-coverage"
+                ],
+                "integration-coverage": [
                     "@php ./vendor/phpunit/phpunit/phpunit -c phpunit-integration.xml.dist"
                 ],
                 "lint": [
@@ -1333,7 +1339,7 @@
                     "Yoast\\WP\\SEO\\Composer\\Actions::check_coding_standards"
                 ],
                 "check-cs-thresholds": [
-                    "@putenv YOASTCS_THRESHOLD_ERRORS=133",
+                    "@putenv YOASTCS_THRESHOLD_ERRORS=130",
                     "@putenv YOASTCS_THRESHOLD_WARNINGS=202",
                     "Yoast\\WP\\SEO\\Composer\\Actions::check_cs_thresholds"
                 ],
@@ -1411,25 +1417,25 @@
                 "wiki": "https://github.com/Yoast/wordpress-seo/wiki",
                 "source": "https://github.com/Yoast/wordpress-seo"
             },
-            "time": "2023-05-09T08:04:33+00:00"
+            "time": "2023-07-11T08:05:49+00:00"
         },
         {
             "name": "yoast/wordpress-seo-premium",
-            "version": "20.7",
+            "version": "20.11",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Yoast-dist/wordpress-seo-premium.git",
-                "reference": "0b180631d376a86f1c7905742ca7d32470179ce4"
+                "reference": "c882de008f0784691ff03e16ded5c279276c10da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://my.yoast.com/packages/dist/yoast/wordpress-seo-premium/yoast-wordpress-seo-premium-0b180631d376a86f1c7905742ca7d32470179ce4-zip-e1bd7d.zip",
-                "reference": "0b180631d376a86f1c7905742ca7d32470179ce4",
-                "shasum": "236aa3940c8862b44c04c78a7f1936807e83f8d1"
+                "url": "https://my.yoast.com/packages/dist/yoast/wordpress-seo-premium/yoast-wordpress-seo-premium-c882de008f0784691ff03e16ded5c279276c10da-zip-14f29e.zip",
+                "reference": "c882de008f0784691ff03e16ded5c279276c10da",
+                "shasum": "98b317aa762731c35ea575329669d8013b2c97bb"
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
-                "yoast/wordpress-seo": "^20.7"
+                "yoast/wordpress-seo": "^20.11"
             },
             "require-dev": {
                 "yoast/wp-test-utils": "^1.1.1",
@@ -1464,9 +1470,15 @@
             },
             "scripts": {
                 "test": [
+                    "@php ./vendor/phpunit/phpunit/phpunit --no-coverage"
+                ],
+                "coverage": [
                     "@php ./vendor/phpunit/phpunit/phpunit"
                 ],
                 "integration-test": [
+                    "@php ./vendor/phpunit/phpunit/phpunit -c phpunit-integration.xml.dist --no-coverage"
+                ],
+                "integration-coverage": [
                     "@php ./vendor/phpunit/phpunit/phpunit -c phpunit-integration.xml.dist"
                 ],
                 "compile-di": [
@@ -1539,7 +1551,7 @@
                 "issues": "https://github.com/Yoast/wordpress-seo-premium/issues",
                 "source": "https://github.com/Yoast/wordpress-seo-premium"
             },
-            "time": "2023-05-09T08:48:55+00:00"
+            "time": "2023-07-11T08:27:13+00:00"
         }
     ],
     "packages-dev": [
