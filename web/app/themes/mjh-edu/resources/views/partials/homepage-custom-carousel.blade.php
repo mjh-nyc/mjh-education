@@ -12,8 +12,8 @@
   <div class="custom-carousel row">
      <div class="col-md-12 no-gutters wrapper">
       @php($carousel_items = get_sub_field('custom_carousel_items'))
-      @php($carousel_total = count($carousel_items))
       @if(!empty($carousel_items))
+         @php($carousel_total = count($carousel_items))
         <div id="slider-custom-{{get_row_index()}}" class="slider-custom mjh-slider" @if($carousel_total < 4) style="padding-bottom: 0" @endif>
           @while (have_rows('custom_carousel_items')) @php(the_row())
             @if(empty(get_sub_field('custom_carousel_section_is_custom_content')))
@@ -28,14 +28,14 @@
                   <h4 class="card-title">
                   @if(!empty($item_id)){!! get_the_title($item_id) !!}@else {{get_sub_field('custom_carousel_title')}} @endif</h4>
                 </div>
-                
+
                 @if(!empty($item_id))
                   @if(has_excerpt($item_id))
                     <div class="custom-card--details card-description">
                       {!! get_the_excerpt($item_id) !!}
                     </div>
                   @endif
-                @else 
+                @else
                   @if(get_sub_field('custom_carousel_description'))
                     <div class="custom-card--details card-description">
                       {!! get_sub_field('custom_carousel_description') !!}
@@ -48,8 +48,8 @@
           @endwhile
         </div>
       @endif
-       
-      
+
+
     </div>
   </div>
 </div>
