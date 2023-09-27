@@ -57,13 +57,13 @@
 }
 
 /* general input fields */
-input[type="text"], 
-input[type="password"], 
-input[type="number"], 
-input[type="search"], 
-input[type="email"], 
-input[type="url"], 
-textarea, 
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+textarea,
 select {
 	@extend %text-input;
 }
@@ -165,7 +165,7 @@ textarea {
 					        left: 60%;
 					        top: 0;
 					        @include font-size(26);
-					       
+
 	            		}
 	            	}
 	            }
@@ -197,7 +197,8 @@ textarea {
 	}*/
 	.af-field {
 		margin-bottom: 1rem;
-		input[type="text"] {
+		input[type="text"],
+    input[type="email"] {
 			width:100%;
 		}
 		select {
@@ -232,14 +233,11 @@ textarea {
   		}
   	}
 }
-  
-
 .post-password-form {
 	* {
 		display: block;
 	}
 }
-
 .page.contact {
 	.acf-form {
 		.af-field-contact-validate-email{
