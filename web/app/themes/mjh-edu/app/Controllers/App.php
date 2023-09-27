@@ -707,14 +707,28 @@ class App extends Controller
 
 	    return $output . $after;
 	}
-
+    /**
+     * Verify user is logged out
+     *
+     */
 	public static function verifyUserLoggedOut(){
 		if(is_user_logged_in() ){
 			wp_redirect( home_url() );
 			exit;
 		}
 	}
-
+    /**
+     * Check if user signed up cookie is set
+     *
+     * @return boolean
+     */
+    public static function userSignedUp(){
+        if( !empty($_COOKIE['mjhedu_signed_up']) ){
+            return true;
+        }else{
+            return false;
+        }
+    }
     /**
      * Get site navigations from MJH via rest api
      *

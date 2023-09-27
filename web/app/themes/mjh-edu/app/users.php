@@ -315,7 +315,7 @@ function users_redirect_register() {
 		wp_redirect( home_url('/register'));
 	}
 }
-add_action('init','users_redirect_register');
+//add_action('init','users_redirect_register');
 
 /**
  * Redirection if login fails
@@ -328,7 +328,7 @@ function users_login_failed() {
 	wp_redirect($login_page . '?login=failed');
 	exit;
 }
-add_action('wp_login_failed', 'users_login_failed');
+//add_action('wp_login_failed', 'users_login_failed');
 
 /**
  * Redirection on logout
@@ -341,7 +341,7 @@ function users_logout_redirect() {
 	wp_redirect($login_page . "?login=false");
 	exit;
 }
-add_action('wp_logout','users_logout_redirect');
+//add_action('wp_logout','users_logout_redirect');
 
 /**
  * User login form footer
@@ -401,7 +401,7 @@ function mjh_retrieve_password_message( $message, $key ){
     }
     // Fetch user information from user_login
     if ( strpos( $_POST['user_login'], '@' ) ) {
- 
+
         $user_data = get_user_by( 'email', trim( $_POST['user_login'] ) );
     } else {
         $login = trim($_POST['user_login']);
@@ -417,7 +417,7 @@ function mjh_retrieve_password_message( $message, $key ){
     $message = __("Dear","sage")." ".$user_first_name.",\n\n";
     $message .= __("A password reset has been requested for your account at","sage").": ";
     $message .= network_home_url( '/' ) . "\r\n\r\n";
-    $message .= __("If you did not request it, just ignore this email and nothing will happen.","sage")."\n\n"; 
+    $message .= __("If you did not request it, just ignore this email and nothing will happen.","sage")."\n\n";
     $message .= __("To reset your password, visit the following address:","sage")."\n";
     $message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login');
 
@@ -426,7 +426,7 @@ function mjh_retrieve_password_message( $message, $key ){
 	$message .= __("Edmond J. Safra Plaza","sage")."\n";
 	$message .= __("36 Battery Place","sage")."\n";
 	$message .= __("New York, NY 10280","sage");
-    
+
     return $message;
 }
 add_filter( 'retrieve_password_message', 'mjh_retrieve_password_message', 10, 2 );
