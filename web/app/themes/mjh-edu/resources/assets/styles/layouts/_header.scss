@@ -68,7 +68,7 @@
             @include font-size(20);
         }
     }
-    
+
     .brand-wrapper {
         z-index: 111;
 
@@ -90,7 +90,7 @@
     }
     .custom-logo-link {
         display: inline-block;
-        
+
         img {
             image-rendering: -webkit-optimize-contrast;
             height: auto;
@@ -131,7 +131,7 @@
     }
 
     .top-links {
-        
+
         @include font-size(10);
         @include media-breakpoint-up(lg) {
             @include font-size(12);
@@ -199,12 +199,12 @@
     }
     .right {
         text-align: right;
-        
+
     }
     .menu-button-top-navigation-container {
         display: inline-block;
     }
-    
+
     .overlay-toggle {
         float: right;
         display: block;
@@ -226,7 +226,7 @@
             //background: url("../images/icon-close-white.svg") center right no-repeat;
         }
     }
-    
+
     .results-stats {
         @include font-size(22);
         @include media-breakpoint-up(md) {
@@ -251,14 +251,14 @@
             }
         }
     }
-    
+
 }
 
 .announcement {
     background: map-get($theme-colors,'alert');
     padding: 2rem 0;
     @include font-size(14);
-    
+
     @include media-breakpoint-up(lg) {
         @include font-size(16);
     }
@@ -266,7 +266,7 @@
     .announcement-wrapper {
         @extend .container;
         margin: 0 auto;
-    
+
         display: flex;
         flex-direction:row;
         justify-content: space-between;
@@ -343,7 +343,7 @@
             @include media-breakpoint-up(md) {
                 @include font-size(16);
             }
-            
+
             a {
                 display: inline-block;
                 line-height: normal;
@@ -364,21 +364,6 @@
             }
             a {
                 position: relative;
-            }
-            a:after {
-                transition: all 0.3s;
-                font-family: FontAwesome;
-                font-size: 18px;
-                line-height: 1;
-                color: white;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                text-indent: 0;
-                content: "\f107";
-                position: absolute;
-                right: -20px;
-                top: 50%;
-                margin-top: -10px;
             }
             &.current-menu-item,
             &.current-menu-ancestor {
@@ -412,8 +397,8 @@
                 left: 40%;
                 bottom: -10px;
                 position: absolute;
-                width: 0; 
-                height: 0; 
+                width: 0;
+                height: 0;
                 border-left: 10px solid transparent;
                 border-right: 10px solid transparent;
 
@@ -466,7 +451,7 @@
                         @include bentonBd();
                         position: relative;
                         transition: all 0.3s;
-                        
+
                     }
                     &.current-menu-item > a {
                         padding-left: 20px;
@@ -522,7 +507,7 @@
                         .current-menu-item a {
                             @include bentonBd();
                         }
-                        
+
                     }
                     &.open {
                         display: block;
@@ -549,7 +534,7 @@
     padding-top: 50px;
     padding-bottom: 50px;
 
-    
+
 
     @include media-breakpoint-up(sm) {
         padding-top: 74px;
@@ -571,7 +556,7 @@
         color: white;
         h1 {
             margin: 0 0 1rem 0;
-            
+
             @include font-size(25);
             @include media-breakpoint-up(sm) {}
             @include media-breakpoint-up(md) {
@@ -621,7 +606,7 @@
     color: black;
     left: 0;
     top: 0;
-    
+
     @include media-breakpoint-up(md) {
         right: 0;
         left:auto;
@@ -634,11 +619,11 @@
         right: 15px;
         top: 15px;
         z-index: 300;
-       
+
         @include media-breakpoint-up(md) {
             top: 20px;
         }
-        
+
         a {
             display: block;
             height: 30px;
