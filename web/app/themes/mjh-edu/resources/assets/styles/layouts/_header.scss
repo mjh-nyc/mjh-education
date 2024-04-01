@@ -806,6 +806,17 @@
                   display: none;
                 }
               }
+              //Overwrite the above for 3rd level nav items
+              .sub-menu-container {
+                display: block;
+                position: relative;
+                top: 0px;
+                width: 50%;
+                left: 0;
+                .sub-menu {
+                  padding: 0 0 10px 17px;
+                }
+              }
             }
           }
         }
