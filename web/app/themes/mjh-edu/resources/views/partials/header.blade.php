@@ -87,8 +87,8 @@
           {!! get_search_form(false) !!}
         </div>
         <nav class="nav-primary">
-          @if (has_nav_menu('primary_navigation'))
-            {!! wp_nav_menu(['theme_location' => 'primary_navigation','container_class' => 'menu-overlay-navigation-container','menu_id' => 'menu-overlay-navigation']) !!}
+          @if (!empty($site_navigations['primary_navigation']))
+            {!! $site_navigations['primary_navigation'] !!}
           @endif
         </nav>
           @if (!empty($site_navigations['mini_top_navigation']))
