@@ -1,13 +1,5 @@
 export default {
 	init() {
-
-		
-
-
-
-		
-
-
 	},
 	finalize() {
 		// JavaScript to be fired on all pages, after page specific JS is fired
@@ -17,7 +9,7 @@ export default {
 		$('.lazy').unveil({
 			offset: 100,
 		});
-		
+
 		// Initiate Typekit Fonts
 		window.WebFontConfig = {
 			typekit: {
@@ -39,7 +31,7 @@ export default {
         //primary navigation
         var topMenuClick = function(event) {
           event.preventDefault();
-          //close any open menus unless there's a 3rd level 
+          //close any open menus unless there's a 3rd level
           if($open_menu!=jQuery(this).parent().attr('id')) {
             jQuery('#' + $open_menu).removeClass('open').find('ul').css('display','none');
           }
@@ -53,7 +45,7 @@ export default {
         //gotta do this on a timer above
         var adjustMenuHeight = function() {
           //open the 3rd level menu if we're on the page that's a child
-          var thirdLevelIsCurrent = jQuery('#menu-primary-navigation .menu-item-has-children .has-submenu .current-menu-ancestor');
+          var thirdLevelIsCurrent = jQuery('.primary-navigation-v2 #menu-primary-navigation .menu-item-has-children .has-submenu .current-menu-ancestor');
           if(thirdLevelIsCurrent.length > 0) {
             thirdLevelIsCurrent.find('a').first().click();
           }
@@ -101,17 +93,17 @@ export default {
           }
         }
 
-        jQuery('#menu-primary-navigation .menu-item-has-children > a, #menu-collapsible-sidenavigation .menu-item-has-children > a').bind('click', topMenuClick);
+        jQuery('.primary-navigation-v2 #menu-primary-navigation .menu-item-has-children > a, #menu-collapsible-sidenavigation .menu-item-has-children > a').bind('click', topMenuClick);
         //wrap submenus
         jQuery('.menu-primary-navigation-container .sub-menu').wrap('<div class="sub-menu-container"></div>');
 
         //if there are 3rd level items, add class
-        jQuery('.menu-primary-navigation-container .sub-menu .sub-menu').parent().parent().parent().addClass('has-submenu');
-        jQuery('.menu-primary-navigation-container .sub-menu .menu-item-has-children > a').unbind('click', topMenuClick);
-        jQuery('.menu-primary-navigation-container .sub-menu .menu-item-has-children > a').bind('click', secondaryMenuClick);
-      
+        jQuery('.primary-navigation-v2 .menu-primary-navigation-container .sub-menu .sub-menu').parent().parent().parent().addClass('has-submenu');
+        jQuery('.primary-navigation-v2 .menu-primary-navigation-container .sub-menu .menu-item-has-children > a').unbind('click', topMenuClick);
+        jQuery('.primary-navigation-v2 .menu-primary-navigation-container .sub-menu .menu-item-has-children > a').bind('click', secondaryMenuClick);
+
         //open the 3rd level menu if we're on the page that's a child
-        var thirdLevelIsCurrent = jQuery('#menu-primary-navigation .menu-item-has-children .has-submenu .current-menu-ancestor');
+        var thirdLevelIsCurrent = jQuery('.primary-navigation-v2 #menu-primary-navigation .menu-item-has-children .has-submenu .current-menu-ancestor');
         if(thirdLevelIsCurrent.length > 0) {
           thirdLevelIsCurrent.find('a').first().click();
         }
@@ -133,7 +125,7 @@ export default {
             jQuery('#primary-nav-toggle').removeClass('open');
             jQuery('#menu-overlay-navigation .open').removeClass('open').find('ul').hide();
         })
-        jQuery('#menu-overlay-navigation .menu-item-has-children > a').bind('click', function(event) {
+        jQuery('.overlay-nav #menu-primary-navigation .menu-item-has-children > a').bind('click', function(event) {
             event.preventDefault();
             jQuery(this).parent().toggleClass('open').find('ul').slideToggle();
             //adjust overlay height
@@ -146,7 +138,7 @@ export default {
 
         })
         //automatically expand parent if we're on a subpage
-        jQuery('#menu-overlay-navigation .current-menu-parent').toggleClass('open').find('ul').slideToggle();
+        jQuery('.overlay-nav #menu-primary-navigation .current-menu-parent').toggleClass('open').find('ul').slideToggle();
 
 
         //init sticky header
@@ -227,4 +219,4 @@ export default {
 			});
 		}
 	},
-};	
+};
