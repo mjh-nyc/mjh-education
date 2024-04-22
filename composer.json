@@ -72,7 +72,7 @@
         "mjh-nyc/mjhedu-custom-configurations": "^1.0.0",
         "wpackagist-plugin/advanced-forms": "^1.0",
         "wpackagist-plugin/wp-super-cache": "^1.6.4",
-        "yoast/wordpress-seo-premium": "^20.0",
+        "yoast/wordpress-seo-premium": "^22.0",
         "wpackagist-plugin/wps-hide-login": "^1.8",
         "wpackagist-plugin/export-wp-users-xml-csv": "^1.0",
         "wpackagist-plugin/wp-all-export": "^1.3",
