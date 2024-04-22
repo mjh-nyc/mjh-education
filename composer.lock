@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4e8428dcca5edf0e335d08f70135839",
+    "content-hash": "d1844a3c1489f6946eae9c4c53a9590e",
     "packages": [
         {
             "name": "composer/installers",
@@ -153,10 +153,10 @@
         },
         {
             "name": "deliciousbrains-plugin/wp-offload-media",
-            "version": "3.2.4",
+            "version": "3.2.7",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-offload-media&version=3.2.4"
+                "url": "https://composer.deliciousbrains.com/?wc-api=delicious-brains&request=composer_download&package=wp-offload-media&version=3.2.7"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -1813,15 +1813,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-forms",
-            "version": "1.9.3.1",
+            "version": "1.9.3.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-forms/",
-                "reference": "tags/1.9.3.1"
+                "reference": "tags/1.9.3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.9.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.9.3.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1849,15 +1849,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-all-export",
-            "version": "1.3.9",
+            "version": "1.4.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-all-export/",
-                "reference": "tags/1.3.9"
+                "reference": "tags/1.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-all-export.1.3.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-all-export.1.4.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1867,15 +1867,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "3.9.0",
+            "version": "4.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/3.9.0"
+                "reference": "tags/4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.9.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1885,15 +1885,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.9.4",
+            "version": "1.12.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.9.4"
+                "reference": "tags/1.12.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.9.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.12.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1903,15 +1903,15 @@
         },
         {
             "name": "wpackagist-plugin/wps-hide-login",
-            "version": "1.9.8",
+            "version": "1.9.15.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wps-hide-login/",
-                "reference": "tags/1.9.8"
+                "reference": "tags/1.9.15.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wps-hide-login.1.9.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/wps-hide-login.1.9.15.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1921,10 +1921,10 @@
         },
         {
             "name": "wpengine/advanced-custom-fields-pro",
-            "version": "6.1.7",
+            "version": "6.2.9",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.1.7"
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.2.9"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
