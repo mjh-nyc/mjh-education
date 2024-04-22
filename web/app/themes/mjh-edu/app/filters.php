@@ -89,3 +89,12 @@ add_filter('upload_mimes', function($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 });
+/**
+ * Resolve notice error when decoding a JSON file ( Wordpress 6.3+ )
+ */
+add_filter('theme_file_path', function($path, $file) {
+    if($file === 'theme.json') {
+        return false;
+    }
+    return $path;
+}, 0, 2);
