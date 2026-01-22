@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3e0e2c21f805ae53e8fd9e487d8860a",
+    "content-hash": "8c88fa80a73784cc63119a8d1a00429b",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
-                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "url": "https://api.github.com/repos/composer/installers/zipball/12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e",
                 "shasum": ""
             },
             "require": {
@@ -25,12 +25,12 @@
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "composer/composer": "1.6.* || ^2.0",
-                "composer/semver": "^1 || ^3",
-                "phpstan/phpstan": "^0.12.55",
-                "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^5.3",
-                "symfony/process": "^5"
+                "composer/composer": "^1.10.27 || ^2.7",
+                "composer/semver": "^1.7.2 || ^3.4.0",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-phpunit": "^1",
+                "symfony/phpunit-bridge": "^7.1.1",
+                "symfony/process": "^5 || ^6 || ^7"
             },
             "type": "composer-plugin",
             "extra": {
@@ -87,6 +87,7 @@
                 "cockpit",
                 "codeigniter",
                 "concrete5",
+                "concreteCMS",
                 "croogo",
                 "dokuwiki",
                 "drupal",
@@ -133,7 +134,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v2.2.0"
+                "source": "https://github.com/composer/installers/tree/v2.3.0"
             },
             "funding": [
                 {
@@ -149,7 +150,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-20T06:45:11+00:00"
+            "time": "2024-06-24T20:46:46+00:00"
         },
         {
             "name": "deliciousbrains-plugin/wp-offload-media",
@@ -1105,20 +1106,20 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.5.3",
+            "version": "6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
-                "reference": "41ff6e23ccbc3a1691406d69fe8c211a225514e2"
+                "reference": "29e4eb49b2f4c591e39d4eb6705a27cf1ea40e45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wordpress/zipball/41ff6e23ccbc3a1691406d69fe8c211a225514e2",
-                "reference": "41ff6e23ccbc3a1691406d69fe8c211a225514e2",
+                "url": "https://api.github.com/repos/roots/wordpress/zipball/29e4eb49b2f4c591e39d4eb6705a27cf1ea40e45",
+                "reference": "29e4eb49b2f4c591e39d4eb6705a27cf1ea40e45",
                 "shasum": ""
             },
             "require": {
-                "roots/wordpress-core-installer": "^1.0.0",
+                "roots/wordpress-core-installer": "^3.0",
                 "roots/wordpress-no-content": "self.version"
             },
             "type": "metapackage",
@@ -1136,7 +1137,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.5.3"
+                "source": "https://github.com/roots/wordpress/tree/6.9"
             },
             "funding": [
                 {
@@ -1144,25 +1145,25 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-01T16:54:37+00:00"
+            "time": "2025-05-23T18:54:22+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
-            "version": "1.100.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress-core-installer.git",
-                "reference": "73f8488e5178c5d54234b919f823a9095e2b1847"
+                "reference": "714d2e2a9e523f6e7bde4810d5a04aedf0ec217f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wordpress-core-installer/zipball/73f8488e5178c5d54234b919f823a9095e2b1847",
-                "reference": "73f8488e5178c5d54234b919f823a9095e2b1847",
+                "url": "https://api.github.com/repos/roots/wordpress-core-installer/zipball/714d2e2a9e523f6e7bde4810d5a04aedf0ec217f",
+                "reference": "714d2e2a9e523f6e7bde4810d5a04aedf0ec217f",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
-                "php": ">=5.6.0"
+                "php": ">=7.2.24"
             },
             "conflict": {
                 "composer/installers": "<1.0.6"
@@ -1172,7 +1173,7 @@
             },
             "require-dev": {
                 "composer/composer": "^1.0 || ^2.0",
-                "phpunit/phpunit": ">=5.7.27"
+                "phpunit/phpunit": "^8.5"
             },
             "type": "composer-plugin",
             "extra": {
@@ -1197,44 +1198,41 @@
                     "email": "team@roots.io"
                 }
             ],
-            "description": "A custom installer to handle deploying WordPress with composer",
+            "description": "A Composer custom installer to handle installing WordPress as a dependency",
             "keywords": [
                 "wordpress"
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress-core-installer/issues",
-                "source": "https://github.com/roots/wordpress-core-installer/tree/master"
+                "source": "https://github.com/roots/wordpress-core-installer/tree/3.0.0"
             },
             "funding": [
                 {
                     "url": "https://github.com/roots",
                     "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
                 }
             ],
-            "time": "2020-08-20T00:27:30+00:00"
+            "time": "2025-05-23T18:47:25+00:00"
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.5.3",
+            "version": "6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.5.3"
+                "reference": "6.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.5.3-no-content.zip",
-                "shasum": "adeffdc339d34eab4209e88b17966d8917e36e91"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.9-no-content.zip",
+                "reference": "6.9",
+                "shasum": "2d8cb4b253b690e255afde1d451e87380e6a5cb5"
             },
             "require": {
-                "php": ">= 7.0.0"
+                "php": ">= 7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.5.3"
+                "wordpress/core-implementation": "6.9"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -1285,7 +1283,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-05-07T16:02:20+00:00"
+            "time": "2025-12-02T19:09:36+00:00"
         },
         {
             "name": "roots/wp-config",
@@ -1335,16 +1333,16 @@
         },
         {
             "name": "roots/wp-password-bcrypt",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wp-password-bcrypt.git",
-                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26"
+                "reference": "bd26ab98aa646d88ce98c76e365d16259c5227a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
-                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
+                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/bd26ab98aa646d88ce98c76e365d16259c5227a2",
+                "reference": "bd26ab98aa646d88ce98c76e365d16259c5227a2",
                 "shasum": ""
             },
             "require": {
@@ -1398,19 +1396,16 @@
             "support": {
                 "forum": "https://discourse.roots.io/",
                 "issues": "https://github.com/roots/wp-password-bcrypt/issues",
-                "source": "https://github.com/roots/wp-password-bcrypt/tree/1.1.0"
+                "source": "https://github.com/roots/wp-password-bcrypt/tree/1.2.0"
             },
             "funding": [
                 {
                     "url": "https://github.com/roots",
                     "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
                 }
             ],
-            "time": "2021-10-31T01:18:58+00:00"
+            "abandoned": "roots/wp-password-bcrypt",
+            "time": "2024-09-10T23:11:22+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
