@@ -81,7 +81,8 @@
         "wpengine/advanced-custom-fields-pro": "^6.1",
         "deliciousbrains-plugin/wp-offload-media": "3.2.11",
         "wpackagist-plugin/wp-mail-smtp": "^4.0",
-        "wpackagist-plugin/two-factor": "^0.14.2"
+        "wpackagist-plugin/two-factor": "^0.14.2",
+        "wpackagist-plugin/fluent-smtp": "^2.2"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^4.0.0",
