@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96473224770a62c886817f357cae6533",
+    "content-hash": "d2906c02e92e441b5506f8dfaabaa964",
     "packages": [
         {
             "name": "composer/installers",
@@ -1736,15 +1736,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-forms",
-            "version": "1.9.3.6",
+            "version": "1.9.3.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-forms/",
-                "reference": "tags/1.9.3.6"
+                "reference": "tags/1.9.3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.9.3.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-forms.1.9.3.8.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1790,15 +1790,15 @@
         },
         {
             "name": "wpackagist-plugin/two-factor",
-            "version": "0.14.2",
+            "version": "0.16.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/two-factor/",
-                "reference": "tags/0.14.2"
+                "reference": "tags/0.16.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/two-factor.0.14.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/two-factor.0.16.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1808,15 +1808,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-all-export",
-            "version": "1.4.14",
+            "version": "1.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-all-export/",
-                "reference": "tags/1.4.14"
+                "reference": "tags/1.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-all-export.1.4.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-all-export.1.5.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1826,15 +1826,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "4.7.1",
+            "version": "4.8.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/4.7.1"
+                "reference": "tags/4.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.8.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1844,15 +1844,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
-            "version": "3.0.3",
+            "version": "3.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/3.0.3"
+                "reference": "tags/3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.3.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.3.1.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
