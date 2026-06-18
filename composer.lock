@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "050b6820cc399f0349195d7d74b524c9",
+    "content-hash": "4572a06e0b2ea70cf8f069e6b553a11b",
     "packages": [
         {
             "name": "composer/installers",
@@ -1047,23 +1047,20 @@
         },
         {
             "name": "roots/bedrock-disallow-indexing",
-            "version": "2.1.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/bedrock-disallow-indexing.git",
-                "reference": "e9f20bf1c2baf96daf80ebab3f4cfbb756b5c88c"
+                "reference": "6c28192e17cb9e02a5c0c99691a18552b85e1615"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/bedrock-disallow-indexing/zipball/e9f20bf1c2baf96daf80ebab3f4cfbb756b5c88c",
-                "reference": "e9f20bf1c2baf96daf80ebab3f4cfbb756b5c88c",
+                "url": "https://api.github.com/repos/roots/bedrock-disallow-indexing/zipball/6c28192e17cb9e02a5c0c99691a18552b85e1615",
+                "reference": "6c28192e17cb9e02a5c0c99691a18552b85e1615",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.27"
+                "php": ">=7.1"
             },
             "type": "wordpress-muplugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -1094,15 +1091,19 @@
             "support": {
                 "forum": "https://discourse.roots.io/",
                 "issues": "https://github.com/roots/bedrock-disallow-indexing/issues",
-                "source": "https://github.com/roots/bedrock-disallow-indexing/tree/2.1.0"
+                "source": "https://github.com/roots/bedrock-disallow-indexing/tree/2.0.0"
             },
             "funding": [
                 {
                     "url": "https://github.com/roots",
                     "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/rootsdev",
+                    "type": "patreon"
                 }
             ],
-            "time": "2026-03-10T01:48:06+00:00"
+            "time": "2020-05-20T01:25:07+00:00"
         },
         {
             "name": "roots/wordpress",
